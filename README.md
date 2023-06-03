@@ -21,6 +21,8 @@ I'm a full-stack engineer who loves coding, creating innovative projects, and ex
 - [Crab Staying](https://crabsatellite.com/projects/web_projects/crab_stay) - A website, online accommodation booking service.
 - [Crab Eats](https://crabsatellite.com/projects/web_projects/crab_eats) - A website, online food ordering service.
 
+You can find more [here](https://crabsatellite.com)
+
 ## 📫 How to reach me
 
 - [Website](https://crabsatellite.com/)
