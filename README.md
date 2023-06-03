@@ -2,7 +2,6 @@
 
 ![GitHub followers](https://img.shields.io/github/followers/crabsatellite?style=social)
 ![GitHub User's stars](https://img.shields.io/github/stars/crabsatellite?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/crabsatellite?style=social)
 
 I'm a full-stack engineer who loves coding, creating innovative projects, and exploring the universe of programming. I'm currently studying Computer Engineering at New York University.
 
