@@ -45,6 +45,7 @@ You can find more [here](https://crabsatellite.com)
 
 ## 📫 How to reach me
 
+- [Email](mailto:ALFullStackEngineer@gmail.com)
 - [Website](https://crabsatellite.com/)
 - [LinkedIn](https://www.linkedin.com/in/alex-lee-13b585263/)
 - [CSDN](https://blog.csdn.net/qq_62447747?spm=1010.2135.3001.5421)
