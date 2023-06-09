@@ -32,7 +32,7 @@ I'm a full-stack engineer who loves coding, creating innovative projects, and ex
 
 1. [Crab Chatbot](https://crabsatellite.com/projects/practical_tools/crab_chatbot) - An AI customer service.
 2. [Hot Bath](https://crabsatellite.com/projects/minecraft_mods/hotbath) - A Minecraft mod.
-3. [Crab Spotify](https://crabsatellite.com/projects/web_projects/crab_spotify) - An Android App, MVVM Music Player.
+3. [Crab Melodies](https://crabsatellite.com/projects/web_projects/crab_spotify) - An Android App, MVVM Music Player.
 4. [Crab Online Music](https://crabsatellite.com/projects/web_projects/crab_online_music) - A Website, Online Music Player, Distributed System.
 5. [Crab Staying](https://crabsatellite.com/projects/web_projects/crab_stay) - A website, online accommodation booking service.
 6. [Crab Eats](https://crabsatellite.com/projects/web_projects/crab_eats) - A website, online food ordering service.
