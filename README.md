@@ -32,13 +32,12 @@ I'm a full-stack engineer who loves coding, creating innovative projects, and ex
 
 1. [Crab Chatbot](https://crabsatellite.com/projects/practical_tools/crab_chatbot) - An AI customer service.
 2. [Crab Melodies](https://crabsatellite.com/projects/web_projects/crab_spotify) - An Android App, MVVM Music Player.
-3. [Crab Online Music](https://crabsatellite.com/projects/web_projects/crab_online_music) - A Website, Online Music Player, Distributed System.
-4. [Crab Staying](https://crabsatellite.com/projects/web_projects/crab_stay) - A website, online accommodation booking service.
-5. [Crab Eats](https://crabsatellite.com/projects/web_projects/crab_eats) - A website, online food ordering service.
-6. [NFT Browser](https://crabsatellite.com/projects/web_projects/nft_browser) - A Website, NFT browser.
-7. [Hot Bath](https://crabsatellite.com/projects/minecraft_mods/hotbath) - A Minecraft mod.
-8. [Touhou Project 2D Game](https://crabsatellite.com/projects/games/touhou_project_2d) - A 2D Game, Touhou Project.
-9. [Gesture Unlock](https://crabsatellite.com/projects/practical_tools/gesture_unlock) - An Embedded System, Gesture Unlock Project.
+3. [Crab Staying](https://crabsatellite.com/projects/web_projects/crab_stay) - A website, online accommodation booking service.
+4. [Crab Eats](https://crabsatellite.com/projects/web_projects/crab_eats) - A website, online food ordering service.
+5. [NFT Browser](https://crabsatellite.com/projects/web_projects/nft_browser) - A Website, NFT browser.
+6. [Hot Bath](https://crabsatellite.com/projects/minecraft_mods/hotbath) - A Minecraft mod.
+7. [Touhou Project 2D Game](https://crabsatellite.com/projects/games/touhou_project_2d) - A 2D Game, Touhou Project.
+8. [Gesture Unlock](https://crabsatellite.com/projects/practical_tools/gesture_unlock) - An Embedded System, Gesture Unlock Project.
 
 You can find more [here](https://crabsatellite.com)
 
