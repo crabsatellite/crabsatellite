@@ -31,7 +31,7 @@ I'm a full-stack engineer who loves coding, creating innovative projects, and ex
 ## 🛠 Projects
 
 1. [Crab Chatbot](https://crabsatellite.com/projects/practical_tools/crab_chatbot) - An AI customer service.
-2. [Crab Melodies](https://crabsatellite.com/projects/web_projects/crab_spotify) - An Android App, MVVM Music Player.
+2. [Crab Melodies](https://crabsatellite.com/projects/web_projects/crab_melodies) - An Android App, MVVM Music Player.
 3. [Crab Staying](https://crabsatellite.com/projects/web_projects/crab_stay) - A website, online accommodation booking service.
 4. [Crab Eats](https://crabsatellite.com/projects/web_projects/crab_eats) - A website, online food ordering service.
 5. [NFT Browser](https://crabsatellite.com/projects/web_projects/nft_browser) - A Website, NFT browser.
