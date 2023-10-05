@@ -49,3 +49,5 @@ You can find more [here](https://crabsatellite.com)
 - [CSDN](https://blog.csdn.net/qq_62447747?spm=1010.2135.3001.5421)
 
 I'm always open to interesting projects and opportunities, so feel free to contact me if you think we could collaborate!
+
+![CrabSatellite's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=CrabSatellite's%20Contribution%20Graph&theme=vue&bg_color=282828&hide_border=true&line=d1a01f&point=c58545&timezone=America/New_York)
