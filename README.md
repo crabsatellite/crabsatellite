@@ -50,4 +50,7 @@ You can find more [here](https://crabsatellite.com)
 
 I'm always open to interesting projects and opportunities, so feel free to contact me if you think we could collaborate!
 
-![Alex's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Alex's%20Contribution%20Graph&theme=vue&bg_color=282828&hide_border=true&line=d1a01f&point=c58545&timezone=America/New_York)
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=crabsatellite)](https://git.io/streak-stats)![Alex's Most used languages](https://github-readme-stats.vercel.app/api/top-langs/?username=crabsatellite&layout=compact&hide_border=true&langs_count=10)
+
+![Alex's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Alex's%20Contribution%20Graph&theme=vue&bg_color=282827&hide_border=false&line=d1a01f&point=c58545&timezone=America/New_York)
