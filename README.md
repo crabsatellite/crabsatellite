@@ -1,6 +1,6 @@
 # Hello, I'm Alex! 👋
 
-[![linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/alex-lee-13b585263/)
+[![linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)]([https://www.linkedin.com/in/alex-lee-13b585263/](https://www.linkedin.com/in/alex-li-13b585263/))
 [![personal website](https://img.shields.io/badge/-Personal_Website-red?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com/)
 
 
