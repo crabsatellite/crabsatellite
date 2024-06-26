@@ -49,6 +49,12 @@ You can find more [here](https://crabsatellite.com)
 
 I'm always open to interesting projects and opportunities, so feel free to contact me if you think we could collaborate!
 
+<!-- 贪吃蛇 - 图片由 actions/generate_snake 定时生成 -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/github-snake.svg" />
+  <img width="100%" alt="github-snake" src="./assets/github-snake.svg" />
+</picture>
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=crabsatellite&hide_border=true&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)![Alex's Most used languages](https://github-readme-stats.vercel.app/api/top-langs/?username=crabsatellite&layout=compact&hide_border=true&langs_count=10)
 
