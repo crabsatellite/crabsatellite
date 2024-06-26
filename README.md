@@ -3,7 +3,6 @@
 [![linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/alex-li-13b585263/)
 [![personal website](https://img.shields.io/badge/-Personal_Website-red?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com/)
 
-
 I'm a full-stack engineer who loves coding, creating innovative projects, and exploring the universe of programming. I'm currently studying Computer Engineering at New York University.
 
 ---
@@ -54,3 +53,6 @@ I'm always open to interesting projects and opportunities, so feel free to conta
 [![GitHub Streak](https://streak-stats.demolab.com?user=crabsatellite&hide_border=true&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)![Alex's Most used languages](https://github-readme-stats.vercel.app/api/top-langs/?username=crabsatellite&layout=compact&hide_border=true&langs_count=10)
 
 ![Alex's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Alex's%20Contribution%20Graph&theme=vue&bg_color=282827&hide_border=false&line=d1a01f&point=c58545&timezone=America/New_York)
+
+# Visitor
+![:crabsatellite](https://count.getloli.com/get/@:crabsatellite?theme=gelbooru) 
