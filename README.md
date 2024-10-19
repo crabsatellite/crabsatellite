@@ -51,5 +51,5 @@ I'm always open to interesting projects and opportunities, so feel free to conta
 
 ![Alex's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Alex's%20Contribution%20Graph&theme=vue&bg_color=282827&hide_border=false&line=d1a01f&point=c58545&timezone=America/New_York)
 
-# Visitor (Count from 2024/06/26)
+# Visitors (Count from 2024/06/26)
 ![:crabsatellite](https://count.getloli.com/get/@:crabsatellite?theme=rule34) 
