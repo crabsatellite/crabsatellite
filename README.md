@@ -1,9 +1,8 @@
-# Hello! 👋
+# Hello! Welcome to crabsatellite👋
 [![personal website](https://img.shields.io/badge/-Personal_Website-red?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com/)
 
 ---
-
-## 🚀 Skills
+## 🚀 Tech Stacks
 
 ![Java](https://img.shields.io/badge/-Java-red?style=flat-square&logo=java)
 ![Kotlin](https://img.shields.io/badge/-Kotlin-purple?style=flat-square&logo=kotlin)
