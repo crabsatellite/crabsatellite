@@ -1,9 +1,5 @@
-# Hello, I'm Alex! 👋
-
-[![linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/alex-li-13b585263/)
+# Hello! 👋
 [![personal website](https://img.shields.io/badge/-Personal_Website-red?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com/)
-
-I'm a full-stack engineer who loves coding, creating innovative projects, and exploring the universe of programming. I'm currently studying Computer Engineering at New York University.
 
 ---
 
@@ -35,8 +31,6 @@ You can find [here](https://crabsatellite.com)
 
 - [Email](mailto:ALFullStackEngineer@gmail.com)
 - [Website](https://crabsatellite.com/)
-- [LinkedIn](https://www.linkedin.com/in/alex-lee-13b585263/)
-- [CSDN](https://blog.csdn.net/qq_62447747?spm=1010.2135.3001.5421)
 
 I'm always open to interesting projects and opportunities, so feel free to contact me if you think we could collaborate!
 
