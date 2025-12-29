@@ -1,48 +1,54 @@
-# Hello! Welcome to crabsatellite👋
-[![personal website](https://img.shields.io/badge/-Personal_Website-red?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com/)
+# Alex — Minecraft Mod Developer & Full-stack Engineer
 
----
-## 🚀 Tech Stacks
-
-![Java](https://img.shields.io/badge/-Java-red?style=flat-square&logo=java)
-![Kotlin](https://img.shields.io/badge/-Kotlin-purple?style=flat-square&logo=kotlin)
-![Python](https://img.shields.io/badge/-Python-blue?style=flat-square&logo=python)
-![JavaScript](https://img.shields.io/badge/-JavaScript-yellow?style=flat-square&logo=javascript)
-![React](https://img.shields.io/badge/-React-blue?style=flat-square&logo=react)
-![Vue.js](https://img.shields.io/badge/-Vue.js-green?style=flat-square&logo=vue.js)
-![node.js](https://img.shields.io/badge/-Node.js-green?style=flat-square&logo=node.js)
-![Gradle](https://img.shields.io/badge/-Gradle-green?style=flat-square&logo=gradle)
-![Spring Boot](https://img.shields.io/badge/-Spring_Boot-green?style=flat-square&logo=spring-boot)
-![Android Jetpack](https://img.shields.io/badge/-Android_Jetpack-green?style=flat-square&logo=android)
-![Room Database](https://img.shields.io/badge/-Room_Database-green?style=flat-square&logo=android)
-![Google Exoplayer](https://img.shields.io/badge/-Google_Exoplayer-green?style=flat-square&logo=google)
-![MySQL](https://img.shields.io/badge/-MySQL-orange?style=flat-square&logo=mysql)
-![DynamoDB](https://img.shields.io/badge/-DynamoDB-orange?style=flat-square&logo=amazon-aws)
-![MongoDB](https://img.shields.io/badge/-MongoDB-orange?style=flat-square&logo=mongodb)
+[![CurseForge](https://img.shields.io/badge/CurseForge-CrabMods-F16436?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
+[![Java](https://img.shields.io/badge/Java-Minecraft_Modding-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/crabsatellite)
+[![NeoForge](https://img.shields.io/badge/NeoForge-Migration-orange?style=for-the-badge)](https://github.com/crabsatellite)
 
 ---
 
-## 🛠 Projects
+## Current Focus (2025-2026)
 
-You can find [here](https://crabsatellite.com)
+Building **Minecraft Mod Version Update Pipeline** — an automated system for cross-version mod migration and continuous compatibility maintenance.
 
-## 📫 How to reach me
+---
 
-- [Email](mailto:ALFullStackEngineer@gmail.com)
-- [Website](https://crabsatellite.com/)
+## What I Do
 
-I'm always open to interesting projects and opportunities, so feel free to contact me if you think we could collaborate!
+- Developing and maintaining Minecraft mods under **CrabMods**
+- Automating Forge → NeoForge migration workflows
+- Cross-version compatibility pipelines for long-term mod survivability
+- Legacy mod revival with modern toolchain integration
 
-<!-- 贪吃蛇 - 图片由 actions/generate_snake 定时生成 -->
+---
+
+## Engineering Philosophy
+
+- Stability over speed
+- Maintenance over novelty
+- Automation over manual repetition
+
+---
+
+## Background
+
+Large-scale systems engineering experience, applied to mod ecosystem reliability and maintainability.
+
+---
+
+## Links
+
+[![CrabMods on CurseForge](https://img.shields.io/badge/CrabMods-CurseForge-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
+[![GitHub](https://img.shields.io/badge/GitHub-crabsatellite-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/crabsatellite)
+[![Personal Site](https://img.shields.io/badge/Personal_Site-crabsatellite.com-blue?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
+
+---
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/github-snake.svg" />
   <img width="100%" alt="github-snake" src="./assets/github-snake.svg" />
 </picture>
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=crabsatellite&hide_border=true&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)![Alex's Most used languages](https://github-readme-stats.vercel.app/api/top-langs/?username=crabsatellite&layout=compact&hide_border=true&langs_count=10)
+[![GitHub Streak](https://streak-stats.demolab.com?user=crabsatellite&hide_border=true&theme=dark&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
 
-![Alex's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Alex's%20Contribution%20Graph&theme=vue&bg_color=282827&hide_border=false&line=d1a01f&point=c58545&timezone=America/New_York)
-
-# Visitors (Count from 2024/06/26)
-![:crabsatellite](https://count.getloli.com/get/@:crabsatellite?theme=rule34) 
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Contribution%20Graph&theme=github-dark&hide_border=true&line=F16436&point=ED8B00)
