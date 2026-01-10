@@ -6,7 +6,11 @@
 ---
 
 <!-- Mod Cards (Visual Display) -->
-<img src="./assets/mods-card.svg" width="100%" alt="Minecraft Mods" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/mods-card-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/mods-card-light.svg" />
+  <img width="100%" alt="Minecraft Mods" src="./assets/mods-card-dark.svg" />
+</picture>
 
 <!-- Quick Links (Clickable) -->
 <div align="center">

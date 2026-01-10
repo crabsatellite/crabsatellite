@@ -257,23 +257,13 @@ async function main() {
   console.log("\n✓ mods.json updated!");
   console.log(`Last updated: ${modsData.last_updated}`);
 
-  // Generate SVG
-  await generateSVG(modsData);
+  // Generate SVG (both themes)
+  await generateSVGs(modsData);
 }
 
-/**
- * Generate SVG cards for README
- */
-async function generateSVG(modsData) {
-  const svgPath = path.join(__dirname, "../../assets/mods-card.svg");
-
-  const CARD_WIDTH = 280;
-  const CARD_HEIGHT = 100;
-  const CARD_GAP = 12;
-  const CARDS_PER_ROW = 3;
-  const PADDING = 20;
-
-  const COLORS = {
+// Theme color schemes
+const THEMES = {
+  dark: {
     background: "#0d1117",
     cardBg: "#161b22",
     cardBorder: "#30363d",
@@ -281,170 +271,194 @@ async function generateSVG(modsData) {
     textMuted: "#8b949e",
     link: "#f16436",
     linkMerged: "#a371f7",
+    linkOpen: "#3fb950",
     tagBg: "#21262d",
     tagText: "#8b949e",
+  },
+  light: {
+    background: "#ffffff",
+    cardBg: "#f6f8fa",
+    cardBorder: "#d0d7de",
+    text: "#1f2328",
+    textMuted: "#656d76",
+    link: "#d73a00",
+    linkMerged: "#8250df",
+    linkOpen: "#1a7f37",
+    tagBg: "#eaeef2",
+    tagText: "#656d76",
+  },
+};
+
+function escapeXml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function generateCard(
+  mod,
+  x,
+  y,
+  cardWidth,
+  colors,
+  prInfo = null,
+  section = "active"
+) {
+  const tags = [mod.role];
+  if (section === "active" && mod.tags) tags.push(...mod.tags);
+  else if (section === "released") {
+    tags.push("Released");
+    if (mod.migration) tags.push(mod.migration);
+  } else if (section === "in_development") {
+    tags.push("In Progress");
+    if (mod.migration) tags.push(mod.migration);
+  }
+
+  let tagX = x + 10;
+  const tagY = y + 70;
+  const maxTagX = x + cardWidth - 10;
+  const tagElements = [];
+  for (const tag of tags) {
+    const tagWidth = Math.min(tag.length * 6 + 12, maxTagX - tagX - 5);
+    if (tagX + tagWidth > maxTagX) break;
+    tagElements.push(
+      `<rect x="${tagX}" y="${tagY}" width="${tagWidth}" height="16" rx="3" fill="${
+        colors.tagBg
+      }"/><text x="${tagX + tagWidth / 2}" y="${
+        tagY + 11.5
+      }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
+        colors.tagText
+      }" text-anchor="middle">${escapeXml(tag)}</text>`
+    );
+    tagX += tagWidth + 5;
+  }
+
+  let prIndicator = "";
+  if (section === "in_development" && prInfo) {
+    const prColor =
+      prInfo.status === "merged" ? colors.linkMerged : colors.linkOpen;
+    const prText = prInfo.status === "merged" ? "✓" : "PR";
+    prIndicator = `<rect x="${x + cardWidth - 32}" y="${
+      y + 8
+    }" width="24" height="16" rx="3" fill="${prColor}"/><text x="${
+      x + cardWidth - 20
+    }" y="${
+      y + 19
+    }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">${prText}</text>`;
+  }
+
+  const maxDescLen = Math.floor(cardWidth / 6.5);
+  const desc =
+    mod.description.length > maxDescLen
+      ? mod.description.slice(0, maxDescLen - 3) + "..."
+      : mod.description;
+
+  return `<g><rect x="${x}" y="${y}" width="${cardWidth}" height="92" rx="6" fill="${
+    colors.cardBg
+  }" stroke="${colors.cardBorder}" stroke-width="1"/><text x="${x + 10}" y="${
+    y + 24
+  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="${
+    colors.link
+  }">${escapeXml(mod.name)}</text>${prIndicator}<text x="${x + 10}" y="${
+    y + 46
+  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="${
+    colors.textMuted
+  }">${escapeXml(desc)}</text>${tagElements.join("")}</g>`;
+}
+
+function generateSection(
+  title,
+  mods,
+  startY,
+  totalWidth,
+  colors,
+  prStatus = {},
+  section = "active"
+) {
+  const padding = 16,
+    gap = 10,
+    cardsPerRow = 3;
+  const cardWidth = Math.floor(
+    (totalWidth - padding * 2 - gap * (cardsPerRow - 1)) / cardsPerRow
+  );
+  const rowCount = Math.ceil(mods.length / cardsPerRow);
+  const sectionHeight = 36 + rowCount * (92 + gap);
+
+  let cardsContent = "";
+  mods.forEach((mod, i) => {
+    const row = Math.floor(i / cardsPerRow),
+      col = i % cardsPerRow;
+    const x = padding + col * (cardWidth + gap),
+      y = startY + 36 + row * (92 + gap);
+    cardsContent += generateCard(
+      mod,
+      x,
+      y,
+      cardWidth,
+      colors,
+      prStatus[mod.repo] || null,
+      section
+    );
+  });
+
+  return {
+    content: `<text x="${padding}" y="${
+      startY + 20
+    }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="${
+      colors.text
+    }">${escapeXml(title)}</text><line x1="${padding}" y1="${
+      startY + 28
+    }" x2="${totalWidth - padding}" y2="${startY + 28}" stroke="${
+      colors.cardBorder
+    }" stroke-width="1"/>${cardsContent}`,
+    height: sectionHeight,
   };
+}
 
-  function escapeXml(str) {
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&apos;");
-  }
-
-  function generateCard(mod, x, y, prInfo = null, section = "active") {
-    const curseforgeUrl = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-
-    const tags = [];
-    tags.push(mod.role);
-
-    if (section === "active" && mod.tags) {
-      tags.push(...mod.tags);
-    } else if (section === "released") {
-      tags.push("Released");
-      if (mod.migration) tags.push(mod.migration);
-    } else if (section === "in_development") {
-      tags.push("In Progress");
-      if (mod.migration) tags.push(mod.migration);
-    }
-
-    let tagX = x + 12;
-    const tagY = y + 75;
-    const tagElements = tags
-      .map((tag) => {
-        const tagWidth = tag.length * 6 + 14;
-        const el = `
-        <rect x="${tagX}" y="${tagY}" width="${tagWidth}" height="18" rx="4" fill="${
-          COLORS.tagBg
-        }"/>
-        <text x="${tagX + tagWidth / 2}" y="${
-          tagY + 13
-        }" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" fill="${
-          COLORS.tagText
-        }" text-anchor="middle">${escapeXml(tag)}</text>
-      `;
-        tagX += tagWidth + 6;
-        return el;
-      })
-      .join("");
-
-    let prLinkElement = "";
-    if (section === "in_development" && prInfo) {
-      const prColor =
-        prInfo.status === "merged" ? COLORS.linkMerged : COLORS.link;
-      const prText =
-        prInfo.status === "merged"
-          ? `✓ #${prInfo.number}`
-          : `→ PR #${prInfo.number}`;
-      prLinkElement = `
-        <a href="${escapeXml(prInfo.url)}" target="_blank">
-          <text x="${x + CARD_WIDTH - 12}" y="${
-        y + 28
-      }" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="${prColor}" text-anchor="end">${prText}</text>
-        </a>
-      `;
-    }
-
-    const desc =
-      mod.description.length > 48
-        ? mod.description.slice(0, 45) + "..."
-        : mod.description;
-
-    return `
-    <g>
-      <rect x="${x}" y="${y}" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" rx="6" fill="${
-      COLORS.cardBg
-    }" stroke="${COLORS.cardBorder}" stroke-width="1"/>
-      <a href="${escapeXml(curseforgeUrl)}" target="_blank">
-        <text x="${x + 12}" y="${
-      y + 28
-    }" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="${
-      COLORS.link
-    }">${escapeXml(mod.name)}</text>
-      </a>
-      ${prLinkElement}
-      <text x="${x + 12}" y="${
-      y + 50
-    }" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" fill="${
-      COLORS.textMuted
-    }">${escapeXml(desc)}</text>
-      ${tagElements}
-    </g>`;
-  }
-
-  function generateSection(
-    title,
-    mods,
-    startY,
-    prStatus = {},
-    section = "active"
-  ) {
-    const rowCount = Math.ceil(mods.length / CARDS_PER_ROW);
-    const sectionHeight = 45 + rowCount * (CARD_HEIGHT + CARD_GAP);
-
-    let cardsContent = "";
-    mods.forEach((mod, i) => {
-      const row = Math.floor(i / CARDS_PER_ROW);
-      const col = i % CARDS_PER_ROW;
-      const x = PADDING + col * (CARD_WIDTH + CARD_GAP);
-      const y = startY + 45 + row * (CARD_HEIGHT + CARD_GAP);
-
-      const prInfo = prStatus[mod.repo] || null;
-      cardsContent += generateCard(mod, x, y, prInfo, section);
-    });
-
-    const lineWidth = CARDS_PER_ROW * (CARD_WIDTH + CARD_GAP) - CARD_GAP;
-
-    return {
-      content: `
-      <text x="${PADDING}" y="${
-        startY + 24
-      }" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="${
-        COLORS.text
-      }">${escapeXml(title)}</text>
-      <line x1="${PADDING}" y1="${startY + 34}" x2="${
-        PADDING + lineWidth
-      }" y2="${startY + 34}" stroke="${COLORS.cardBorder}" stroke-width="1"/>
-      ${cardsContent}`,
-      height: sectionHeight,
-    };
-  }
-
+function buildSVG(modsData, theme) {
+  const colors = THEMES[theme];
+  const totalWidth = 840,
+    padding = 16;
   const prStatus = modsData.pr_status || {};
-  let currentY = PADDING;
-  let allContent = "";
+  let currentY = padding,
+    allContent = "";
 
-  if (modsData.mods.active && modsData.mods.active.length > 0) {
+  if (modsData.mods.active?.length > 0) {
     const s = generateSection(
-      "Active Mods — Author",
+      "🎮 Active Mods — Author",
       modsData.mods.active,
       currentY,
+      totalWidth,
+      colors,
       {},
       "active"
     );
     allContent += s.content;
-    currentY += s.height + 20;
+    currentY += s.height + 16;
   }
-
-  if (modsData.mods.released && modsData.mods.released.length > 0) {
+  if (modsData.mods.released?.length > 0) {
     const s = generateSection(
-      "Released — Version Migration Complete",
+      "✅ Released — Version Migration Complete",
       modsData.mods.released,
       currentY,
+      totalWidth,
+      colors,
       {},
       "released"
     );
     allContent += s.content;
-    currentY += s.height + 20;
+    currentY += s.height + 16;
   }
-
-  if (modsData.mods.in_development && modsData.mods.in_development.length > 0) {
+  if (modsData.mods.in_development?.length > 0) {
     const s = generateSection(
-      "In Development — Active Migration",
+      "🚧 In Development — Active Migration",
       modsData.mods.in_development,
       currentY,
+      totalWidth,
+      colors,
       prStatus,
       "in_development"
     );
@@ -452,9 +466,7 @@ async function generateSVG(modsData) {
     currentY += s.height;
   }
 
-  const totalWidth =
-    PADDING * 2 + CARDS_PER_ROW * (CARD_WIDTH + CARD_GAP) - CARD_GAP;
-  const totalHeight = currentY + PADDING + 10;
+  const totalHeight = currentY + padding;
   const updateDate = modsData.last_updated
     ? new Date(modsData.last_updated).toLocaleDateString("en-US", {
         year: "numeric",
@@ -463,18 +475,22 @@ async function generateSVG(modsData) {
       })
     : new Date().toLocaleDateString();
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="${totalHeight}" viewBox="0 0 ${totalWidth} ${totalHeight}">
-  <rect width="100%" height="100%" fill="${COLORS.background}"/>
-  ${allContent}
-  <text x="${totalWidth - PADDING}" y="${
-    totalHeight - 10
-  }" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" fill="${
-    COLORS.textMuted
-  }" text-anchor="end">Last updated: ${updateDate}</text>
-</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="${totalHeight}" viewBox="0 0 ${totalWidth} ${totalHeight}"><rect width="100%" height="100%" fill="${
+    colors.background
+  }" rx="6"/>${allContent}<text x="${totalWidth - padding}" y="${
+    totalHeight - 8
+  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
+    colors.textMuted
+  }" text-anchor="end">Updated: ${updateDate}</text></svg>`;
+}
 
-  fs.writeFileSync(svgPath, svg);
-  console.log("\n✓ SVG generated: assets/mods-card.svg");
+async function generateSVGs(modsData) {
+  const darkPath = path.join(__dirname, "../../assets/mods-card-dark.svg");
+  const lightPath = path.join(__dirname, "../../assets/mods-card-light.svg");
+
+  fs.writeFileSync(darkPath, buildSVG(modsData, "dark"));
+  fs.writeFileSync(lightPath, buildSVG(modsData, "light"));
+  console.log("\n✓ SVGs generated: mods-card-dark.svg, mods-card-light.svg");
 
   // Update README badges
   await updateReadmeBadges(modsData);

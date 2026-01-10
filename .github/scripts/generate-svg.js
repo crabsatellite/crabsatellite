@@ -3,19 +3,34 @@ const path = require("path");
 
 const CURSEFORGE_BASE = "https://www.curseforge.com/minecraft/mc-mods";
 
-// Colors matching GitHub dark theme
-const COLORS = {
-  background: "#0d1117",
-  cardBg: "#161b22",
-  cardBorder: "#30363d",
-  text: "#e6edf3",
-  textMuted: "#8b949e",
-  link: "#f16436",
-  linkMerged: "#a371f7",
-  linkOpen: "#3fb950",
-  tagBg: "#21262d",
-  tagText: "#8b949e",
-  sectionBorder: "#21262d",
+// Theme color schemes
+const THEMES = {
+  dark: {
+    background: "#0d1117",
+    cardBg: "#161b22",
+    cardBorder: "#30363d",
+    text: "#e6edf3",
+    textMuted: "#8b949e",
+    link: "#f16436",
+    linkMerged: "#a371f7",
+    linkOpen: "#3fb950",
+    tagBg: "#21262d",
+    tagText: "#8b949e",
+    sectionBorder: "#21262d",
+  },
+  light: {
+    background: "#ffffff",
+    cardBg: "#f6f8fa",
+    cardBorder: "#d0d7de",
+    text: "#1f2328",
+    textMuted: "#656d76",
+    link: "#d73a00",
+    linkMerged: "#8250df",
+    linkOpen: "#1a7f37",
+    tagBg: "#eaeef2",
+    tagText: "#656d76",
+    sectionBorder: "#d0d7de",
+  },
 };
 
 function escapeXml(str) {
@@ -27,11 +42,15 @@ function escapeXml(str) {
     .replace(/'/g, "&apos;");
 }
 
-/**
- * Generate a single mod card
- */
-function generateCard(mod, x, y, cardWidth, prInfo = null, section = "active") {
-  // Build tags
+function generateCard(
+  mod,
+  x,
+  y,
+  cardWidth,
+  colors,
+  prInfo = null,
+  section = "active"
+) {
   const tags = [mod.role];
 
   if (section === "active" && mod.tags) {
@@ -44,7 +63,6 @@ function generateCard(mod, x, y, cardWidth, prInfo = null, section = "active") {
     if (mod.migration) tags.push(mod.migration);
   }
 
-  // Calculate tag positions - ensure they fit within card
   let tagX = x + 10;
   const tagY = y + 70;
   const maxTagX = x + cardWidth - 10;
@@ -52,26 +70,25 @@ function generateCard(mod, x, y, cardWidth, prInfo = null, section = "active") {
   const tagElements = [];
   for (const tag of tags) {
     const tagWidth = Math.min(tag.length * 6 + 12, maxTagX - tagX - 5);
-    if (tagX + tagWidth > maxTagX) break; // Stop if no room
+    if (tagX + tagWidth > maxTagX) break;
 
     tagElements.push(`
       <rect x="${tagX}" y="${tagY}" width="${tagWidth}" height="16" rx="3" fill="${
-      COLORS.tagBg
+      colors.tagBg
     }"/>
       <text x="${tagX + tagWidth / 2}" y="${
       tagY + 11.5
     }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
-      COLORS.tagText
+      colors.tagText
     }" text-anchor="middle">${escapeXml(tag)}</text>
     `);
     tagX += tagWidth + 5;
   }
 
-  // PR indicator for in_development
   let prIndicator = "";
   if (section === "in_development" && prInfo) {
     const prColor =
-      prInfo.status === "merged" ? COLORS.linkMerged : COLORS.linkOpen;
+      prInfo.status === "merged" ? colors.linkMerged : colors.linkOpen;
     const prText = prInfo.status === "merged" ? "✓" : "PR";
     prIndicator = `
       <rect x="${x + cardWidth - 32}" y="${
@@ -83,7 +100,6 @@ function generateCard(mod, x, y, cardWidth, prInfo = null, section = "active") {
     `;
   }
 
-  // Truncate description to fit
   const maxDescLen = Math.floor(cardWidth / 6.5);
   const desc =
     mod.description.length > maxDescLen
@@ -93,32 +109,30 @@ function generateCard(mod, x, y, cardWidth, prInfo = null, section = "active") {
   return `
     <g>
       <rect x="${x}" y="${y}" width="${cardWidth}" height="92" rx="6" fill="${
-    COLORS.cardBg
-  }" stroke="${COLORS.cardBorder}" stroke-width="1"/>
+    colors.cardBg
+  }" stroke="${colors.cardBorder}" stroke-width="1"/>
       <text x="${x + 10}" y="${
     y + 24
   }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="${
-    COLORS.link
+    colors.link
   }">${escapeXml(mod.name)}</text>
       ${prIndicator}
       <text x="${x + 10}" y="${
     y + 46
   }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="${
-    COLORS.textMuted
+    colors.textMuted
   }">${escapeXml(desc)}</text>
       ${tagElements.join("")}
     </g>
   `;
 }
 
-/**
- * Generate a section with title and cards
- */
 function generateSection(
   title,
   mods,
   startY,
   totalWidth,
+  colors,
   prStatus = {},
   section = "active"
 ) {
@@ -141,7 +155,7 @@ function generateSection(
     const y = startY + 36 + row * (cardHeight + gap);
 
     const prInfo = prStatus[mod.repo] || null;
-    cardsContent += generateCard(mod, x, y, cardWidth, prInfo, section);
+    cardsContent += generateCard(mod, x, y, cardWidth, colors, prInfo, section);
   });
 
   const lineWidth = totalWidth - padding * 2;
@@ -151,35 +165,33 @@ function generateSection(
       <text x="${padding}" y="${
       startY + 20
     }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="${
-      COLORS.text
+      colors.text
     }">${escapeXml(title)}</text>
       <line x1="${padding}" y1="${startY + 28}" x2="${
       padding + lineWidth
-    }" y2="${startY + 28}" stroke="${COLORS.sectionBorder}" stroke-width="1"/>
+    }" y2="${startY + 28}" stroke="${colors.sectionBorder}" stroke-width="1"/>
       ${cardsContent}
     `,
     height: sectionHeight,
   };
 }
 
-/**
- * Generate the complete SVG
- */
-function generateSVG(modsData) {
-  const totalWidth = 840; // Fixed width that works well on GitHub
+function generateSVG(modsData, theme = "dark") {
+  const colors = THEMES[theme];
+  const totalWidth = 840;
   const padding = 16;
   const prStatus = modsData.pr_status || {};
 
   let currentY = padding;
   let allContent = "";
 
-  // Active Mods section
   if (modsData.mods.active && modsData.mods.active.length > 0) {
     const s = generateSection(
       "🎮 Active Mods — Author",
       modsData.mods.active,
       currentY,
       totalWidth,
+      colors,
       {},
       "active"
     );
@@ -187,13 +199,13 @@ function generateSVG(modsData) {
     currentY += s.height + 16;
   }
 
-  // Released section
   if (modsData.mods.released && modsData.mods.released.length > 0) {
     const s = generateSection(
       "✅ Released — Version Migration Complete",
       modsData.mods.released,
       currentY,
       totalWidth,
+      colors,
       {},
       "released"
     );
@@ -201,13 +213,13 @@ function generateSVG(modsData) {
     currentY += s.height + 16;
   }
 
-  // In Development section
   if (modsData.mods.in_development && modsData.mods.in_development.length > 0) {
     const s = generateSection(
       "🚧 In Development — Active Migration",
       modsData.mods.in_development,
       currentY,
       totalWidth,
+      colors,
       prStatus,
       "in_development"
     );
@@ -225,98 +237,36 @@ function generateSVG(modsData) {
     : new Date().toLocaleDateString();
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="${totalHeight}" viewBox="0 0 ${totalWidth} ${totalHeight}">
-  <rect width="100%" height="100%" fill="${COLORS.background}" rx="6"/>
+  <rect width="100%" height="100%" fill="${colors.background}" rx="6"/>
   ${allContent}
   <text x="${totalWidth - padding}" y="${
     totalHeight - 8
   }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
-    COLORS.textMuted
+    colors.textMuted
   }" text-anchor="end">Updated: ${updateDate}</text>
 </svg>`;
 }
 
-/**
- * Generate clickable markdown links section
- */
-function generateMarkdownLinks(modsData) {
-  const prStatus = modsData.pr_status || {};
-  let md = "";
-
-  // Quick links as badges
-  md += '<div align="center">\n\n';
-
-  // Active mods
-  for (const mod of modsData.mods.active || []) {
-    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-    const badge = `https://img.shields.io/badge/${encodeURIComponent(
-      mod.name
-    ).replace(
-      /-/g,
-      "--"
-    )}-Author-F16436?style=flat-square&logo=curseforge&logoColor=white`;
-    md += `[![${mod.name}](${badge})](${url}) `;
-  }
-
-  md += "\n\n";
-
-  // Released mods
-  for (const mod of modsData.mods.released || []) {
-    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-    const badge = `https://img.shields.io/badge/${encodeURIComponent(
-      mod.name
-    ).replace(
-      /-/g,
-      "--"
-    )}-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white`;
-    md += `[![${mod.name}](${badge})](${url}) `;
-  }
-
-  md += "\n\n";
-
-  // In development mods with PR links
-  for (const mod of modsData.mods.in_development || []) {
-    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-    const pr = prStatus[mod.repo];
-
-    const modBadge = `https://img.shields.io/badge/${encodeURIComponent(
-      mod.name
-    ).replace(
-      /-/g,
-      "--"
-    )}-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white`;
-    md += `[![${mod.name}](${modBadge})](${url})`;
-
-    if (pr) {
-      const prColor = pr.status === "merged" ? "a371f7" : "3fb950";
-      const prLabel = pr.status === "merged" ? "Merged" : "Open";
-      const prBadge = `https://img.shields.io/badge/%23${pr.number}-${prLabel}-${prColor}?style=flat-square&logo=github&logoColor=white`;
-      md += `[![PR](${prBadge})](${pr.url})`;
-    }
-    md += " ";
-  }
-
-  md += "\n\n</div>\n";
-
-  return md;
-}
-
 async function main() {
   const dataPath = path.join(__dirname, "../../data/mods.json");
-  const svgPath = path.join(__dirname, "../../assets/mods-card.svg");
-  const linksPath = path.join(__dirname, "../../assets/mods-links.md");
+  const darkSvgPath = path.join(__dirname, "../../assets/mods-card-dark.svg");
+  const lightSvgPath = path.join(__dirname, "../../assets/mods-card-light.svg");
 
   const modsData = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 
-  console.log("Generating SVG...");
-  const svg = generateSVG(modsData);
-  fs.writeFileSync(svgPath, svg);
-  console.log(`✓ SVG generated: ${svgPath}`);
-  console.log(`  Size: ${svg.length} bytes`);
+  console.log("Generating SVGs...");
 
-  console.log("\nGenerating markdown links...");
-  const links = generateMarkdownLinks(modsData);
-  fs.writeFileSync(linksPath, links);
-  console.log(`✓ Links generated: ${linksPath}`);
+  // Generate dark theme
+  const darkSvg = generateSVG(modsData, "dark");
+  fs.writeFileSync(darkSvgPath, darkSvg);
+  console.log(`✓ Dark theme: ${darkSvgPath}`);
+
+  // Generate light theme
+  const lightSvg = generateSVG(modsData, "light");
+  fs.writeFileSync(lightSvgPath, lightSvg);
+  console.log(`✓ Light theme: ${lightSvgPath}`);
+
+  console.log(`  Size: ${darkSvg.length} / ${lightSvg.length} bytes`);
 }
 
 main().catch(console.error);
