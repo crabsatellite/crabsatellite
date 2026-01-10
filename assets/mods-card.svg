@@ -1,0 +1,402 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="904" height="760" viewBox="0 0 904 760">
+  <style>
+    a { cursor: pointer; }
+    a:hover text { text-decoration: underline; }
+  </style>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0d1117"/>
+  
+  
+      <!-- Section: Active Mods — Author -->
+      <text x="20" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">Active Mods — Author</text>
+      <line x1="20" y1="52" x2="884" y2="52" stroke="#2a2a2a" stroke-width="1"/>
+      
+    <g>
+      <!-- Card background -->
+      <rect x="20" y="60" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/hotbath" target="_blank">
+        <text x="32" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">HotBath</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="32" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Relaxing hot baths with healing, buffs and magi...
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="32" y="135" width="51" height="18" rx="4" fill="#222222"/>
+      <text x="57.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Author</text>
+    
+      <rect x="89" y="135" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="127.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintained</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="312" y="60" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/showercore" target="_blank">
+        <text x="324" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">ShowerCore</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="324" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Official HotBath extension: showers, bathtubs, ...
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="324" y="135" width="51" height="18" rx="4" fill="#222222"/>
+      <text x="349.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Author</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="604" y="60" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper" target="_blank">
+        <text x="616" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">LeafDecayStopper</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="616" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Dimension-based leaf decay control via commands...
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="616" y="135" width="51" height="18" rx="4" fill="#222222"/>
+      <text x="641.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Author</text>
+    
+    </g>
+  
+    
+      <!-- Section: Released — Version Migration Complete -->
+      <text x="20" y="216" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">Released — Version Migration Complete</text>
+      <line x1="20" y1="224" x2="884" y2="224" stroke="#2a2a2a" stroke-width="1"/>
+      
+    <g>
+      <!-- Card background -->
+      <rect x="20" y="232" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/tanukidecor" target="_blank">
+        <text x="32" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Tanuki Decor</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="32" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to NeoForge 1.21.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="32" y="307" width="103" height="18" rx="4" fill="#222222"/>
+      <text x="83.5" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Migration Lead</text>
+    
+      <rect x="141" y="307" width="64" height="18" rx="4" fill="#222222"/>
+      <text x="173" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Released</text>
+    
+      <rect x="211" y="307" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="265.75" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="312" y="232" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/nomadic-tents" target="_blank">
+        <text x="324" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Nomadic Tents</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="324" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to NeoForge 1.21.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="324" y="307" width="103" height="18" rx="4" fill="#222222"/>
+      <text x="375.5" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Migration Lead</text>
+    
+      <rect x="433" y="307" width="64" height="18" rx="4" fill="#222222"/>
+      <text x="465" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Released</text>
+    
+      <rect x="503" y="307" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="557.75" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    
+      <!-- Section: In Development — Active Migration -->
+      <text x="20" y="388" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">In Development — Active Migration</text>
+      <line x1="20" y1="396" x2="884" y2="396" stroke="#2a2a2a" stroke-width="1"/>
+      
+    <g>
+      <!-- Card background -->
+      <rect x="20" y="404" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/alexs-mobs" target="_blank">
+        <text x="32" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Alex&apos;s Mobs</text>
+      </a>
+      
+      <a href="https://github.com/AlexModGuy/AlexsMobs/pull/2318" target="_blank">
+        <text x="288" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #2318</text>
+      </a>
+    
+      
+      <!-- Description -->
+      <text x="32" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to NeoForge 1.21.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="32" y="479" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="70.5" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="115" y="479" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="156.75" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="204.5" y="479" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="259.25" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="312" y="404" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/alexs-caves" target="_blank">
+        <text x="324" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Alex&apos;s Caves</text>
+      </a>
+      
+      <a href="https://github.com/AlexModGuy/AlexsCaves/pull/1693" target="_blank">
+        <text x="580" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #1693</text>
+      </a>
+    
+      
+      <!-- Description -->
+      <text x="324" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to NeoForge 1.21.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="324" y="479" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="362.5" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="407" y="479" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="448.75" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="496.5" y="479" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="551.25" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="604" y="404" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/rats" target="_blank">
+        <text x="616" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Rats</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="616" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to NeoForge 1.21.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="616" y="479" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="654.5" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="699" y="479" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="740.75" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="788.5" y="479" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="843.25" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="20" y="516" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/citadel" target="_blank">
+        <text x="32" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Citadel</text>
+      </a>
+      
+      <a href="https://github.com/AlexModGuy/Citadel/pull/220" target="_blank">
+        <text x="288" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #220</text>
+      </a>
+    
+      
+      <!-- Description -->
+      <text x="32" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Feature fixes and bug fixes contribution
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="32" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="73.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Contributor</text>
+    
+      <rect x="121.5" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="163.25" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="211" y="591" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="265.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="312" y="516" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/extra-golems" target="_blank">
+        <text x="324" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Extra Golems</text>
+      </a>
+      
+      <a href="https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144" target="_blank">
+        <text x="580" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #144</text>
+      </a>
+    
+      
+      <!-- Description -->
+      <text x="324" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to NeoForge 1.21.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="324" y="591" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="362.5" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="407" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="448.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="496.5" y="591" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="551.25" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="604" y="516" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory" target="_blank">
+        <text x="616" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Pelagic Prehistory</text>
+      </a>
+      
+      <a href="https://github.com/skyjay1/Pelagic-Prehistory/pull/1" target="_blank">
+        <text x="872" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #1</text>
+      </a>
+    
+      
+      <!-- Description -->
+      <text x="616" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to Forge 1.20.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="616" y="591" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="654.5" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="699" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="740.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="788.5" y="591" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="843.25" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.19.2 → 1.20.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="20" y="628" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/greekfantasy" target="_blank">
+        <text x="32" y="656" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Greek Fantasy</text>
+      </a>
+      
+      <a href="https://github.com/skyjay1/GreekFantasy/pull/148" target="_blank">
+        <text x="288" y="656" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #148</text>
+      </a>
+    
+      
+      <!-- Description -->
+      <text x="32" y="678" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to Forge 1.20.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="32" y="703" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="70.5" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="115" y="703" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="156.75" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="204.5" y="703" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="259.25" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.19.2 → 1.20.1</text>
+    
+    </g>
+  
+    <g>
+      <!-- Card background -->
+      <rect x="312" y="628" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      
+      <!-- Title with link -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/rpg-gods" target="_blank">
+        <text x="324" y="656" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">RPG Gods</text>
+      </a>
+      
+      
+      <!-- Description -->
+      <text x="324" y="678" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
+        Full port to Forge 1.20.1
+      </text>
+      
+      <!-- Tags -->
+      
+      <rect x="324" y="703" width="77" height="18" rx="4" fill="#222222"/>
+      <text x="362.5" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+    
+      <rect x="407" y="703" width="83.5" height="18" rx="4" fill="#222222"/>
+      <text x="448.75" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+    
+      <rect x="496.5" y="703" width="109.5" height="18" rx="4" fill="#222222"/>
+      <text x="551.25" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.19.2 → 1.20.1</text>
+    
+    </g>
+  
+    
+  
+  <!-- Last updated -->
+  <text x="884" y="752" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#aaaaaa" text-anchor="end">Last updated: 2026/1/10</text>
+</svg>
