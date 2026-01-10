@@ -24,8 +24,6 @@
 
 [![Alex's Mobs](https://img.shields.io/badge/Alex's%20Mobs-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)[![#2318](https://img.shields.io/badge/%232318-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsMobs/pull/2318)
 [![Alex's Caves](https://img.shields.io/badge/Alex's%20Caves-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-caves)[![#1693](https://img.shields.io/badge/%231693-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsCaves/pull/1693)
-[![Rats](https://img.shields.io/badge/Rats-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/rats)
-[![Citadel](https://img.shields.io/badge/Citadel-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/citadel)[![#220](https://img.shields.io/badge/%23220-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/Citadel/pull/220)
 [![Extra Golems](https://img.shields.io/badge/Extra%20Golems-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/extra-golems)[![#144](https://img.shields.io/badge/%23144-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144)
 [![Pelagic Prehistory](https://img.shields.io/badge/Pelagic%20Prehistory-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory)[![#1](https://img.shields.io/badge/%231-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/skyjay1/Pelagic-Prehistory/pull/1)
 [![Greek Fantasy](https://img.shields.io/badge/Greek%20Fantasy-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/greekfantasy)[![#148](https://img.shields.io/badge/%23148-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/skyjay1/GreekFantasy/pull/148)
@@ -41,6 +39,14 @@
   <img width="100%" alt="github-snake" src="./assets/github-snake.svg" />
 </picture>
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=crabsatellite&hide_border=true&theme=dark&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Contribution%20Graph&theme=github-dark&hide_border=true&line=F16436&point=ED8B00" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Contribution%20Graph&theme=github-light&hide_border=true&line=F16436&point=ED8B00" />
+  <img width="100%" alt="Activity Graph" src="https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Contribution%20Graph&theme=github-dark&hide_border=true&line=F16436&point=ED8B00" />
+</picture>
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=crabsatellite&custom_title=Contribution%20Graph&theme=github-dark&hide_border=true&line=F16436&point=ED8B00)
+<div align="center">
+  <img src="https://img.shields.io/badge/Visitors-since_2024%2F06%2F26-F16436?style=for-the-badge&logo=github&logoColor=white" alt="Visitors Badge" />
+  <br/>
+  <img src="https://count.getloli.com/get/@:crabsatellite?theme=asoul" alt="Visitor Count" />
+</div>

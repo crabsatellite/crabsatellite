@@ -68,16 +68,6 @@
         "description": "Full port to NeoForge 1.21.1"
       },
       {
-        "name": "Rats",
-        "repo": "AlexModGuy/Rats",
-        "curseforge_slug": "rats",
-        "curseforge_id": 286612,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
-        "role": "Maintainer",
-        "description": "Full port to NeoForge 1.21.1"
-      },
-      {
         "name": "Citadel",
         "repo": "AlexModGuy/Citadel",
         "curseforge_slug": "citadel",
