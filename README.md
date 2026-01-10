@@ -1,45 +1,115 @@
 # Alex — Minecraft Mod Developer & Full-stack Engineer
 
 [![CurseForge](https://img.shields.io/badge/CurseForge-CrabMods-F16436?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
-[![Java](https://img.shields.io/badge/Java-Minecraft_Modding-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/crabsatellite)
-[![NeoForge](https://img.shields.io/badge/NeoForge-Migration-orange?style=for-the-badge)](https://github.com/crabsatellite)
+[![Personal Site](https://img.shields.io/badge/Personal_Site-crabsatellite.com-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
 
 ---
 
-## Current Focus (2025-2026)
+<link rel="stylesheet" href="./assets/style.css">
 
-Building **Minecraft Mod Version Update Pipeline** — an automated system for cross-version mod migration and continuous compatibility maintenance.
+<div class="section">
+  <h2>Active Mods — Author</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/hotbath">HotBath</a></h3>
+      <p>Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.</p>
+      <span class="tag">Author</span>
+      <span class="tag">Maintained</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/showercore">ShowerCore</a></h3>
+      <p>Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.</p>
+      <span class="tag">Author</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper">LeafDecayStopper</a></h3>
+      <p>Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.</p>
+      <span class="tag">Author</span>
+    </div>
+  </div>
+</div>
 
----
+<div class="section">
+  <h2>Released — Version Migration Complete</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/tanukidecor">Tanuki Decor</a></h3>
+      <p>Full port to NeoForge 1.21.1</p>
+      <span class="tag">Migration Lead</span>
+      <span class="tag">Released</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/nomadic-tents">Nomadic Tents</a></h3>
+      <p>Full port to NeoForge 1.21.1</p>
+      <span class="tag">Migration Lead</span>
+      <span class="tag">Released</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+  </div>
+</div>
 
-## What I Do
-
-- Developing and maintaining Minecraft mods under **CrabMods**
-- Automating Forge → NeoForge migration workflows
-- Cross-version compatibility pipelines for long-term mod survivability
-- Legacy mod revival with modern toolchain integration
-
----
-
-## Engineering Philosophy
-
-- Stability over speed
-- Maintenance over novelty
-- Automation over manual repetition
-
----
-
-## Background
-
-Large-scale systems engineering experience, applied to mod ecosystem reliability and maintainability.
-
----
-
-## Links
-
-[![CrabMods on CurseForge](https://img.shields.io/badge/CrabMods-CurseForge-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
-[![GitHub](https://img.shields.io/badge/GitHub-crabsatellite-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/crabsatellite)
-[![Personal Site](https://img.shields.io/badge/Personal_Site-crabsatellite.com-blue?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
+<div class="section">
+  <h2>In Development — Active Migration</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/alexs-mobs">Alex's Mobs</a> <a href="https://github.com/AlexModGuy/AlexsMobs/pull/2318" class="pr-link">→ PR</a></h3>
+      <p>Full port to NeoForge 1.21.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/alexs-caves">Alex's Caves</a> <a href="https://github.com/AlexModGuy/AlexsCaves/pull/1693" class="pr-link">→ PR</a></h3>
+      <p>Full port to NeoForge 1.21.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/rats">Rats</a></h3>
+      <p>Full port to NeoForge 1.21.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/citadel">Citadel</a> <a href="https://github.com/AlexModGuy/Citadel/pull/220" class="pr-link">→ PR</a></h3>
+      <p>Feature fixes and bug fixes contribution</p>
+      <span class="tag">Contributor</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/extra-golems">Extra Golems</a> <a href="https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144" class="pr-link">→ PR</a></h3>
+      <p>Full port to NeoForge 1.21.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.20.1 → 1.21.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory">Pelagic Prehistory</a></h3>
+      <p>Full port to Forge 1.20.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.19.2 → 1.20.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/greekfantasy">Greek Fantasy</a> <a href="https://github.com/skyjay1/GreekFantasy/pull/148" class="pr-link">→ PR</a></h3>
+      <p>Full port to Forge 1.20.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.19.2 → 1.20.1</span>
+    </div>
+    <div class="card">
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/rpg-gods">RPG Gods</a></h3>
+      <p>Full port to Forge 1.20.1</p>
+      <span class="tag">Maintainer</span>
+      <span class="tag">In Progress</span>
+      <span class="tag">1.19.2 → 1.20.1</span>
+    </div>
+  </div>
+</div>
 
 ---
 

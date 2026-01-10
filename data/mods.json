@@ -1,0 +1,108 @@
+{
+  "author": "crabsatellite",
+  "mods": {
+    "in_development": [
+      {
+        "name": "Alex's Mobs",
+        "repo": "AlexModGuy/AlexsMobs",
+        "migration": "1.20.1 → 1.21.1",
+        "role": "Maintainer",
+        "description": "Full port to NeoForge 1.21.1"
+      },
+      {
+        "name": "Alex's Caves",
+        "repo": "AlexModGuy/AlexsCaves",
+        "migration": "1.20.1 → 1.21.1",
+        "role": "Maintainer",
+        "description": "Full port to NeoForge 1.21.1"
+      },
+      {
+        "name": "Rats",
+        "repo": "AlexModGuy/Rats",
+        "migration": "1.20.1 → 1.21.1",
+        "role": "Maintainer",
+        "description": "Full port to NeoForge 1.21.1"
+      },
+      {
+        "name": "Citadel",
+        "repo": "AlexModGuy/Citadel",
+        "migration": "1.20.1 → 1.21.1",
+        "role": "Contributor",
+        "description": "Feature fixes and bug fixes contribution"
+      },
+      {
+        "name": "Extra Golems",
+        "repo": "MinecraftModDevelopmentMods/Extra-Golems",
+        "migration": "1.20.1 → 1.21.1",
+        "role": "Maintainer",
+        "description": "Full port to NeoForge 1.21.1"
+      },
+      {
+        "name": "Pelagic Prehistory",
+        "repo": "skyjay1/Pelagic-Prehistory",
+        "migration": "1.19.2 → 1.20.1",
+        "role": "Maintainer",
+        "description": "Full port to Forge 1.20.1"
+      },
+      {
+        "name": "Greek Fantasy",
+        "repo": "skyjay1/GreekFantasy",
+        "migration": "1.19.2 → 1.20.1",
+        "role": "Maintainer",
+        "description": "Full port to Forge 1.20.1"
+      },
+      {
+        "name": "RPG Gods",
+        "repo": "skyjay1/RPG-Gods",
+        "migration": "1.19.2 → 1.20.1",
+        "role": "Maintainer",
+        "description": "Full port to Forge 1.20.1"
+      }
+    ]
+  },
+  "pr_status": {
+    "AlexModGuy/AlexsMobs": {
+      "status": "open",
+      "number": 2318,
+      "title": "Fix in order to compatiable with the latest Citadel",
+      "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318",
+      "updated_at": "2026-01-09T08:31:40Z"
+    },
+    "AlexModGuy/AlexsCaves": {
+      "status": "open",
+      "number": 1693,
+      "title": "Port to 1.21.1",
+      "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
+      "updated_at": "2026-01-09T10:38:52Z"
+    },
+    "AlexModGuy/Citadel": {
+      "status": "open",
+      "number": 220,
+      "title": "1.21 Port Bug Fix ",
+      "url": "https://github.com/AlexModGuy/Citadel/pull/220",
+      "updated_at": "2026-01-07T23:35:45Z"
+    },
+    "MinecraftModDevelopmentMods/Extra-Golems": {
+      "status": "open",
+      "number": 144,
+      "title": "Port to 1.21.1 neoforge",
+      "url": "https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144",
+      "updated_at": "2025-12-29T12:58:51Z"
+    },
+    "skyjay1/Pelagic-Prehistory": {
+      "status": "open",
+      "number": 1,
+      "title": "Port Pelagic-Prehistory to 1.20.1",
+      "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
+      "updated_at": "2025-12-28T10:13:50Z"
+    },
+    "skyjay1/GreekFantasy": {
+      "status": "open",
+      "number": 148,
+      "title": "Port to 1.20.1",
+      "url": "https://github.com/skyjay1/GreekFantasy/pull/148",
+      "updated_at": "2025-12-28T10:32:35Z"
+    }
+  },
+  "last_updated": "2026-01-10T04:09:44.808Z"
+}
