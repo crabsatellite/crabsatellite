@@ -3,29 +3,21 @@ const path = require("path");
 
 const CURSEFORGE_BASE = "https://www.curseforge.com/minecraft/mc-mods";
 
-// SVG card dimensions
-const CARD_WIDTH = 280;
-const CARD_HEIGHT = 100;
-const CARD_GAP = 12;
-const CARDS_PER_ROW = 3;
-const PADDING = 20;
-
-// Colors matching CSS
+// Colors matching GitHub dark theme
 const COLORS = {
   background: "#0d1117",
-  cardBg: "#0f0f0f",
-  cardBorder: "#2a2a2a",
+  cardBg: "#161b22",
+  cardBorder: "#30363d",
   text: "#e6edf3",
-  textMuted: "#aaaaaa",
+  textMuted: "#8b949e",
   link: "#f16436",
-  linkMerged: "#8b5cf6",
-  tagBg: "#222222",
-  tagText: "#aaaaaa",
+  linkMerged: "#a371f7",
+  linkOpen: "#3fb950",
+  tagBg: "#21262d",
+  tagText: "#8b949e",
+  sectionBorder: "#21262d",
 };
 
-/**
- * Escape XML special characters
- */
 function escapeXml(str) {
   return str
     .replace(/&/g, "&amp;")
@@ -36,14 +28,11 @@ function escapeXml(str) {
 }
 
 /**
- * Generate a single card SVG element
+ * Generate a single mod card
  */
-function generateCard(mod, x, y, prInfo = null, section = "active") {
-  const curseforgeUrl = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-
+function generateCard(mod, x, y, cardWidth, prInfo = null, section = "active") {
   // Build tags
-  const tags = [];
-  tags.push(mod.role);
+  const tags = [mod.role];
 
   if (section === "active" && mod.tags) {
     tags.push(...mod.tags);
@@ -55,75 +44,69 @@ function generateCard(mod, x, y, prInfo = null, section = "active") {
     if (mod.migration) tags.push(mod.migration);
   }
 
-  // Calculate tag positions
-  let tagX = x + 12;
-  const tagY = y + 75;
-  const tagElements = tags
-    .map((tag, i) => {
-      const tagWidth = tag.length * 6.5 + 12;
-      const el = `
-      <rect x="${tagX}" y="${tagY}" width="${tagWidth}" height="18" rx="4" fill="${
-        COLORS.tagBg
-      }"/>
-      <text x="${tagX + tagWidth / 2}" y="${
-        tagY + 13
-      }" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="${
-        COLORS.tagText
-      }" text-anchor="middle">${escapeXml(tag)}</text>
-    `;
-      tagX += tagWidth + 6;
-      return el;
-    })
-    .join("");
+  // Calculate tag positions - ensure they fit within card
+  let tagX = x + 10;
+  const tagY = y + 70;
+  const maxTagX = x + cardWidth - 10;
 
-  // PR link for in_development
-  let prLinkElement = "";
+  const tagElements = [];
+  for (const tag of tags) {
+    const tagWidth = Math.min(tag.length * 6 + 12, maxTagX - tagX - 5);
+    if (tagX + tagWidth > maxTagX) break; // Stop if no room
+
+    tagElements.push(`
+      <rect x="${tagX}" y="${tagY}" width="${tagWidth}" height="16" rx="3" fill="${
+      COLORS.tagBg
+    }"/>
+      <text x="${tagX + tagWidth / 2}" y="${
+      tagY + 11.5
+    }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
+      COLORS.tagText
+    }" text-anchor="middle">${escapeXml(tag)}</text>
+    `);
+    tagX += tagWidth + 5;
+  }
+
+  // PR indicator for in_development
+  let prIndicator = "";
   if (section === "in_development" && prInfo) {
     const prColor =
-      prInfo.status === "merged" ? COLORS.linkMerged : COLORS.link;
-    prLinkElement = `
-      <a href="${escapeXml(prInfo.url)}" target="_blank">
-        <text x="${x + CARD_WIDTH - 12}" y="${
-      y + 28
-    }" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="${prColor}" text-anchor="end">→ PR #${
-      prInfo.number
-    }</text>
-      </a>
+      prInfo.status === "merged" ? COLORS.linkMerged : COLORS.linkOpen;
+    const prText = prInfo.status === "merged" ? "✓" : "PR";
+    prIndicator = `
+      <rect x="${x + cardWidth - 32}" y="${
+      y + 8
+    }" width="24" height="16" rx="3" fill="${prColor}"/>
+      <text x="${x + cardWidth - 20}" y="${
+      y + 19
+    }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">${prText}</text>
     `;
   }
 
+  // Truncate description to fit
+  const maxDescLen = Math.floor(cardWidth / 6.5);
+  const desc =
+    mod.description.length > maxDescLen
+      ? mod.description.slice(0, maxDescLen - 3) + "..."
+      : mod.description;
+
   return `
     <g>
-      <!-- Card background -->
-      <rect x="${x}" y="${y}" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" rx="8" fill="${
+      <rect x="${x}" y="${y}" width="${cardWidth}" height="92" rx="6" fill="${
     COLORS.cardBg
   }" stroke="${COLORS.cardBorder}" stroke-width="1"/>
-      
-      <!-- Title with link -->
-      <a href="${escapeXml(curseforgeUrl)}" target="_blank">
-        <text x="${x + 12}" y="${
-    y + 28
-  }" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="${
+      <text x="${x + 10}" y="${
+    y + 24
+  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="${
     COLORS.link
   }">${escapeXml(mod.name)}</text>
-      </a>
-      ${prLinkElement}
-      
-      <!-- Description -->
-      <text x="${x + 12}" y="${
-    y + 50
-  }" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="${
+      ${prIndicator}
+      <text x="${x + 10}" y="${
+    y + 46
+  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="${
     COLORS.textMuted
-  }">
-        ${escapeXml(
-          mod.description.length > 50
-            ? mod.description.slice(0, 47) + "..."
-            : mod.description
-        )}
-      </text>
-      
-      <!-- Tags -->
-      ${tagElements}
+  }">${escapeXml(desc)}</text>
+      ${tagElements.join("")}
     </g>
   `;
 }
@@ -135,34 +118,44 @@ function generateSection(
   title,
   mods,
   startY,
+  totalWidth,
   prStatus = {},
   section = "active"
 ) {
-  const rowCount = Math.ceil(mods.length / CARDS_PER_ROW);
-  const sectionHeight = 40 + rowCount * (CARD_HEIGHT + CARD_GAP);
+  const padding = 16;
+  const gap = 10;
+  const cardsPerRow = 3;
+  const cardWidth = Math.floor(
+    (totalWidth - padding * 2 - gap * (cardsPerRow - 1)) / cardsPerRow
+  );
+
+  const rowCount = Math.ceil(mods.length / cardsPerRow);
+  const cardHeight = 92;
+  const sectionHeight = 36 + rowCount * (cardHeight + gap);
 
   let cardsContent = "";
   mods.forEach((mod, i) => {
-    const row = Math.floor(i / CARDS_PER_ROW);
-    const col = i % CARDS_PER_ROW;
-    const x = PADDING + col * (CARD_WIDTH + CARD_GAP);
-    const y = startY + 40 + row * (CARD_HEIGHT + CARD_GAP);
+    const row = Math.floor(i / cardsPerRow);
+    const col = i % cardsPerRow;
+    const x = padding + col * (cardWidth + gap);
+    const y = startY + 36 + row * (cardHeight + gap);
 
     const prInfo = prStatus[mod.repo] || null;
-    cardsContent += generateCard(mod, x, y, prInfo, section);
+    cardsContent += generateCard(mod, x, y, cardWidth, prInfo, section);
   });
+
+  const lineWidth = totalWidth - padding * 2;
 
   return {
     content: `
-      <!-- Section: ${title} -->
-      <text x="${PADDING}" y="${
-      startY + 24
-    }" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="${
+      <text x="${padding}" y="${
+      startY + 20
+    }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="${
       COLORS.text
     }">${escapeXml(title)}</text>
-      <line x1="${PADDING}" y1="${startY + 32}" x2="${
-      PADDING + CARDS_PER_ROW * (CARD_WIDTH + CARD_GAP) - CARD_GAP
-    }" y2="${startY + 32}" stroke="${COLORS.cardBorder}" stroke-width="1"/>
+      <line x1="${padding}" y1="${startY + 28}" x2="${
+      padding + lineWidth
+    }" y2="${startY + 28}" stroke="${COLORS.sectionBorder}" stroke-width="1"/>
       ${cardsContent}
     `,
     height: sectionHeight,
@@ -173,92 +166,157 @@ function generateSection(
  * Generate the complete SVG
  */
 function generateSVG(modsData) {
+  const totalWidth = 840; // Fixed width that works well on GitHub
+  const padding = 16;
   const prStatus = modsData.pr_status || {};
-  let currentY = PADDING;
+
+  let currentY = padding;
   let allContent = "";
 
   // Active Mods section
   if (modsData.mods.active && modsData.mods.active.length > 0) {
-    const activeSection = generateSection(
-      "Active Mods — Author",
+    const s = generateSection(
+      "🎮 Active Mods — Author",
       modsData.mods.active,
       currentY,
+      totalWidth,
       {},
       "active"
     );
-    allContent += activeSection.content;
-    currentY += activeSection.height + 20;
+    allContent += s.content;
+    currentY += s.height + 16;
   }
 
   // Released section
   if (modsData.mods.released && modsData.mods.released.length > 0) {
-    const releasedSection = generateSection(
-      "Released — Version Migration Complete",
+    const s = generateSection(
+      "✅ Released — Version Migration Complete",
       modsData.mods.released,
       currentY,
+      totalWidth,
       {},
       "released"
     );
-    allContent += releasedSection.content;
-    currentY += releasedSection.height + 20;
+    allContent += s.content;
+    currentY += s.height + 16;
   }
 
   // In Development section
   if (modsData.mods.in_development && modsData.mods.in_development.length > 0) {
-    const devSection = generateSection(
-      "In Development — Active Migration",
+    const s = generateSection(
+      "🚧 In Development — Active Migration",
       modsData.mods.in_development,
       currentY,
+      totalWidth,
       prStatus,
       "in_development"
     );
-    allContent += devSection.content;
-    currentY += devSection.height;
+    allContent += s.content;
+    currentY += s.height;
   }
 
-  const totalWidth =
-    PADDING * 2 + CARDS_PER_ROW * (CARD_WIDTH + CARD_GAP) - CARD_GAP;
-  const totalHeight = currentY + PADDING;
+  const totalHeight = currentY + padding;
+  const updateDate = modsData.last_updated
+    ? new Date(modsData.last_updated).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    : new Date().toLocaleDateString();
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="${totalHeight}" viewBox="0 0 ${totalWidth} ${totalHeight}">
-  <style>
-    a { cursor: pointer; }
-    a:hover text { text-decoration: underline; }
-  </style>
-  
-  <!-- Background -->
-  <rect width="100%" height="100%" fill="${COLORS.background}"/>
-  
+  <rect width="100%" height="100%" fill="${COLORS.background}" rx="6"/>
   ${allContent}
-  
-  <!-- Last updated -->
-  <text x="${totalWidth - PADDING}" y="${
+  <text x="${totalWidth - padding}" y="${
     totalHeight - 8
-  }" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="${
+  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
     COLORS.textMuted
-  }" text-anchor="end">Last updated: ${
-    modsData.last_updated
-      ? new Date(modsData.last_updated).toLocaleDateString()
-      : new Date().toLocaleDateString()
-  }</text>
+  }" text-anchor="end">Updated: ${updateDate}</text>
 </svg>`;
 }
 
 /**
- * Main function
+ * Generate clickable markdown links section
  */
+function generateMarkdownLinks(modsData) {
+  const prStatus = modsData.pr_status || {};
+  let md = "";
+
+  // Quick links as badges
+  md += '<div align="center">\n\n';
+
+  // Active mods
+  for (const mod of modsData.mods.active || []) {
+    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+    const badge = `https://img.shields.io/badge/${encodeURIComponent(
+      mod.name
+    ).replace(
+      /-/g,
+      "--"
+    )}-Author-F16436?style=flat-square&logo=curseforge&logoColor=white`;
+    md += `[![${mod.name}](${badge})](${url}) `;
+  }
+
+  md += "\n\n";
+
+  // Released mods
+  for (const mod of modsData.mods.released || []) {
+    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+    const badge = `https://img.shields.io/badge/${encodeURIComponent(
+      mod.name
+    ).replace(
+      /-/g,
+      "--"
+    )}-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white`;
+    md += `[![${mod.name}](${badge})](${url}) `;
+  }
+
+  md += "\n\n";
+
+  // In development mods with PR links
+  for (const mod of modsData.mods.in_development || []) {
+    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+    const pr = prStatus[mod.repo];
+
+    const modBadge = `https://img.shields.io/badge/${encodeURIComponent(
+      mod.name
+    ).replace(
+      /-/g,
+      "--"
+    )}-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white`;
+    md += `[![${mod.name}](${modBadge})](${url})`;
+
+    if (pr) {
+      const prColor = pr.status === "merged" ? "a371f7" : "3fb950";
+      const prLabel = pr.status === "merged" ? "Merged" : "Open";
+      const prBadge = `https://img.shields.io/badge/%23${pr.number}-${prLabel}-${prColor}?style=flat-square&logo=github&logoColor=white`;
+      md += `[![PR](${prBadge})](${pr.url})`;
+    }
+    md += " ";
+  }
+
+  md += "\n\n</div>\n";
+
+  return md;
+}
+
 async function main() {
   const dataPath = path.join(__dirname, "../../data/mods.json");
   const svgPath = path.join(__dirname, "../../assets/mods-card.svg");
+  const linksPath = path.join(__dirname, "../../assets/mods-links.md");
 
   const modsData = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 
   console.log("Generating SVG...");
   const svg = generateSVG(modsData);
-
   fs.writeFileSync(svgPath, svg);
   console.log(`✓ SVG generated: ${svgPath}`);
   console.log(`  Size: ${svg.length} bytes`);
+
+  console.log("\nGenerating markdown links...");
+  const links = generateMarkdownLinks(modsData);
+  fs.writeFileSync(linksPath, links);
+  console.log(`✓ Links generated: ${linksPath}`);
 }
 
 main().catch(console.error);

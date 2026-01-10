@@ -475,6 +475,83 @@ async function generateSVG(modsData) {
 
   fs.writeFileSync(svgPath, svg);
   console.log("\n✓ SVG generated: assets/mods-card.svg");
+
+  // Update README badges
+  await updateReadmeBadges(modsData);
+}
+
+/**
+ * Update README with clickable badges
+ */
+async function updateReadmeBadges(modsData) {
+  const readmePath = path.join(__dirname, "../../README.md");
+  let readme = fs.readFileSync(readmePath, "utf8");
+
+  const prStatus = modsData.pr_status || {};
+
+  // Generate badges markdown
+  let badges = `<!-- Quick Links (Clickable) -->
+<div align="center">
+
+`;
+
+  // Active mods
+  for (const mod of modsData.mods.active || []) {
+    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+    badges += `[![${
+      mod.name
+    }](https://img.shields.io/badge/${encodeURIComponent(mod.name).replace(
+      /-/g,
+      "--"
+    )}-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](${url})\n`;
+  }
+  badges += "\n";
+
+  // Released mods
+  for (const mod of modsData.mods.released || []) {
+    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+    badges += `[![${
+      mod.name
+    }](https://img.shields.io/badge/${encodeURIComponent(mod.name).replace(
+      /-/g,
+      "--"
+    )}-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](${url})\n`;
+  }
+  badges += "\n";
+
+  // In development mods
+  for (const mod of modsData.mods.in_development || []) {
+    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+    const pr = prStatus[mod.repo];
+
+    badges += `[![${
+      mod.name
+    }](https://img.shields.io/badge/${encodeURIComponent(mod.name).replace(
+      /-/g,
+      "--"
+    )}-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](${url})`;
+
+    if (pr) {
+      const prColor = pr.status === "merged" ? "a371f7" : "3fb950";
+      const prLabel = pr.status === "merged" ? "Merged" : "Open";
+      badges += `[![#${pr.number}](https://img.shields.io/badge/%23${pr.number}-${prLabel}-${prColor}?style=flat-square&logo=github&logoColor=white)](${pr.url})`;
+    }
+    badges += "\n";
+  }
+
+  badges += `
+</div>`;
+
+  // Replace badges section in README
+  const badgesRegex = /<!-- Quick Links \(Clickable\) -->[\s\S]*?<\/div>/;
+
+  if (badgesRegex.test(readme)) {
+    readme = readme.replace(badgesRegex, badges);
+    fs.writeFileSync(readmePath, readme);
+    console.log("✓ README badges updated!");
+  } else {
+    console.log("⚠ Badges section not found in README");
+  }
 }
 
 main().catch(console.error);

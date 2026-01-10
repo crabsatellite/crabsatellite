@@ -5,11 +5,29 @@
 
 ---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/mods-card.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/mods-card.svg" />
-  <img width="100%" alt="Minecraft Mods" src="./assets/mods-card.svg" />
-</picture>
+<!-- Mod Cards (Visual Display) -->
+<img src="./assets/mods-card.svg" width="100%" alt="Minecraft Mods" />
+
+<!-- Quick Links (Clickable) -->
+<div align="center">
+
+[![HotBath](https://img.shields.io/badge/HotBath-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/hotbath)
+[![ShowerCore](https://img.shields.io/badge/ShowerCore-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/showercore)
+[![LeafDecayStopper](https://img.shields.io/badge/LeafDecayStopper-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper)
+
+[![Tanuki Decor](https://img.shields.io/badge/Tanuki%20Decor-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/tanukidecor)
+[![Nomadic Tents](https://img.shields.io/badge/Nomadic%20Tents-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/nomadic-tents)
+
+[![Alex's Mobs](https://img.shields.io/badge/Alex's%20Mobs-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)[![#2318](https://img.shields.io/badge/%232318-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsMobs/pull/2318)
+[![Alex's Caves](https://img.shields.io/badge/Alex's%20Caves-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-caves)[![#1693](https://img.shields.io/badge/%231693-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsCaves/pull/1693)
+[![Rats](https://img.shields.io/badge/Rats-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/rats)
+[![Citadel](https://img.shields.io/badge/Citadel-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/citadel)[![#220](https://img.shields.io/badge/%23220-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/Citadel/pull/220)
+[![Extra Golems](https://img.shields.io/badge/Extra%20Golems-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/extra-golems)[![#144](https://img.shields.io/badge/%23144-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144)
+[![Pelagic Prehistory](https://img.shields.io/badge/Pelagic%20Prehistory-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory)[![#1](https://img.shields.io/badge/%231-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/skyjay1/Pelagic-Prehistory/pull/1)
+[![Greek Fantasy](https://img.shields.io/badge/Greek%20Fantasy-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/greekfantasy)[![#148](https://img.shields.io/badge/%23148-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/skyjay1/GreekFantasy/pull/148)
+[![RPG Gods](https://img.shields.io/badge/RPG%20Gods-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/rpg-gods)
+
+</div>
 
 ---
 
