@@ -88,7 +88,7 @@
       <span class="tag">1.20.1 → 1.21.1</span>
     </div>
     <div class="card">
-      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory">Pelagic Prehistory</a></h3>
+      <h3><a href="https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory">Pelagic Prehistory</a> <a href="https://github.com/skyjay1/Pelagic-Prehistory/pull/1" class="pr-link">→ PR</a></h3>
       <p>Full port to Forge 1.20.1</p>
       <span class="tag">Maintainer</span>
       <span class="tag">In Progress</span>

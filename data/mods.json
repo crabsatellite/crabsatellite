@@ -1,60 +1,106 @@
 {
   "author": "crabsatellite",
   "mods": {
+    "released": [
+      {
+        "name": "Tanuki Decor",
+        "repo": "skyjay1/TanukiDecor",
+        "curseforge_slug": "tanukidecor",
+        "curseforge_id": 927282,
+        "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
+        "role": "Migration Lead",
+        "description": "Full port to NeoForge 1.21.1"
+      },
+      {
+        "name": "Nomadic Tents",
+        "repo": "skyjay1/Nomadic-Tents",
+        "curseforge_slug": "nomadic-tents",
+        "curseforge_id": 242287,
+        "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
+        "role": "Migration Lead",
+        "description": "Full port to NeoForge 1.21.1"
+      }
+    ],
     "in_development": [
       {
         "name": "Alex's Mobs",
         "repo": "AlexModGuy/AlexsMobs",
+        "curseforge_slug": "alexs-mobs",
+        "curseforge_id": 426558,
         "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1"
       },
       {
         "name": "Alex's Caves",
         "repo": "AlexModGuy/AlexsCaves",
+        "curseforge_slug": "alexs-caves",
+        "curseforge_id": 918558,
         "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1"
       },
       {
         "name": "Rats",
         "repo": "AlexModGuy/Rats",
+        "curseforge_slug": "rats",
+        "curseforge_id": 286612,
         "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1"
       },
       {
         "name": "Citadel",
         "repo": "AlexModGuy/Citadel",
+        "curseforge_slug": "citadel",
+        "curseforge_id": 331936,
         "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
         "role": "Contributor",
         "description": "Feature fixes and bug fixes contribution"
       },
       {
         "name": "Extra Golems",
         "repo": "MinecraftModDevelopmentMods/Extra-Golems",
+        "curseforge_slug": "extra-golems",
+        "curseforge_id": 250173,
         "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1"
       },
       {
         "name": "Pelagic Prehistory",
         "repo": "skyjay1/Pelagic-Prehistory",
+        "curseforge_slug": "pelagic-prehistory",
+        "curseforge_id": 893880,
         "migration": "1.19.2 → 1.20.1",
+        "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1"
       },
       {
         "name": "Greek Fantasy",
         "repo": "skyjay1/GreekFantasy",
+        "curseforge_slug": "greekfantasy",
+        "curseforge_id": 399094,
         "migration": "1.19.2 → 1.20.1",
+        "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1"
       },
       {
         "name": "RPG Gods",
         "repo": "skyjay1/RPG-Gods",
+        "curseforge_slug": "rpg-gods",
+        "curseforge_id": 525031,
         "migration": "1.19.2 → 1.20.1",
+        "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1"
       }
@@ -104,5 +150,39 @@
       "updated_at": "2025-12-28T10:32:35Z"
     }
   },
-  "last_updated": "2026-01-10T04:09:44.808Z"
+  "release_status": {
+    "alexs-mobs": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "alexs-caves": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "rats": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "citadel": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "extra-golems": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "pelagic-prehistory": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "greekfantasy": {
+      "released": false,
+      "method": "curseforge-api"
+    },
+    "rpg-gods": {
+      "released": false,
+      "method": "curseforge-api"
+    }
+  },
+  "last_updated": "2026-01-10T05:12:05.951Z"
 }
