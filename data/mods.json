@@ -1,6 +1,29 @@
 {
   "author": "crabsatellite",
   "mods": {
+    "active": [
+      {
+        "name": "HotBath",
+        "curseforge_slug": "hotbath",
+        "role": "Author",
+        "tags": ["Maintained"],
+        "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits."
+      },
+      {
+        "name": "ShowerCore",
+        "curseforge_slug": "showercore",
+        "role": "Author",
+        "tags": [],
+        "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs."
+      },
+      {
+        "name": "LeafDecayStopper",
+        "curseforge_slug": "leafdecaystopper",
+        "role": "Author",
+        "tags": [],
+        "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration."
+      }
+    ],
     "released": [
       {
         "name": "Tanuki Decor",
