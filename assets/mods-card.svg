@@ -1,402 +1,241 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="904" height="760" viewBox="0 0 904 760">
-  <style>
-    a { cursor: pointer; }
-    a:hover text { text-decoration: underline; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="682" viewBox="0 0 840 682">
+  <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
   
-  <!-- Background -->
-  <rect width="100%" height="100%" fill="#0d1117"/>
-  
-  
-      <!-- Section: Active Mods — Author -->
-      <text x="20" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">Active Mods — Author</text>
-      <line x1="20" y1="52" x2="884" y2="52" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="16" y="36" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#e6edf3">🎮 Active Mods — Author</text>
+      <line x1="16" y1="44" x2="824" y2="44" stroke="#21262d" stroke-width="1"/>
       
     <g>
-      <!-- Card background -->
-      <rect x="20" y="60" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="16" y="52" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="26" y="76" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">HotBath</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/hotbath" target="_blank">
-        <text x="32" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">HotBath</text>
-      </a>
+      <text x="26" y="98" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Relaxing hot baths with healing, buff...</text>
       
-      
-      <!-- Description -->
-      <text x="32" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Relaxing hot baths with healing, buffs and magi...
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="32" y="135" width="51" height="18" rx="4" fill="#222222"/>
-      <text x="57.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Author</text>
+      <rect x="26" y="122" width="48" height="16" rx="3" fill="#21262d"/>
+      <text x="50" y="133.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Author</text>
     
-      <rect x="89" y="135" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="127.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintained</text>
+      <rect x="79" y="122" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="115" y="133.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintained</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="312" y="60" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="288" y="52" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="298" y="76" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">ShowerCore</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/showercore" target="_blank">
-        <text x="324" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">ShowerCore</text>
-      </a>
+      <text x="298" y="98" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Official HotBath extension: showers, ...</text>
       
-      
-      <!-- Description -->
-      <text x="324" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Official HotBath extension: showers, bathtubs, ...
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="324" y="135" width="51" height="18" rx="4" fill="#222222"/>
-      <text x="349.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Author</text>
+      <rect x="298" y="122" width="48" height="16" rx="3" fill="#21262d"/>
+      <text x="322" y="133.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Author</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="604" y="60" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="560" y="52" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="570" y="76" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">LeafDecayStopper</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper" target="_blank">
-        <text x="616" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">LeafDecayStopper</text>
-      </a>
+      <text x="570" y="98" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Dimension-based leaf decay control vi...</text>
       
-      
-      <!-- Description -->
-      <text x="616" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Dimension-based leaf decay control via commands...
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="616" y="135" width="51" height="18" rx="4" fill="#222222"/>
-      <text x="641.5" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Author</text>
+      <rect x="570" y="122" width="48" height="16" rx="3" fill="#21262d"/>
+      <text x="594" y="133.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Author</text>
     
     </g>
   
     
-      <!-- Section: Released — Version Migration Complete -->
-      <text x="20" y="216" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">Released — Version Migration Complete</text>
-      <line x1="20" y1="224" x2="884" y2="224" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="16" y="190" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#e6edf3">✅ Released — Version Migration Complete</text>
+      <line x1="16" y1="198" x2="824" y2="198" stroke="#21262d" stroke-width="1"/>
       
     <g>
-      <!-- Card background -->
-      <rect x="20" y="232" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="16" y="206" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="26" y="230" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Tanuki Decor</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/tanukidecor" target="_blank">
-        <text x="32" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Tanuki Decor</text>
-      </a>
+      <text x="26" y="252" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to NeoForge 1.21.1</text>
       
-      
-      <!-- Description -->
-      <text x="32" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to NeoForge 1.21.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="32" y="307" width="103" height="18" rx="4" fill="#222222"/>
-      <text x="83.5" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Migration Lead</text>
+      <rect x="26" y="276" width="96" height="16" rx="3" fill="#21262d"/>
+      <text x="74" y="287.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Migration Lead</text>
     
-      <rect x="141" y="307" width="64" height="18" rx="4" fill="#222222"/>
-      <text x="173" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Released</text>
+      <rect x="127" y="276" width="60" height="16" rx="3" fill="#21262d"/>
+      <text x="157" y="287.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Released</text>
     
-      <rect x="211" y="307" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="265.75" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="192" y="276" width="71" height="16" rx="3" fill="#21262d"/>
+      <text x="227.5" y="287.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="312" y="232" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="288" y="206" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="298" y="230" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Nomadic Tents</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/nomadic-tents" target="_blank">
-        <text x="324" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Nomadic Tents</text>
-      </a>
+      <text x="298" y="252" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to NeoForge 1.21.1</text>
       
-      
-      <!-- Description -->
-      <text x="324" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to NeoForge 1.21.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="324" y="307" width="103" height="18" rx="4" fill="#222222"/>
-      <text x="375.5" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Migration Lead</text>
+      <rect x="298" y="276" width="96" height="16" rx="3" fill="#21262d"/>
+      <text x="346" y="287.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Migration Lead</text>
     
-      <rect x="433" y="307" width="64" height="18" rx="4" fill="#222222"/>
-      <text x="465" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Released</text>
+      <rect x="399" y="276" width="60" height="16" rx="3" fill="#21262d"/>
+      <text x="429" y="287.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Released</text>
     
-      <rect x="503" y="307" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="557.75" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="464" y="276" width="71" height="16" rx="3" fill="#21262d"/>
+      <text x="499.5" y="287.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     
-      <!-- Section: In Development — Active Migration -->
-      <text x="20" y="388" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">In Development — Active Migration</text>
-      <line x1="20" y1="396" x2="884" y2="396" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="16" y="344" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#e6edf3">🚧 In Development — Active Migration</text>
+      <line x1="16" y1="352" x2="824" y2="352" stroke="#21262d" stroke-width="1"/>
       
     <g>
-      <!-- Card background -->
-      <rect x="20" y="404" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="16" y="360" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="26" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Alex&apos;s Mobs</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/alexs-mobs" target="_blank">
-        <text x="32" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Alex&apos;s Mobs</text>
-      </a>
-      
-      <a href="https://github.com/AlexModGuy/AlexsMobs/pull/2318" target="_blank">
-        <text x="288" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #2318</text>
-      </a>
+      <rect x="246" y="368" width="24" height="16" rx="3" fill="#3fb950"/>
+      <text x="258" y="379" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">PR</text>
     
+      <text x="26" y="406" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to NeoForge 1.21.1</text>
       
-      <!-- Description -->
-      <text x="32" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to NeoForge 1.21.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="32" y="479" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="70.5" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="26" y="430" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="62" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="115" y="479" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="156.75" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="103" y="430" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="142" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="204.5" y="479" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="259.25" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="186" y="430" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="224.5" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="312" y="404" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="288" y="360" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="298" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Alex&apos;s Caves</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/alexs-caves" target="_blank">
-        <text x="324" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Alex&apos;s Caves</text>
-      </a>
-      
-      <a href="https://github.com/AlexModGuy/AlexsCaves/pull/1693" target="_blank">
-        <text x="580" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #1693</text>
-      </a>
+      <rect x="518" y="368" width="24" height="16" rx="3" fill="#3fb950"/>
+      <text x="530" y="379" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">PR</text>
     
+      <text x="298" y="406" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to NeoForge 1.21.1</text>
       
-      <!-- Description -->
-      <text x="324" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to NeoForge 1.21.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="324" y="479" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="362.5" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="298" y="430" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="334" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="407" y="479" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="448.75" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="375" y="430" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="414" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="496.5" y="479" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="551.25" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="458" y="430" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="496.5" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="604" y="404" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="560" y="360" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="570" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Rats</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/rats" target="_blank">
-        <text x="616" y="432" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Rats</text>
-      </a>
+      <text x="570" y="406" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to NeoForge 1.21.1</text>
       
-      
-      <!-- Description -->
-      <text x="616" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to NeoForge 1.21.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="616" y="479" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="654.5" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="570" y="430" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="606" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="699" y="479" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="740.75" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="647" y="430" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="686" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="788.5" y="479" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="843.25" y="492" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="730" y="430" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="768.5" y="441.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="20" y="516" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="16" y="462" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="26" y="486" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Citadel</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/citadel" target="_blank">
-        <text x="32" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Citadel</text>
-      </a>
-      
-      <a href="https://github.com/AlexModGuy/Citadel/pull/220" target="_blank">
-        <text x="288" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #220</text>
-      </a>
+      <rect x="246" y="470" width="24" height="16" rx="3" fill="#3fb950"/>
+      <text x="258" y="481" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">PR</text>
     
+      <text x="26" y="508" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Feature fixes and bug fixes contribution</text>
       
-      <!-- Description -->
-      <text x="32" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Feature fixes and bug fixes contribution
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="32" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="73.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Contributor</text>
+      <rect x="26" y="532" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="65" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Contributor</text>
     
-      <rect x="121.5" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="163.25" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="109" y="532" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="148" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="211" y="591" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="265.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="192" y="532" width="71" height="16" rx="3" fill="#21262d"/>
+      <text x="227.5" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="312" y="516" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="288" y="462" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="298" y="486" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Extra Golems</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/extra-golems" target="_blank">
-        <text x="324" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Extra Golems</text>
-      </a>
-      
-      <a href="https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144" target="_blank">
-        <text x="580" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #144</text>
-      </a>
+      <rect x="518" y="470" width="24" height="16" rx="3" fill="#3fb950"/>
+      <text x="530" y="481" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">PR</text>
     
+      <text x="298" y="508" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to NeoForge 1.21.1</text>
       
-      <!-- Description -->
-      <text x="324" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to NeoForge 1.21.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="324" y="591" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="362.5" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="298" y="532" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="334" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="407" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="448.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="375" y="532" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="414" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="496.5" y="591" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="551.25" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.20.1 → 1.21.1</text>
+      <rect x="458" y="532" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="496.5" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.20.1 → 1.21.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="604" y="516" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="560" y="462" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="570" y="486" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Pelagic Prehistory</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory" target="_blank">
-        <text x="616" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Pelagic Prehistory</text>
-      </a>
-      
-      <a href="https://github.com/skyjay1/Pelagic-Prehistory/pull/1" target="_blank">
-        <text x="872" y="544" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #1</text>
-      </a>
+      <rect x="790" y="470" width="24" height="16" rx="3" fill="#3fb950"/>
+      <text x="802" y="481" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">PR</text>
     
+      <text x="570" y="508" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to Forge 1.20.1</text>
       
-      <!-- Description -->
-      <text x="616" y="566" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to Forge 1.20.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="616" y="591" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="654.5" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="570" y="532" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="606" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="699" y="591" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="740.75" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="647" y="532" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="686" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="788.5" y="591" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="843.25" y="604" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.19.2 → 1.20.1</text>
+      <rect x="730" y="532" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="768.5" y="543.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.19.2 → 1.20.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="20" y="628" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="16" y="564" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="26" y="588" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">Greek Fantasy</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/greekfantasy" target="_blank">
-        <text x="32" y="656" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">Greek Fantasy</text>
-      </a>
-      
-      <a href="https://github.com/skyjay1/GreekFantasy/pull/148" target="_blank">
-        <text x="288" y="656" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#f16436" text-anchor="end">→ PR #148</text>
-      </a>
+      <rect x="246" y="572" width="24" height="16" rx="3" fill="#3fb950"/>
+      <text x="258" y="583" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">PR</text>
     
+      <text x="26" y="610" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to Forge 1.20.1</text>
       
-      <!-- Description -->
-      <text x="32" y="678" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to Forge 1.20.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="32" y="703" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="70.5" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="26" y="634" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="62" y="645.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="115" y="703" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="156.75" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="103" y="634" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="142" y="645.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="204.5" y="703" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="259.25" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.19.2 → 1.20.1</text>
+      <rect x="186" y="634" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="224.5" y="645.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.19.2 → 1.20.1</text>
     
     </g>
   
     <g>
-      <!-- Card background -->
-      <rect x="312" y="628" width="280" height="100" rx="8" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="288" y="564" width="262" height="92" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="298" y="588" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#f16436">RPG Gods</text>
       
-      <!-- Title with link -->
-      <a href="https://www.curseforge.com/minecraft/mc-mods/rpg-gods" target="_blank">
-        <text x="324" y="656" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f16436">RPG Gods</text>
-      </a>
+      <text x="298" y="610" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">Full port to Forge 1.20.1</text>
       
-      
-      <!-- Description -->
-      <text x="324" y="678" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#aaaaaa">
-        Full port to Forge 1.20.1
-      </text>
-      
-      <!-- Tags -->
-      
-      <rect x="324" y="703" width="77" height="18" rx="4" fill="#222222"/>
-      <text x="362.5" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">Maintainer</text>
+      <rect x="298" y="634" width="72" height="16" rx="3" fill="#21262d"/>
+      <text x="334" y="645.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Maintainer</text>
     
-      <rect x="407" y="703" width="83.5" height="18" rx="4" fill="#222222"/>
-      <text x="448.75" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">In Progress</text>
+      <rect x="375" y="634" width="78" height="16" rx="3" fill="#21262d"/>
+      <text x="414" y="645.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">In Progress</text>
     
-      <rect x="496.5" y="703" width="109.5" height="18" rx="4" fill="#222222"/>
-      <text x="551.25" y="716" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">1.19.2 → 1.20.1</text>
+      <rect x="458" y="634" width="77" height="16" rx="3" fill="#21262d"/>
+      <text x="496.5" y="645.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">1.19.2 → 1.20.1</text>
     
     </g>
   
     
-  
-  <!-- Last updated -->
-  <text x="884" y="752" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#aaaaaa" text-anchor="end">Last updated: 2026/1/10</text>
+  <text x="824" y="674" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e" text-anchor="end">Updated: Jan 10, 2026</text>
 </svg>
