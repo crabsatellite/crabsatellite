@@ -3,15 +3,13 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "0",
+      "downloads": "445.1K",
       "updated": "Jan 11, 2026",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/806/538/256/256/638174502297178542.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/815/186/256/256/638191029853594596.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/hotbath",
       "categories": [
-        null,
-        null,
         null,
         null
       ],
@@ -21,11 +19,11 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "1",
+      "downloads": "933",
       "updated": "Jan 11, 2026",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/1133/978/256/256/638694577495337310.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1560/169/256/256/639012358014985830.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/showercore",
       "categories": [
         null,
@@ -37,13 +35,14 @@
     {
       "title": "LeafDecayStopper",
       "author": "CrabMods",
-      "downloads": "549",
+      "downloads": "2.6K",
       "updated": "Jan 11, 2026",
       "created": "Oct 28, 2024",
       "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
-      "image": "https://83374.media.forgecdn.net/avatars/thumbnails/1096/172/256/256/638641716827451131.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1106/990/256/256/638656875759417082.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper",
       "categories": [
+        null,
         null
       ],
       "isOwner": true,
@@ -54,13 +53,15 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "294",
+      "downloads": "735.2K",
       "updated": "Jan 11, 2026",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/894/399/256/256/638338010345406733.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/922/804/256/256/638388680754044327.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/tanukidecor",
       "categories": [
+        null,
+        null,
         null
       ],
       "isOwner": false,
@@ -71,13 +72,14 @@
     {
       "title": "Nomadic Tents",
       "author": "skyjay1",
-      "downloads": "0",
+      "downloads": "7.4M",
       "updated": "Jan 11, 2026",
       "created": "Jan 28, 2017",
       "description": "Full port to NeoForge 1.21.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/35/241/256/256/635921859324690721.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/184/32/256/256/636818851745227719.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/nomadic-tents",
       "categories": [
+        null,
         null,
         null,
         null
@@ -115,11 +117,11 @@
     {
       "title": "Alex's Caves",
       "author": "AlexModGuy",
-      "downloads": "162",
+      "downloads": "22.6M",
       "updated": "Jan 11, 2026",
       "created": "Oct 26, 2023",
       "description": "Full port to NeoForge 1.21.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/884/86/256/256/638317926395333758.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/891/449/256/256/638332962331987353.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/alexs-caves",
       "categories": [
         null,
@@ -164,11 +166,11 @@
     {
       "title": "Extra Golems",
       "author": "MinecraftModDevelopmentMods",
-      "downloads": "0",
+      "downloads": "8.5M",
       "updated": "Jan 11, 2026",
       "created": "Nov 6, 2015",
       "description": "Full port to NeoForge 1.21.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/49/205/256/256/636074798088492730.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/186/336/256/256/636832893257126275.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/extra-golems",
       "categories": [
         null,
@@ -189,13 +191,16 @@
     {
       "title": "Pelagic Prehistory",
       "author": "skyjay1",
-      "downloads": "0",
+      "downloads": "13.0K",
       "updated": "Jan 11, 2026",
       "created": "Aug 26, 2023",
       "description": "Full port to Forge 1.20.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/855/101/256/256/638259631759423139.png",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/822/361/256/256/638205421305341178.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory",
       "categories": [
+        null,
+        null,
+        null,
         null
       ],
       "isOwner": false,
@@ -211,14 +216,16 @@
     {
       "title": "Greek Fantasy",
       "author": "skyjay1",
-      "downloads": "0",
+      "downloads": "6.5M",
       "updated": "Jan 11, 2026",
-      "created": "Jul 17, 2020",
+      "created": "",
       "description": "Full port to Forge 1.20.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/294/126/256/256/637341938568453915.png",
-      "url": "https://www.curseforge.com/minecraft/mc-mods/greekfantasy",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/306/667/256/256/637385699213327088.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/greek-fantasy",
       "categories": [
-        "Mods"
+        null,
+        null,
+        null
       ],
       "isOwner": false,
       "role": "Maintainer",
@@ -233,13 +240,15 @@
     {
       "title": "RPG Gods",
       "author": "skyjay1",
-      "downloads": "0",
+      "downloads": "1.7M",
       "updated": "Jan 11, 2026",
       "created": "Oct 15, 2022",
       "description": "Full port to Forge 1.20.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/430/707/256/256/637664915264423830.jpeg",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/521/337/256/256/637840254256587523.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/rpg-gods",
       "categories": [
+        null,
+        null,
         null,
         null
       ],
