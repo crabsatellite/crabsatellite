@@ -1,0 +1,258 @@
+{
+  "owner": [
+    {
+      "title": "HotBath",
+      "author": "CrabMods",
+      "downloads": "435.0K",
+      "updated": "Dec 13, 2025",
+      "created": "May 8, 2023",
+      "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/815/186/256/256/638191029853594596.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/hotbath",
+      "categories": [
+        "Mods",
+        "Cosmetic",
+        "Adventure and RPG"
+      ],
+      "isOwner": true,
+      "role": "Author"
+    },
+    {
+      "title": "ShowerCore",
+      "author": "CrabMods",
+      "downloads": "879",
+      "updated": "Dec 16, 2025",
+      "created": "Dec 15, 2025",
+      "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1560/169/256/256/639012358014985830.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/showercore",
+      "categories": [
+        "Mods",
+        "Adventure and RPG",
+        "Cosmetic"
+      ],
+      "isOwner": true,
+      "role": "Author"
+    },
+    {
+      "title": "LeafDecayStopper",
+      "author": "CrabMods",
+      "downloads": "2.6K",
+      "updated": "Dec 16, 2025",
+      "created": "Oct 28, 2024",
+      "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1106/990/256/256/638656875759417082.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper",
+      "categories": [
+        "Mods",
+        "Server Utility",
+        "Bug Fixes"
+      ],
+      "isOwner": true,
+      "role": "Author"
+    }
+  ],
+  "others": [
+    {
+      "title": "Tanuki Decor",
+      "author": "skyjay1",
+      "downloads": "729.6K",
+      "updated": "Nov 26, 2025",
+      "created": "Dec 24, 2023",
+      "description": "Full port to NeoForge 1.21.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/922/804/256/256/638388680754044327.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/tanukidecor",
+      "categories": [
+        "Mods",
+        "Cosmetic",
+        "Storage",
+        "Utility & QoL"
+      ],
+      "isOwner": false,
+      "role": "Migration Lead",
+      "repo": "skyjay1/TanukiDecor",
+      "migration": "1.20.1 → 1.21.1"
+    },
+    {
+      "title": "Nomadic Tents",
+      "author": "skyjay1",
+      "downloads": "2.3M",
+      "updated": "Nov 26, 2025",
+      "created": "Jan 28, 2017",
+      "description": "Full port to NeoForge 1.21.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/54/621/256/256/636205405028620627.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/nomadic-tents",
+      "categories": [
+        "Mods",
+        "Adventure and RPG",
+        "Storage"
+      ],
+      "isOwner": false,
+      "role": "Migration Lead",
+      "repo": "skyjay1/Nomadic-Tents",
+      "migration": "1.20.1 → 1.21.1"
+    },
+    {
+      "title": "Alex's Mobs",
+      "author": "AlexModGuy",
+      "downloads": "85.7M",
+      "updated": "Dec 15, 2025",
+      "created": "Oct 10, 2020",
+      "description": "Full port to NeoForge 1.21.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/304/969/256/256/637367729541758498.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/alexs-mobs",
+      "categories": [
+        "Mods",
+        "Adventure and RPG",
+        "Mobs"
+      ],
+      "isOwner": false,
+      "role": "Maintainer",
+      "repo": "AlexModGuy/AlexsMobs",
+      "migration": "1.20.1 → 1.21.1",
+      "prStatus": {
+        "status": "merged",
+        "number": 2318,
+        "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318"
+      }
+    },
+    {
+      "title": "Alex's Caves",
+      "author": "AlexModGuy",
+      "downloads": "14.0M",
+      "updated": "Dec 15, 2025",
+      "created": "Oct 26, 2023",
+      "description": "Full port to NeoForge 1.21.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/912/645/256/256/638378055785451297.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/alexs-caves",
+      "categories": [
+        "Mods",
+        "Adventure and RPG",
+        "Dimensions"
+      ],
+      "isOwner": false,
+      "role": "Maintainer",
+      "repo": "AlexModGuy/AlexsCaves",
+      "migration": "1.20.1 → 1.21.1",
+      "prStatus": {
+        "status": "merged",
+        "number": 1693,
+        "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693"
+      }
+    },
+    {
+      "title": "Citadel",
+      "author": "AlexModGuy",
+      "downloads": "141.5M",
+      "updated": "Dec 15, 2025",
+      "created": "May 3, 2020",
+      "description": "Feature fixes and bug fixes contribution",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/284/332/256/256/637323093490439690.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/citadel",
+      "categories": [
+        "Mods",
+        "API and Library"
+      ],
+      "isOwner": false,
+      "role": "Contributor",
+      "repo": "AlexModGuy/Citadel",
+      "migration": "1.20.1 → 1.21.1",
+      "prStatus": {
+        "status": "open",
+        "number": 220,
+        "url": "https://github.com/AlexModGuy/Citadel/pull/220"
+      }
+    },
+    {
+      "title": "Extra Golems",
+      "author": "MinecraftModDevelopmentMods",
+      "downloads": "3.9M",
+      "updated": "Dec 10, 2025",
+      "created": "Nov 6, 2015",
+      "description": "Full port to NeoForge 1.21.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/34/587/256/256/636097412096548648.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/extra-golems",
+      "categories": [
+        "Mods",
+        "Mobs",
+        "Adventure and RPG"
+      ],
+      "isOwner": false,
+      "role": "Maintainer",
+      "repo": "MinecraftModDevelopmentMods/Extra-Golems",
+      "migration": "1.20.1 → 1.21.1",
+      "prStatus": {
+        "status": "open",
+        "number": 144,
+        "url": "https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144"
+      }
+    },
+    {
+      "title": "Pelagic Prehistory",
+      "author": "skyjay1",
+      "downloads": "107.7K",
+      "updated": "Sep 29, 2024",
+      "created": "Aug 26, 2023",
+      "description": "Full port to Forge 1.20.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/880/917/256/256/638309397915161161.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory",
+      "categories": [
+        "Mods",
+        "Adventure and RPG",
+        "Mobs"
+      ],
+      "isOwner": false,
+      "role": "Maintainer",
+      "repo": "skyjay1/Pelagic-Prehistory",
+      "migration": "1.19.2 → 1.20.1",
+      "prStatus": {
+        "status": "open",
+        "number": 1,
+        "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1"
+      }
+    },
+    {
+      "title": "Greek Fantasy",
+      "author": "skyjay1",
+      "downloads": "1.9M",
+      "updated": "Oct 9, 2024",
+      "created": "Jul 17, 2020",
+      "description": "Full port to Forge 1.20.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/294/126/256/256/637341938568453915.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/greekfantasy",
+      "categories": [
+        "Mods",
+        "Adventure and RPG",
+        "Mobs"
+      ],
+      "isOwner": false,
+      "role": "Maintainer",
+      "repo": "skyjay1/GreekFantasy",
+      "migration": "1.19.2 → 1.20.1",
+      "prStatus": {
+        "status": "open",
+        "number": 148,
+        "url": "https://github.com/skyjay1/GreekFantasy/pull/148"
+      }
+    },
+    {
+      "title": "RPG Gods",
+      "author": "skyjay1",
+      "downloads": "131.5K",
+      "updated": "Oct 9, 2024",
+      "created": "Oct 15, 2022",
+      "description": "Full port to Forge 1.20.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/613/147/256/256/638009621810397143.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/rpg-gods",
+      "categories": [
+        "Mods",
+        "Adventure and RPG"
+      ],
+      "isOwner": false,
+      "role": "Maintainer",
+      "repo": "skyjay1/RPG-Gods",
+      "migration": "1.19.2 → 1.20.1"
+    }
+  ],
+  "lastUpdated": "2026-01-11T00:30:43.044Z"
+}
