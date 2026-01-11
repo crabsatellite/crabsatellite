@@ -5,25 +5,29 @@
       {
         "name": "HotBath",
         "curseforge_slug": "hotbath",
+        "curseforge_id": 852174,
         "role": "Author",
-        "tags": [
-          "Maintained"
-        ],
-        "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits."
+        "tags": ["Maintained"],
+        "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/815/186/256/256/638191029853594596.png"
       },
       {
         "name": "ShowerCore",
         "curseforge_slug": "showercore",
+        "curseforge_id": 1157025,
         "role": "Author",
         "tags": [],
-        "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs."
+        "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/1560/169/256/256/639012358014985830.png"
       },
       {
         "name": "LeafDecayStopper",
         "curseforge_slug": "leafdecaystopper",
+        "curseforge_id": 1118956,
         "role": "Author",
         "tags": [],
-        "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration."
+        "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/1106/990/256/256/638656875759417082.png"
       }
     ],
     "released": [
@@ -35,7 +39,8 @@
         "migration": "1.20.1 → 1.21.1",
         "target_version": "1.21.1",
         "role": "Migration Lead",
-        "description": "Full port to NeoForge 1.21.1"
+        "description": "Full port to NeoForge 1.21.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/922/804/256/256/638388680754044327.png"
       },
       {
         "name": "Nomadic Tents",
@@ -45,7 +50,8 @@
         "migration": "1.20.1 → 1.21.1",
         "target_version": "1.21.1",
         "role": "Migration Lead",
-        "description": "Full port to NeoForge 1.21.1"
+        "description": "Full port to NeoForge 1.21.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/54/621/256/256/636205405028620627.png"
       }
     ],
     "in_development": [
@@ -57,7 +63,8 @@
         "migration": "1.20.1 → 1.21.1",
         "target_version": "1.21.1",
         "role": "Maintainer",
-        "description": "Full port to NeoForge 1.21.1"
+        "description": "Full port to NeoForge 1.21.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/304/969/256/256/637367729541758498.png"
       },
       {
         "name": "Alex's Caves",
@@ -67,7 +74,8 @@
         "migration": "1.20.1 → 1.21.1",
         "target_version": "1.21.1",
         "role": "Maintainer",
-        "description": "Full port to NeoForge 1.21.1"
+        "description": "Full port to NeoForge 1.21.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/912/645/256/256/638378055785451297.png"
       },
       {
         "name": "Citadel",
@@ -77,7 +85,8 @@
         "migration": "1.20.1 → 1.21.1",
         "target_version": "1.21.1",
         "role": "Contributor",
-        "description": "Feature fixes and bug fixes contribution"
+        "description": "Feature fixes and bug fixes contribution",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/284/332/256/256/637323093490439690.png"
       },
       {
         "name": "Extra Golems",
@@ -87,7 +96,8 @@
         "migration": "1.20.1 → 1.21.1",
         "target_version": "1.21.1",
         "role": "Maintainer",
-        "description": "Full port to NeoForge 1.21.1"
+        "description": "Full port to NeoForge 1.21.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/34/587/256/256/636097412096548648.png"
       },
       {
         "name": "Pelagic Prehistory",
@@ -97,7 +107,8 @@
         "migration": "1.19.2 → 1.20.1",
         "target_version": "1.20.1",
         "role": "Maintainer",
-        "description": "Full port to Forge 1.20.1"
+        "description": "Full port to Forge 1.20.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/880/917/256/256/638309397915161161.png"
       },
       {
         "name": "Greek Fantasy",
@@ -107,7 +118,8 @@
         "migration": "1.19.2 → 1.20.1",
         "target_version": "1.20.1",
         "role": "Maintainer",
-        "description": "Full port to Forge 1.20.1"
+        "description": "Full port to Forge 1.20.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/294/126/256/256/637341938568453915.png"
       },
       {
         "name": "RPG Gods",
@@ -117,31 +129,32 @@
         "migration": "1.19.2 → 1.20.1",
         "target_version": "1.20.1",
         "role": "Maintainer",
-        "description": "Full port to Forge 1.20.1"
+        "description": "Full port to Forge 1.20.1",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/613/147/256/256/638009621810397143.png"
       }
     ]
   },
   "pr_status": {
     "AlexModGuy/AlexsMobs": {
-      "status": "merged",
+      "status": "open",
       "number": 2318,
       "title": "Fix in order to compatiable with the latest Citadel",
       "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318",
-      "updated_at": "2026-01-10T17:01:25Z"
+      "updated_at": "2026-01-09T08:31:40Z"
     },
     "AlexModGuy/AlexsCaves": {
-      "status": "merged",
+      "status": "open",
       "number": 1693,
       "title": "Port to 1.21.1",
       "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
-      "updated_at": "2026-01-10T17:02:44Z"
+      "updated_at": "2026-01-09T10:38:52Z"
     },
     "AlexModGuy/Citadel": {
       "status": "open",
       "number": 220,
       "title": "1.21 Port Bug Fix ",
       "url": "https://github.com/AlexModGuy/Citadel/pull/220",
-      "updated_at": "2026-01-10T17:00:42Z"
+      "updated_at": "2026-01-07T23:35:45Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -174,6 +187,10 @@
       "released": false,
       "method": "curseforge-api"
     },
+    "rats": {
+      "released": false,
+      "method": "curseforge-api"
+    },
     "citadel": {
       "released": false,
       "method": "curseforge-api"
@@ -195,5 +212,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-11T00:30:43.044Z"
+  "last_updated": "2026-01-10T05:12:05.951Z"
 }

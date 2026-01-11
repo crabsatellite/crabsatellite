@@ -8,6 +8,74 @@ const GITHUB_AUTHOR = "crabsatellite";
 const CURSEFORGE_BASE = "https://www.curseforge.com/minecraft/mc-mods";
 
 /**
+ * Fetch mod details from CurseForge API including image, downloads, etc.
+ */
+async function fetchCurseForgeModDetails(curseforgeId, curseforgeSlug) {
+  if (!curseforgeId) {
+    console.log(`  ⚠ No curseforge_id for ${curseforgeSlug}`);
+    return null;
+  }
+
+  const apiUrl = `https://www.curseforge.com/api/v1/mods/${curseforgeId}`;
+
+  try {
+    const response = await fetch(apiUrl, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        Accept: "application/json",
+        Referer: `https://www.curseforge.com/minecraft/mc-mods/${curseforgeSlug}`,
+      },
+    });
+
+    if (!response.ok) {
+      console.log(`  ⚠ CurseForge API returned ${response.status} for ${curseforgeSlug}`);
+      return null;
+    }
+
+    const data = await response.json();
+    
+    if (data.data) {
+      const mod = data.data;
+      return {
+        image: mod.avatarUrl || mod.logo?.thumbnailUrl || mod.logo?.url || null,
+        downloads: mod.downloadCount || 0,
+        author: mod.authors?.[0]?.name || "Unknown",
+        created: mod.dateCreated,
+        updated: mod.dateModified,
+        categories: (mod.categories || []).map(c => c.name),
+      };
+    }
+    
+    return null;
+  } catch (error) {
+    console.log(`  ⚠ Error fetching mod details for ${curseforgeSlug}:`, error.message);
+    return null;
+  }
+}
+
+/**
+ * Format download count to human readable string
+ */
+function formatDownloads(count) {
+  if (count >= 1000000) {
+    return (count / 1000000).toFixed(1) + "M";
+  } else if (count >= 1000) {
+    return (count / 1000).toFixed(1) + "K";
+  }
+  return count.toString();
+}
+
+/**
+ * Format date to readable string
+ */
+function formatDate(dateString) {
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+/**
  * Fetch PR status from GitHub
  */
 async function fetchPRs(repo) {
@@ -257,8 +325,118 @@ async function main() {
   console.log("\n✓ mods.json updated!");
   console.log(`Last updated: ${modsData.last_updated}`);
 
+  // Step 4: Fetch CurseForge mod details (images, downloads, etc.) and generate portfolio data
+  console.log("\n🖼️ Fetching CurseForge mod details for portfolio...\n");
+  
+  const portfolioData = await generatePortfolioData(modsData, prStatus);
+  
+  const portfolioPath = path.join(__dirname, "../../data/portfolio_mods.json");
+  fs.writeFileSync(portfolioPath, JSON.stringify(portfolioData, null, 2) + "\n");
+  console.log("✓ portfolio_mods.json generated!");
+
   // Generate SVG (both themes)
   await generateSVGs(modsData);
+}
+
+/**
+ * Generate portfolio-ready data with full mod details
+ */
+async function generatePortfolioData(modsData, prStatus) {
+  const portfolioData = {
+    owner: [],
+    others: [],
+    lastUpdated: modsData.last_updated
+  };
+
+  // Process active mods (owner's mods)
+  console.log("Processing owner mods...");
+  for (const mod of modsData.mods.active || []) {
+    // If mod already has image field, skip API call
+    let details = null;
+    if (!mod.image) {
+      console.log(`  Fetching details for ${mod.name}...`);
+      details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Rate limit
+    } else {
+      console.log(`  Using cached data for ${mod.name}`);
+      // Still fetch for downloads count
+      details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    
+    portfolioData.owner.push({
+      title: mod.name,
+      author: details?.author || "CrabMods",
+      downloads: details ? formatDownloads(details.downloads) : "0",
+      updated: details ? formatDate(details.updated) : "",
+      created: details ? formatDate(details.created) : "",
+      description: mod.description,
+      image: mod.image || details?.image || "",
+      url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
+      categories: details?.categories || ["Mods"],
+      isOwner: true,
+      role: mod.role
+    });
+  }
+
+  // Process released mods
+  console.log("Processing released mods...");
+  for (const mod of modsData.mods.released || []) {
+    console.log(`  Fetching details for ${mod.name}...`);
+    const details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    portfolioData.others.push({
+      title: mod.name,
+      author: details?.author || mod.repo?.split('/')[0] || "Unknown",
+      downloads: details ? formatDownloads(details.downloads) : "0",
+      updated: details ? formatDate(details.updated) : "",
+      created: details ? formatDate(details.created) : "",
+      description: mod.description,
+      image: mod.image || details?.image || "",
+      url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
+      categories: details?.categories || ["Mods"],
+      isOwner: false,
+      role: mod.role,
+      repo: mod.repo,
+      migration: mod.migration,
+      status: "released"
+    });
+  }
+
+  // Process in_development mods
+  console.log("Processing in-development mods...");
+  for (const mod of modsData.mods.in_development || []) {
+    console.log(`  Fetching details for ${mod.name}...`);
+    const details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    const pr = prStatus[mod.repo];
+    
+    portfolioData.others.push({
+      title: mod.name,
+      author: details?.author || mod.repo?.split('/')[0] || "Unknown",
+      downloads: details ? formatDownloads(details.downloads) : "0",
+      updated: details ? formatDate(details.updated) : "",
+      created: details ? formatDate(details.created) : "",
+      description: mod.description,
+      image: mod.image || details?.image || "",
+      url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
+      categories: details?.categories || ["Mods"],
+      isOwner: false,
+      role: mod.role,
+      repo: mod.repo,
+      migration: mod.migration,
+      status: "in_development",
+      prStatus: pr ? {
+        status: pr.status,
+        number: pr.number,
+        url: pr.url
+      } : undefined
+    });
+  }
+
+  return portfolioData;
 }
 
 // Theme color schemes
