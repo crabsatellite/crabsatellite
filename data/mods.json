@@ -113,13 +113,13 @@
       {
         "name": "Greek Fantasy",
         "repo": "skyjay1/GreekFantasy",
-        "curseforge_slug": "greekfantasy",
-        "curseforge_id": 399094,
+        "curseforge_slug": "greek-fantasy",
+        "curseforge_id": 413724,
         "migration": "1.19.2 → 1.20.1",
         "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/294/126/256/256/637341938568453915.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/306/667/256/256/637385699213327088.png"
       },
       {
         "name": "RPG Gods",
