@@ -7,7 +7,9 @@
         "curseforge_slug": "hotbath",
         "curseforge_id": 859412,
         "role": "Author",
-        "tags": ["Maintained"],
+        "tags": [
+          "Maintained"
+        ],
         "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
         "image": "https://media.forgecdn.net/avatars/thumbnails/815/186/256/256/638191029853594596.png"
       },
@@ -136,25 +138,25 @@
   },
   "pr_status": {
     "AlexModGuy/AlexsMobs": {
-      "status": "open",
+      "status": "merged",
       "number": 2318,
       "title": "Fix in order to compatiable with the latest Citadel",
       "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318",
-      "updated_at": "2026-01-09T08:31:40Z"
+      "updated_at": "2026-01-10T17:01:25Z"
     },
     "AlexModGuy/AlexsCaves": {
-      "status": "open",
+      "status": "merged",
       "number": 1693,
       "title": "Port to 1.21.1",
       "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
-      "updated_at": "2026-01-09T10:38:52Z"
+      "updated_at": "2026-01-10T17:02:44Z"
     },
     "AlexModGuy/Citadel": {
       "status": "open",
       "number": 220,
       "title": "1.21 Port Bug Fix ",
       "url": "https://github.com/AlexModGuy/Citadel/pull/220",
-      "updated_at": "2026-01-07T23:35:45Z"
+      "updated_at": "2026-01-11T03:22:40Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -187,10 +189,6 @@
       "released": false,
       "method": "curseforge-api"
     },
-    "rats": {
-      "released": false,
-      "method": "curseforge-api"
-    },
     "citadel": {
       "released": false,
       "method": "curseforge-api"
@@ -203,7 +201,7 @@
       "released": false,
       "method": "curseforge-api"
     },
-    "greekfantasy": {
+    "greek-fantasy": {
       "released": false,
       "method": "curseforge-api"
     },
@@ -212,5 +210,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-10T05:12:05.951Z"
+  "last_updated": "2026-01-11T12:31:32.175Z"
 }

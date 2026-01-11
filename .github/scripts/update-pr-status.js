@@ -365,24 +365,13 @@ async function generatePortfolioData(modsData, prStatus) {
   // Process active mods (owner's mods)
   console.log("Processing owner mods...");
   for (const mod of modsData.mods.active || []) {
-    // If mod already has image field, skip API call
-    let details = null;
-    if (!mod.image) {
-      console.log(`  Fetching details for ${mod.name}...`);
-      details = await fetchCurseForgeModDetails(
-        mod.curseforge_id,
-        mod.curseforge_slug
-      );
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Rate limit
-    } else {
-      console.log(`  Using cached data for ${mod.name}`);
-      // Still fetch for downloads count
-      details = await fetchCurseForgeModDetails(
-        mod.curseforge_id,
-        mod.curseforge_slug
-      );
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-    }
+    // Always fetch fresh data from API
+    console.log(`  Fetching details for ${mod.name}...`);
+    const details = await fetchCurseForgeModDetails(
+      mod.curseforge_id,
+      mod.curseforge_slug
+    );
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Rate limit
 
     portfolioData.owner.push({
       title: mod.name,
@@ -391,7 +380,7 @@ async function generatePortfolioData(modsData, prStatus) {
       updated: details ? formatDate(details.updated) : "",
       created: details ? formatDate(details.created) : "",
       description: mod.description,
-      image: mod.image || details?.image || "",
+      image: details?.image || "",
       url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
       categories: details?.categories || ["Mods"],
       isOwner: true,
@@ -416,7 +405,7 @@ async function generatePortfolioData(modsData, prStatus) {
       updated: details ? formatDate(details.updated) : "",
       created: details ? formatDate(details.created) : "",
       description: mod.description,
-      image: mod.image || details?.image || "",
+      image: details?.image || "",
       url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
       categories: details?.categories || ["Mods"],
       isOwner: false,
@@ -446,7 +435,7 @@ async function generatePortfolioData(modsData, prStatus) {
       updated: details ? formatDate(details.updated) : "",
       created: details ? formatDate(details.created) : "",
       description: mod.description,
-      image: mod.image || details?.image || "",
+      image: details?.image || "",
       url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
       categories: details?.categories || ["Mods"],
       isOwner: false,
