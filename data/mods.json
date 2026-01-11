@@ -6,7 +6,9 @@
         "name": "HotBath",
         "curseforge_slug": "hotbath",
         "role": "Author",
-        "tags": ["Maintained"],
+        "tags": [
+          "Maintained"
+        ],
         "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits."
       },
       {
@@ -121,25 +123,25 @@
   },
   "pr_status": {
     "AlexModGuy/AlexsMobs": {
-      "status": "open",
+      "status": "merged",
       "number": 2318,
       "title": "Fix in order to compatiable with the latest Citadel",
       "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318",
-      "updated_at": "2026-01-09T08:31:40Z"
+      "updated_at": "2026-01-10T17:01:25Z"
     },
     "AlexModGuy/AlexsCaves": {
-      "status": "open",
+      "status": "merged",
       "number": 1693,
       "title": "Port to 1.21.1",
       "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
-      "updated_at": "2026-01-09T10:38:52Z"
+      "updated_at": "2026-01-10T17:02:44Z"
     },
     "AlexModGuy/Citadel": {
       "status": "open",
       "number": 220,
       "title": "1.21 Port Bug Fix ",
       "url": "https://github.com/AlexModGuy/Citadel/pull/220",
-      "updated_at": "2026-01-07T23:35:45Z"
+      "updated_at": "2026-01-10T17:00:42Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -172,10 +174,6 @@
       "released": false,
       "method": "curseforge-api"
     },
-    "rats": {
-      "released": false,
-      "method": "curseforge-api"
-    },
     "citadel": {
       "released": false,
       "method": "curseforge-api"
@@ -197,5 +195,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-10T05:12:05.951Z"
+  "last_updated": "2026-01-11T00:30:43.044Z"
 }
