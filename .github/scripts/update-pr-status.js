@@ -8,7 +8,8 @@ const GITHUB_AUTHOR = "crabsatellite";
 const CURSEFORGE_BASE = "https://www.curseforge.com/minecraft/mc-mods";
 
 /**
- * Fetch mod details from CurseForge API including image, downloads, etc.
+ * Fetch mod details from CurseForge Widget API (api.cfwidget.com)
+ * This is a free, reliable API that doesn't require authentication
  */
 async function fetchCurseForgeModDetails(curseforgeId, curseforgeSlug) {
   if (!curseforgeId) {
@@ -16,40 +17,46 @@ async function fetchCurseForgeModDetails(curseforgeId, curseforgeSlug) {
     return null;
   }
 
-  const apiUrl = `https://www.curseforge.com/api/v1/mods/${curseforgeId}`;
+  // Use CurseForge Widget API - more reliable than official API
+  const apiUrl = `https://api.cfwidget.com/${curseforgeId}`;
 
   try {
     const response = await fetch(apiUrl, {
       headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "User-Agent": "crabsatellite-portfolio-updater",
         Accept: "application/json",
-        Referer: `https://www.curseforge.com/minecraft/mc-mods/${curseforgeSlug}`,
       },
     });
 
     if (!response.ok) {
-      console.log(`  ⚠ CurseForge API returned ${response.status} for ${curseforgeSlug}`);
+      console.log(
+        `  ⚠ CFWidget API returned ${response.status} for ${curseforgeSlug}`
+      );
       return null;
     }
 
     const data = await response.json();
-    
-    if (data.data) {
-      const mod = data.data;
+
+    if (data && data.id) {
       return {
-        image: mod.avatarUrl || mod.logo?.thumbnailUrl || mod.logo?.url || null,
-        downloads: mod.downloadCount || 0,
-        author: mod.authors?.[0]?.name || "Unknown",
-        created: mod.dateCreated,
-        updated: mod.dateModified,
-        categories: (mod.categories || []).map(c => c.name),
+        image: data.thumbnail || null,
+        downloads: data.downloads?.total || 0,
+        author:
+          data.members?.[0]?.username || data.authors?.[0]?.name || "Unknown",
+        created: data.created_at,
+        updated: data.last_fetch || data.created_at,
+        categories: (data.categories || []).map((c) =>
+          typeof c === "string" ? c : c.name
+        ),
       };
     }
-    
+
     return null;
   } catch (error) {
-    console.log(`  ⚠ Error fetching mod details for ${curseforgeSlug}:`, error.message);
+    console.log(
+      `  ⚠ Error fetching mod details for ${curseforgeSlug}:`,
+      error.message
+    );
     return null;
   }
 }
@@ -72,7 +79,11 @@ function formatDownloads(count) {
 function formatDate(dateString) {
   if (!dateString) return "";
   const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
 /**
@@ -327,11 +338,14 @@ async function main() {
 
   // Step 4: Fetch CurseForge mod details (images, downloads, etc.) and generate portfolio data
   console.log("\n🖼️ Fetching CurseForge mod details for portfolio...\n");
-  
+
   const portfolioData = await generatePortfolioData(modsData, prStatus);
-  
+
   const portfolioPath = path.join(__dirname, "../../data/portfolio_mods.json");
-  fs.writeFileSync(portfolioPath, JSON.stringify(portfolioData, null, 2) + "\n");
+  fs.writeFileSync(
+    portfolioPath,
+    JSON.stringify(portfolioData, null, 2) + "\n"
+  );
   console.log("✓ portfolio_mods.json generated!");
 
   // Generate SVG (both themes)
@@ -345,7 +359,7 @@ async function generatePortfolioData(modsData, prStatus) {
   const portfolioData = {
     owner: [],
     others: [],
-    lastUpdated: modsData.last_updated
+    lastUpdated: modsData.last_updated,
   };
 
   // Process active mods (owner's mods)
@@ -355,15 +369,21 @@ async function generatePortfolioData(modsData, prStatus) {
     let details = null;
     if (!mod.image) {
       console.log(`  Fetching details for ${mod.name}...`);
-      details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Rate limit
+      details = await fetchCurseForgeModDetails(
+        mod.curseforge_id,
+        mod.curseforge_slug
+      );
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Rate limit
     } else {
       console.log(`  Using cached data for ${mod.name}`);
       // Still fetch for downloads count
-      details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      details = await fetchCurseForgeModDetails(
+        mod.curseforge_id,
+        mod.curseforge_slug
+      );
+      await new Promise((resolve) => setTimeout(resolve, 1000));
     }
-    
+
     portfolioData.owner.push({
       title: mod.name,
       author: details?.author || "CrabMods",
@@ -375,7 +395,7 @@ async function generatePortfolioData(modsData, prStatus) {
       url: `${CURSEFORGE_BASE}/${mod.curseforge_slug}`,
       categories: details?.categories || ["Mods"],
       isOwner: true,
-      role: mod.role
+      role: mod.role,
     });
   }
 
@@ -383,12 +403,15 @@ async function generatePortfolioData(modsData, prStatus) {
   console.log("Processing released mods...");
   for (const mod of modsData.mods.released || []) {
     console.log(`  Fetching details for ${mod.name}...`);
-    const details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    const details = await fetchCurseForgeModDetails(
+      mod.curseforge_id,
+      mod.curseforge_slug
+    );
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     portfolioData.others.push({
       title: mod.name,
-      author: details?.author || mod.repo?.split('/')[0] || "Unknown",
+      author: details?.author || mod.repo?.split("/")[0] || "Unknown",
       downloads: details ? formatDownloads(details.downloads) : "0",
       updated: details ? formatDate(details.updated) : "",
       created: details ? formatDate(details.created) : "",
@@ -400,7 +423,7 @@ async function generatePortfolioData(modsData, prStatus) {
       role: mod.role,
       repo: mod.repo,
       migration: mod.migration,
-      status: "released"
+      status: "released",
     });
   }
 
@@ -408,14 +431,17 @@ async function generatePortfolioData(modsData, prStatus) {
   console.log("Processing in-development mods...");
   for (const mod of modsData.mods.in_development || []) {
     console.log(`  Fetching details for ${mod.name}...`);
-    const details = await fetchCurseForgeModDetails(mod.curseforge_id, mod.curseforge_slug);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    const details = await fetchCurseForgeModDetails(
+      mod.curseforge_id,
+      mod.curseforge_slug
+    );
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     const pr = prStatus[mod.repo];
-    
+
     portfolioData.others.push({
       title: mod.name,
-      author: details?.author || mod.repo?.split('/')[0] || "Unknown",
+      author: details?.author || mod.repo?.split("/")[0] || "Unknown",
       downloads: details ? formatDownloads(details.downloads) : "0",
       updated: details ? formatDate(details.updated) : "",
       created: details ? formatDate(details.created) : "",
@@ -428,11 +454,13 @@ async function generatePortfolioData(modsData, prStatus) {
       repo: mod.repo,
       migration: mod.migration,
       status: "in_development",
-      prStatus: pr ? {
-        status: pr.status,
-        number: pr.number,
-        url: pr.url
-      } : undefined
+      prStatus: pr
+        ? {
+            status: pr.status,
+            number: pr.number,
+            url: pr.url,
+          }
+        : undefined,
     });
   }
 
