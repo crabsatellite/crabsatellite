@@ -3,7 +3,7 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "445.1K",
+      "downloads": "447.6K",
       "updated": "May 8, 2023",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "933",
+      "downloads": "949",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -35,7 +35,7 @@
     {
       "title": "LeafDecayStopper",
       "author": "CrabMods",
-      "downloads": "2.6K",
+      "downloads": "2.7K",
       "updated": "Oct 28, 2024",
       "created": "Oct 28, 2024",
       "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "735.2K",
+      "downloads": "737.5K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -94,9 +94,9 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "128.4M",
-      "updated": "Dec 8, 2020",
-      "created": "Dec 8, 2020",
+      "downloads": "128.5M",
+      "updated": "Dec 7, 2020",
+      "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
       "image": "https://media.forgecdn.net/avatars/thumbnails/543/777/256/256/637874731161865623.jpeg",
       "url": "https://www.curseforge.com/minecraft/mc-mods/alexs-mobs",
@@ -112,9 +112,9 @@
       "migration": "1.20.1 → 1.21.1",
       "status": "in_development",
       "prStatus": {
-        "status": "merged",
-        "number": 2318,
-        "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318"
+        "status": "open",
+        "number": 2319,
+        "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2319"
       }
     },
     {
@@ -147,9 +147,9 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "170.8M",
-      "updated": "Jul 24, 2019",
-      "created": "Jul 24, 2019",
+      "downloads": "170.9M",
+      "updated": "Jul 23, 2019",
+      "created": "Jul 23, 2019",
       "description": "Feature fixes and bug fixes contribution",
       "image": "https://media.forgecdn.net/avatars/thumbnails/214/988/256/256/636995179309161946.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/citadel",
@@ -172,8 +172,8 @@
       "title": "Extra Golems",
       "author": "skyjay1",
       "downloads": "8.5M",
-      "updated": "Jul 30, 2015",
-      "created": "Jul 30, 2015",
+      "updated": "Jul 29, 2015",
+      "created": "Jul 29, 2015",
       "description": "Full port to NeoForge 1.21.1",
       "image": "https://media.forgecdn.net/avatars/thumbnails/186/336/256/256/636832893257126275.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/extra-golems",
@@ -224,8 +224,8 @@
       "title": "Greek Fantasy",
       "author": "skyjay1",
       "downloads": "6.5M",
-      "updated": "Nov 7, 2020",
-      "created": "Nov 7, 2020",
+      "updated": "Nov 6, 2020",
+      "created": "Nov 6, 2020",
       "description": "Full port to Forge 1.20.1",
       "image": "https://media.forgecdn.net/avatars/thumbnails/306/667/256/256/637385699213327088.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/greek-fantasy",
@@ -267,5 +267,5 @@
       "status": "in_development"
     }
   ],
-  "lastUpdated": "2026-01-11T12:31:32.175Z"
+  "lastUpdated": "2026-01-12T00:29:19.985Z"
 }

@@ -138,11 +138,11 @@
   },
   "pr_status": {
     "AlexModGuy/AlexsMobs": {
-      "status": "merged",
-      "number": 2318,
-      "title": "Fix in order to compatiable with the latest Citadel",
-      "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318",
-      "updated_at": "2026-01-10T17:01:25Z"
+      "status": "open",
+      "number": 2319,
+      "title": "Fix in order to be compatiable with latest Citadel",
+      "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2319",
+      "updated_at": "2026-01-11T15:41:31Z"
     },
     "AlexModGuy/AlexsCaves": {
       "status": "merged",
@@ -156,7 +156,7 @@
       "number": 220,
       "title": "1.21 Port Bug Fix ",
       "url": "https://github.com/AlexModGuy/Citadel/pull/220",
-      "updated_at": "2026-01-11T03:22:40Z"
+      "updated_at": "2026-01-11T16:07:38Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -210,5 +210,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-11T12:31:32.175Z"
+  "last_updated": "2026-01-12T00:29:19.985Z"
 }
