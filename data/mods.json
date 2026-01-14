@@ -156,7 +156,7 @@
       "number": 220,
       "title": "1.21 Port Bug Fix ",
       "url": "https://github.com/AlexModGuy/Citadel/pull/220",
-      "updated_at": "2026-01-12T04:05:07Z"
+      "updated_at": "2026-01-13T22:50:02Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -210,5 +210,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-13T00:23:57.493Z"
+  "last_updated": "2026-01-14T00:28:58.306Z"
 }
