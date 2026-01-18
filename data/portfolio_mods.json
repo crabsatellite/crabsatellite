@@ -3,7 +3,7 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "494.1K",
+      "downloads": "528.8K",
       "updated": "May 8, 2023",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "1.1K",
+      "downloads": "1.2K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "750.0K",
+      "downloads": "752.6K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -92,9 +92,28 @@
       "status": "released"
     },
     {
+      "title": "Citadel",
+      "author": "sbom_xela",
+      "downloads": "172.0M",
+      "updated": "Jul 23, 2019",
+      "created": "Jul 23, 2019",
+      "description": "Feature fixes and bug fixes contribution",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/214/988/256/256/636995179309161946.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/citadel",
+      "categories": [
+        "Miscellaneous",
+        "API and Library"
+      ],
+      "isOwner": false,
+      "role": "Contributor",
+      "repo": "AlexModGuy/Citadel",
+      "migration": "1.20.1 → 1.21.1",
+      "status": "released"
+    },
+    {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "129.1M",
+      "downloads": "129.3M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -120,7 +139,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "22.8M",
+      "downloads": "22.9M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -142,30 +161,6 @@
         "status": "merged",
         "number": 1693,
         "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693"
-      }
-    },
-    {
-      "title": "Citadel",
-      "author": "sbom_xela",
-      "downloads": "171.8M",
-      "updated": "Jul 23, 2019",
-      "created": "Jul 23, 2019",
-      "description": "Feature fixes and bug fixes contribution",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/214/988/256/256/636995179309161946.png",
-      "url": "https://www.curseforge.com/minecraft/mc-mods/citadel",
-      "categories": [
-        "API and Library",
-        "Miscellaneous"
-      ],
-      "isOwner": false,
-      "role": "Contributor",
-      "repo": "AlexModGuy/Citadel",
-      "migration": "1.20.1 → 1.21.1",
-      "status": "in_development",
-      "prStatus": {
-        "status": "merged",
-        "number": 220,
-        "url": "https://github.com/AlexModGuy/Citadel/pull/220"
       }
     },
     {
@@ -267,5 +262,5 @@
       "status": "in_development"
     }
   ],
-  "lastUpdated": "2026-01-17T00:26:51.459Z"
+  "lastUpdated": "2026-01-18T00:30:22.198Z"
 }

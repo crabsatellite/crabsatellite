@@ -54,6 +54,17 @@
         "role": "Migration Lead",
         "description": "Full port to NeoForge 1.21.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/54/621/256/256/636205405028620627.png"
+      },
+      {
+        "name": "Citadel",
+        "repo": "AlexModGuy/Citadel",
+        "curseforge_slug": "citadel",
+        "curseforge_id": 331936,
+        "migration": "1.20.1 → 1.21.1",
+        "target_version": "1.21.1",
+        "role": "Contributor",
+        "description": "Feature fixes and bug fixes contribution",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/284/332/256/256/637323093490439690.png"
       }
     ],
     "in_development": [
@@ -78,17 +89,6 @@
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/912/645/256/256/638378055785451297.png"
-      },
-      {
-        "name": "Citadel",
-        "repo": "AlexModGuy/Citadel",
-        "curseforge_slug": "citadel",
-        "curseforge_id": 331936,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
-        "role": "Contributor",
-        "description": "Feature fixes and bug fixes contribution",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/284/332/256/256/637323093490439690.png"
       },
       {
         "name": "Extra Golems",
@@ -142,7 +142,7 @@
       "number": 2319,
       "title": "Fix in order to be compatiable with latest Citadel",
       "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2319",
-      "updated_at": "2026-01-14T22:26:53Z"
+      "updated_at": "2026-01-17T18:35:02Z"
     },
     "AlexModGuy/AlexsCaves": {
       "status": "merged",
@@ -150,13 +150,6 @@
       "title": "Port to 1.21.1",
       "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
       "updated_at": "2026-01-10T17:02:44Z"
-    },
-    "AlexModGuy/Citadel": {
-      "status": "merged",
-      "number": 220,
-      "title": "1.21 Port Bug Fix ",
-      "url": "https://github.com/AlexModGuy/Citadel/pull/220",
-      "updated_at": "2026-01-14T22:25:52Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -170,7 +163,7 @@
       "number": 1,
       "title": "Port Pelagic-Prehistory to 1.20.1",
       "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
-      "updated_at": "2025-12-28T10:13:50Z"
+      "updated_at": "2026-01-17T14:16:42Z"
     },
     "skyjay1/GreekFantasy": {
       "status": "open",
@@ -190,7 +183,9 @@
       "method": "curseforge-api"
     },
     "citadel": {
-      "released": false,
+      "released": true,
+      "file_name": "citadel-2.7.0-1.21.1.jar",
+      "file_id": 7476597,
       "method": "curseforge-api"
     },
     "extra-golems": {
@@ -210,5 +205,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-17T00:26:51.459Z"
+  "last_updated": "2026-01-18T00:30:22.198Z"
 }
