@@ -97,7 +97,7 @@
         "repo": "AlexModGuy/AlexsMobs",
         "curseforge_slug": "alexs-mobs",
         "curseforge_id": 426558,
-        "role": "Maintainer",
+        "role": "Migration Lead",
         "description": "Full port to NeoForge 1.21.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/304/969/256/256/637367729541758498.png",
         "contributions": [
@@ -114,7 +114,7 @@
         "repo": "AlexModGuy/AlexsCaves",
         "curseforge_slug": "alexs-caves",
         "curseforge_id": 924854,
-        "role": "Maintainer",
+        "role": "Migration Lead",
         "description": "Full port to NeoForge 1.21.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/912/645/256/256/638378055785451297.png",
         "contributions": [
@@ -131,7 +131,7 @@
         "repo": "MinecraftModDevelopmentMods/Extra-Golems",
         "curseforge_slug": "extra-golems",
         "curseforge_id": 233300,
-        "role": "Maintainer",
+        "role": "Migration Lead",
         "description": "Full port to NeoForge 1.21.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/34/587/256/256/636097412096548648.png",
         "contributions": [
@@ -148,7 +148,7 @@
         "repo": "skyjay1/Pelagic-Prehistory",
         "curseforge_slug": "pelagic-prehistory",
         "curseforge_id": 865244,
-        "role": "Maintainer",
+        "role": "Migration Lead",
         "description": "Full port to Forge 1.20.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/880/917/256/256/638309397915161161.png",
         "contributions": [
@@ -165,7 +165,7 @@
         "repo": "skyjay1/GreekFantasy",
         "curseforge_slug": "greek-fantasy",
         "curseforge_id": 413724,
-        "role": "Maintainer",
+        "role": "Migration Lead",
         "description": "Full port to Forge 1.20.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/306/667/256/256/637385699213327088.png",
         "contributions": [
@@ -182,7 +182,7 @@
         "repo": "skyjay1/RPG-Gods",
         "curseforge_slug": "rpg-gods",
         "curseforge_id": 601680,
-        "role": "Maintainer",
+        "role": "Migration Lead",
         "description": "Full port to Forge 1.20.1",
         "image": "https://media.forgecdn.net/avatars/thumbnails/613/147/256/256/638009621810397143.png",
         "contributions": [
@@ -419,5 +419,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-19T02:59:52.472Z"
+  "last_updated": "2026-01-19T04:02:08.165Z"
 }
