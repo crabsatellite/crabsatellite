@@ -153,21 +153,22 @@ async function fetchPRs(repo) {
 
 /**
  * Check if a mod has been released for the target Minecraft version on CurseForge
- * Uses the CurseForge internal API endpoint
  */
 async function checkCurseForgeRelease(mod) {
-  const { curseforge_slug, target_version, curseforge_id } = mod;
+  const { curseforge_slug, curseforge_id, contributions } = mod;
+  
+  // Get target versions to check from contributions array
+  const targetVersions = (contributions || [])
+    .filter(c => c.target_version && c.status !== 'released')
+    .map(c => c.target_version);
 
-  if (!curseforge_slug || !target_version) {
-    return {
-      released: false,
-      error: "Missing curseforge_slug or target_version",
-    };
+  if (!curseforge_slug || targetVersions.length === 0) {
+    return { released: false, versions: {} };
   }
 
   // Use CurseForge's internal API endpoint for fetching files with version filter
   // This endpoint is used by the CurseForge website itself
-  const apiUrl = `https://www.curseforge.com/api/v1/mods/${curseforge_id}/files?pageIndex=0&pageSize=20&sort=dateCreated&sortDescending=true&removeAlphas=true`;
+  const apiUrl = `https://www.curseforge.com/api/v1/mods/${curseforge_id}/files?pageIndex=0&pageSize=50&sort=dateCreated&sortDescending=true&removeAlphas=true`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -183,46 +184,97 @@ async function checkCurseForgeRelease(mod) {
       console.error(
         `  API returned HTTP ${response.status} for ${curseforge_slug}`
       );
-      return { released: false, error: `HTTP ${response.status}` };
+      return { released: false, error: `HTTP ${response.status}`, versions: {} };
     }
 
     const data = await response.json();
+    
+    // Check which target versions have been released
+    const versionResults = {};
+    let anyReleased = false;
 
-    // Check if any file supports the target version
+    // Check if any file supports each target version
     if (data.data && Array.isArray(data.data)) {
-      for (const file of data.data) {
-        // Try multiple possible version field names
-        const gameVersions =
-          file.gameVersions || file.sortableGameVersions || [];
+      for (const targetVersion of targetVersions) {
+        let found = false;
+        for (const file of data.data) {
+          // Try multiple possible version field names
+          const gameVersions =
+            file.gameVersions || file.sortableGameVersions || [];
 
-        // Handle both string arrays and object arrays
-        const versionStrings = gameVersions.map((v) =>
-          typeof v === "string"
-            ? v
-            : v.gameVersionName || v.name || v.gameVersion || ""
-        );
+          // Handle both string arrays and object arrays
+          const versionStrings = gameVersions.map((v) =>
+            typeof v === "string"
+              ? v
+              : v.gameVersionName || v.name || v.gameVersion || ""
+          );
 
-        // Check if target version is in the list
-        const hasTargetVersion = versionStrings.some(
-          (v) => v === target_version || v.includes(target_version)
-        );
+          // Check if target version is in the list
+          const hasTargetVersion = versionStrings.some(
+            (v) => v === targetVersion || v.includes(targetVersion)
+          );
 
-        if (hasTargetVersion) {
-          return {
-            released: true,
-            file_name: file.fileName,
-            file_id: file.id,
-            method: "curseforge-api",
-          };
+          if (hasTargetVersion) {
+            versionResults[targetVersion] = {
+              released: true,
+              file_name: file.fileName,
+              file_id: file.id,
+            };
+            found = true;
+            anyReleased = true;
+            break;
+          }
+        }
+        if (!found) {
+          versionResults[targetVersion] = { released: false };
         }
       }
     }
 
-    return { released: false, method: "curseforge-api" };
+    return { 
+      released: anyReleased, 
+      versions: versionResults,
+      method: "curseforge-api" 
+    };
   } catch (error) {
     console.error(`  Error checking ${curseforge_slug}:`, error.message);
-    return { released: false, error: error.message };
+    return { released: false, error: error.message, versions: {} };
   }
+}
+
+/**
+ * Contribution type display labels
+ */
+const CONTRIBUTION_LABELS = {
+  migration: 'Migration',
+  bugfix: 'Bug Fix',
+  feature: 'Feature',
+  port: 'Port',
+  maintenance: 'Maintenance',
+  documentation: 'Docs',
+  translation: 'Translation',
+  other: 'Contribution',
+};
+
+/**
+ * Get display string for contributions
+ */
+function getContributionsDisplay(mod) {
+  return (mod.contributions || []).map(c => {
+    if (c.type === 'migration') {
+      return c.migration || `→ ${c.target_version}`;
+    }
+    return CONTRIBUTION_LABELS[c.type] || c.type || 'Contribution';
+  }).join(', ');
+}
+
+/**
+ * Get target versions for checking release
+ */
+function getTargetVersions(mod) {
+  return (mod.contributions || [])
+    .filter(c => c.target_version && c.status !== 'released')
+    .map(c => c.target_version);
 }
 
 /**
@@ -241,28 +293,44 @@ async function main() {
   const prStatus = {};
   const releaseStatus = {};
   const modsToRelease = []; // in_development → released
+  const contributionsToUpdate = []; // For updating individual contribution status
 
-  // Step 1: Check CurseForge releases for in_development mods ONLY
-  // Released mods are not checked - if you want to add a new target version,
-  // manually move the mod to in_development with the new target_version
+  // Step 1: Check CurseForge releases for in_development mods
+  // Supports both single target_version and multiple contributions
   console.log("📦 Checking CurseForge for in_development mods...\n");
 
   for (const mod of modsData.mods.in_development) {
-    console.log(`Checking ${mod.name} for ${mod.target_version} release...`);
+    const targetVersions = getTargetVersions(mod);
+    const displayVersions = targetVersions.join(', ') || 'N/A';
+    console.log(`Checking ${mod.name} for [${displayVersions}] release...`);
+    
     const release = await checkCurseForgeRelease(mod);
     releaseStatus[mod.curseforge_slug] = release;
 
-    if (release.released) {
-      console.log(`  ✅ RELEASED on CurseForge!`);
+    // Update individual contribution status
+    let allReleased = true;
+    for (const contribution of mod.contributions || []) {
+      if (contribution.target_version && release.versions[contribution.target_version]?.released) {
+        console.log(`  ✅ ${contribution.target_version} RELEASED!`);
+        contribution.status = 'released';
+      } else if (contribution.target_version && contribution.status !== 'released') {
+        console.log(`  ⏳ ${contribution.target_version} not released yet`);
+        allReleased = false;
+      } else if (!contribution.target_version && contribution.status !== 'released') {
+        // Non-migration contributions (bugfix, feature, etc.) - check if still in progress
+        allReleased = false;
+      }
+    }
+    
+    // Only move to released if ALL contributions are released
+    if (allReleased && mod.contributions?.length > 0) {
       modsToRelease.push(mod);
-    } else {
-      console.log(`  ⏳ Not released yet`);
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 1500)); // Rate limiting
+    await new Promise((resolve) => setTimeout(resolve, 1500));
   }
 
-  // Step 2: Move released mods from in_development to released
+  // Step 2: Move fully released mods from in_development to released
   if (modsToRelease.length > 0) {
     console.log(
       `\n🚀 Moving ${modsToRelease.length} mod(s) to Released section...`
@@ -293,27 +361,22 @@ async function main() {
   const allModsWithRepos = [
     ...modsData.mods.in_development,
     ...modsData.mods.released,
-  ].filter((mod) => mod.repo); // Only mods with repo field
+  ].filter((mod) => mod.repo);
 
   for (const mod of allModsWithRepos) {
     console.log(`Checking ${mod.name} (${mod.repo})...`);
     const prResult = await fetchPRs(mod.repo);
 
-    if (prResult && prResult.rateLimited) {
-      // Rate limited - preserve existing data
+    if (prResult?.rateLimited) {
       if (existingPrStatus[mod.repo]) {
         prStatus[mod.repo] = existingPrStatus[mod.repo];
-        const existingCount = existingPrStatus[mod.repo].prs?.length || 1;
-        console.log(
-          `  → Rate limited, keeping existing: ${existingCount} PR(s)`
-        );
+        console.log(`  → Rate limited, keeping existing: ${existingPrStatus[mod.repo].prs?.length || 0} PR(s)`);
       } else {
         console.log(`  → Rate limited, no existing data`);
       }
-    } else if (prResult && prResult.prs && prResult.prs.length > 0) {
+    } else if (prResult?.prs?.length > 0) {
       prStatus[mod.repo] = prResult;
-      console.log(`  → Found ${prResult.prs.length} PR(s) (total: ${prResult.total})`);
-      // Log first few PRs for visibility
+      console.log(`  → Found ${prResult.prs.length} PR(s)`);
       prResult.prs.slice(0, 3).forEach((pr) => {
         console.log(`    - #${pr.number} [${pr.status.toUpperCase()}]: ${pr.title.slice(0, 50)}...`);
       });
@@ -412,15 +475,10 @@ async function generatePortfolioData(modsData, prStatus) {
       isOwner: false,
       role: mod.role,
       repo: mod.repo,
-      migration: mod.migration,
+      migration: getContributionsDisplay(mod),
+      contributions: mod.contributions,
       status: "released",
-      prStatus: latestPR
-        ? {
-            status: latestPR.status,
-            number: latestPR.number,
-            url: latestPR.url,
-          }
-        : undefined,
+      prStatus: latestPR ? { status: latestPR.status, number: latestPR.number, url: latestPR.url } : undefined,
       allPRs: prData?.prs || [],
     });
   }
@@ -436,7 +494,6 @@ async function generatePortfolioData(modsData, prStatus) {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const prData = prStatus[mod.repo];
-    // Get the latest PR for display, but keep full list available
     const latestPR = prData?.prs?.[0];
 
     portfolioData.others.push({
@@ -452,15 +509,10 @@ async function generatePortfolioData(modsData, prStatus) {
       isOwner: false,
       role: mod.role,
       repo: mod.repo,
-      migration: mod.migration,
+      migration: getContributionsDisplay(mod),
+      contributions: mod.contributions,
       status: "in_development",
-      prStatus: latestPR
-        ? {
-            status: latestPR.status,
-            number: latestPR.number,
-            url: latestPR.url,
-          }
-        : undefined,
+      prStatus: latestPR ? { status: latestPR.status, number: latestPR.number, url: latestPR.url } : undefined,
       allPRs: prData?.prs || [],
     });
   }

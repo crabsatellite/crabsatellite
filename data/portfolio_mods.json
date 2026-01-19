@@ -68,6 +68,14 @@
       "role": "Migration Lead",
       "repo": "skyjay1/TanukiDecor",
       "migration": "1.20.1 → 1.21.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.20.1 → 1.21.1",
+          "target_version": "1.21.1",
+          "status": "released"
+        }
+      ],
       "status": "released",
       "allPRs": []
     },
@@ -90,6 +98,14 @@
       "role": "Migration Lead",
       "repo": "skyjay1/Nomadic-Tents",
       "migration": "1.20.1 → 1.21.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.20.1 → 1.21.1",
+          "target_version": "1.21.1",
+          "status": "released"
+        }
+      ],
       "status": "released",
       "prStatus": {
         "status": "merged",
@@ -114,7 +130,7 @@
       "downloads": "172.2M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
-      "description": "Feature fixes and bug fixes contribution",
+      "description": "Version migration and ongoing bug fixes",
       "image": "https://media.forgecdn.net/avatars/thumbnails/214/988/256/256/636995179309161946.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/citadel",
       "categories": [
@@ -124,7 +140,21 @@
       "isOwner": false,
       "role": "Contributor",
       "repo": "AlexModGuy/Citadel",
-      "migration": "1.20.1 → 1.21.1",
+      "migration": "1.20.1 → 1.21.1, Bug Fix",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.20.1 → 1.21.1",
+          "target_version": "1.21.1",
+          "status": "released",
+          "description": "Port to NeoForge 1.21.1"
+        },
+        {
+          "type": "bugfix",
+          "description": "Renderer and pathfinding fixes",
+          "status": "in_progress"
+        }
+      ],
       "status": "released",
       "prStatus": {
         "status": "open",
@@ -180,6 +210,14 @@
       "role": "Maintainer",
       "repo": "AlexModGuy/AlexsMobs",
       "migration": "1.20.1 → 1.21.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.20.1 → 1.21.1",
+          "target_version": "1.21.1",
+          "status": "in_progress"
+        }
+      ],
       "status": "in_development",
       "prStatus": {
         "status": "open",
@@ -254,6 +292,14 @@
       "role": "Maintainer",
       "repo": "AlexModGuy/AlexsCaves",
       "migration": "1.20.1 → 1.21.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.20.1 → 1.21.1",
+          "target_version": "1.21.1",
+          "status": "in_progress"
+        }
+      ],
       "status": "in_development",
       "prStatus": {
         "status": "open",
@@ -300,6 +346,14 @@
       "role": "Maintainer",
       "repo": "MinecraftModDevelopmentMods/Extra-Golems",
       "migration": "1.20.1 → 1.21.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.20.1 → 1.21.1",
+          "target_version": "1.21.1",
+          "status": "in_progress"
+        }
+      ],
       "status": "in_development",
       "prStatus": {
         "status": "open",
@@ -337,6 +391,14 @@
       "role": "Maintainer",
       "repo": "skyjay1/Pelagic-Prehistory",
       "migration": "1.19.2 → 1.20.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.19.2 → 1.20.1",
+          "target_version": "1.20.1",
+          "status": "in_progress"
+        }
+      ],
       "status": "in_development",
       "prStatus": {
         "status": "open",
@@ -373,6 +435,14 @@
       "role": "Maintainer",
       "repo": "skyjay1/GreekFantasy",
       "migration": "1.19.2 → 1.20.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.19.2 → 1.20.1",
+          "target_version": "1.20.1",
+          "status": "in_progress"
+        }
+      ],
       "status": "in_development",
       "prStatus": {
         "status": "open",
@@ -410,9 +480,17 @@
       "role": "Maintainer",
       "repo": "skyjay1/RPG-Gods",
       "migration": "1.19.2 → 1.20.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.19.2 → 1.20.1",
+          "target_version": "1.20.1",
+          "status": "in_progress"
+        }
+      ],
       "status": "in_development",
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-01-19T02:07:31.964Z"
+  "lastUpdated": "2026-01-19T02:59:52.472Z"
 }

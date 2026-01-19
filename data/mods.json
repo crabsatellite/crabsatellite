@@ -38,33 +38,57 @@
         "repo": "skyjay1/TanukiDecor",
         "curseforge_slug": "tanukidecor",
         "curseforge_id": 953094,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
         "role": "Migration Lead",
         "description": "Full port to NeoForge 1.21.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/922/804/256/256/638388680754044327.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/922/804/256/256/638388680754044327.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.20.1 → 1.21.1",
+            "target_version": "1.21.1",
+            "status": "released"
+          }
+        ]
       },
       {
         "name": "Nomadic Tents",
         "repo": "skyjay1/Nomadic-Tents",
         "curseforge_slug": "nomadic-tents",
         "curseforge_id": 238794,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
         "role": "Migration Lead",
         "description": "Full port to NeoForge 1.21.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/54/621/256/256/636205405028620627.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/54/621/256/256/636205405028620627.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.20.1 → 1.21.1",
+            "target_version": "1.21.1",
+            "status": "released"
+          }
+        ]
       },
       {
         "name": "Citadel",
         "repo": "AlexModGuy/Citadel",
         "curseforge_slug": "citadel",
         "curseforge_id": 331936,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
         "role": "Contributor",
-        "description": "Feature fixes and bug fixes contribution",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/284/332/256/256/637323093490439690.png"
+        "description": "Version migration and ongoing bug fixes",
+        "image": "https://media.forgecdn.net/avatars/thumbnails/284/332/256/256/637323093490439690.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.20.1 → 1.21.1",
+            "target_version": "1.21.1",
+            "status": "released",
+            "description": "Port to NeoForge 1.21.1"
+          },
+          {
+            "type": "bugfix",
+            "description": "Renderer and pathfinding fixes",
+            "status": "in_progress"
+          }
+        ]
       }
     ],
     "in_development": [
@@ -73,66 +97,102 @@
         "repo": "AlexModGuy/AlexsMobs",
         "curseforge_slug": "alexs-mobs",
         "curseforge_id": 426558,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/304/969/256/256/637367729541758498.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/304/969/256/256/637367729541758498.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.20.1 → 1.21.1",
+            "target_version": "1.21.1",
+            "status": "in_progress"
+          }
+        ]
       },
       {
         "name": "Alex's Caves",
         "repo": "AlexModGuy/AlexsCaves",
         "curseforge_slug": "alexs-caves",
         "curseforge_id": 924854,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/912/645/256/256/638378055785451297.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/912/645/256/256/638378055785451297.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.20.1 → 1.21.1",
+            "target_version": "1.21.1",
+            "status": "in_progress"
+          }
+        ]
       },
       {
         "name": "Extra Golems",
         "repo": "MinecraftModDevelopmentMods/Extra-Golems",
         "curseforge_slug": "extra-golems",
         "curseforge_id": 233300,
-        "migration": "1.20.1 → 1.21.1",
-        "target_version": "1.21.1",
         "role": "Maintainer",
         "description": "Full port to NeoForge 1.21.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/34/587/256/256/636097412096548648.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/34/587/256/256/636097412096548648.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.20.1 → 1.21.1",
+            "target_version": "1.21.1",
+            "status": "in_progress"
+          }
+        ]
       },
       {
         "name": "Pelagic Prehistory",
         "repo": "skyjay1/Pelagic-Prehistory",
         "curseforge_slug": "pelagic-prehistory",
         "curseforge_id": 865244,
-        "migration": "1.19.2 → 1.20.1",
-        "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/880/917/256/256/638309397915161161.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/880/917/256/256/638309397915161161.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.19.2 → 1.20.1",
+            "target_version": "1.20.1",
+            "status": "in_progress"
+          }
+        ]
       },
       {
         "name": "Greek Fantasy",
         "repo": "skyjay1/GreekFantasy",
         "curseforge_slug": "greek-fantasy",
         "curseforge_id": 413724,
-        "migration": "1.19.2 → 1.20.1",
-        "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/306/667/256/256/637385699213327088.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/306/667/256/256/637385699213327088.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.19.2 → 1.20.1",
+            "target_version": "1.20.1",
+            "status": "in_progress"
+          }
+        ]
       },
       {
         "name": "RPG Gods",
         "repo": "skyjay1/RPG-Gods",
         "curseforge_slug": "rpg-gods",
         "curseforge_id": 601680,
-        "migration": "1.19.2 → 1.20.1",
-        "target_version": "1.20.1",
         "role": "Maintainer",
         "description": "Full port to Forge 1.20.1",
-        "image": "https://media.forgecdn.net/avatars/thumbnails/613/147/256/256/638009621810397143.png"
+        "image": "https://media.forgecdn.net/avatars/thumbnails/613/147/256/256/638009621810397143.png",
+        "contributions": [
+          {
+            "type": "migration",
+            "migration": "1.19.2 → 1.20.1",
+            "target_version": "1.20.1",
+            "status": "in_progress"
+          }
+        ]
       }
     ]
   },
@@ -306,28 +366,58 @@
   "release_status": {
     "alexs-mobs": {
       "released": false,
+      "versions": {
+        "1.21.1": {
+          "released": false
+        }
+      },
       "method": "curseforge-api"
     },
     "alexs-caves": {
       "released": false,
+      "versions": {
+        "1.21.1": {
+          "released": false
+        }
+      },
       "method": "curseforge-api"
     },
     "extra-golems": {
       "released": false,
+      "versions": {
+        "1.21.1": {
+          "released": false
+        }
+      },
       "method": "curseforge-api"
     },
     "pelagic-prehistory": {
       "released": false,
+      "versions": {
+        "1.20.1": {
+          "released": false
+        }
+      },
       "method": "curseforge-api"
     },
     "greek-fantasy": {
       "released": false,
+      "versions": {
+        "1.20.1": {
+          "released": false
+        }
+      },
       "method": "curseforge-api"
     },
     "rpg-gods": {
       "released": false,
+      "versions": {
+        "1.20.1": {
+          "released": false
+        }
+      },
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-19T02:07:31.964Z"
+  "last_updated": "2026-01-19T02:59:52.472Z"
 }
