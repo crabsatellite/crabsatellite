@@ -138,18 +138,18 @@
   },
   "pr_status": {
     "AlexModGuy/AlexsMobs": {
-      "status": "merged",
-      "number": 2319,
-      "title": "Fix in order to be compatiable with latest Citadel",
-      "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2319",
-      "updated_at": "2026-01-17T18:35:02Z"
+      "status": "open",
+      "number": 2323,
+      "title": "Fix EntityEnderiophageRocket and TarantulaHawkElytra Rendering",
+      "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2323",
+      "updated_at": "2026-01-18T10:12:04Z"
     },
     "AlexModGuy/AlexsCaves": {
-      "status": "merged",
-      "number": 1693,
-      "title": "Port to 1.21.1",
-      "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
-      "updated_at": "2026-01-10T17:02:44Z"
+      "status": "open",
+      "number": 1698,
+      "title": "1.21.1 neoforge bug fix",
+      "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1698",
+      "updated_at": "2026-01-18T14:08:48Z"
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "status": "open",
@@ -163,7 +163,7 @@
       "number": 1,
       "title": "Port Pelagic-Prehistory to 1.20.1",
       "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
-      "updated_at": "2026-01-17T14:16:42Z"
+      "updated_at": "2026-01-18T13:53:01Z"
     },
     "skyjay1/GreekFantasy": {
       "status": "open",
@@ -180,12 +180,6 @@
     },
     "alexs-caves": {
       "released": false,
-      "method": "curseforge-api"
-    },
-    "citadel": {
-      "released": true,
-      "file_name": "citadel-2.7.0-1.21.1.jar",
-      "file_id": 7476597,
       "method": "curseforge-api"
     },
     "extra-golems": {
@@ -205,5 +199,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-18T00:30:22.198Z"
+  "last_updated": "2026-01-19T00:30:04.715Z"
 }
