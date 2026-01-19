@@ -19,9 +19,7 @@
 [![ShowerCore](https://img.shields.io/badge/ShowerCore-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/showercore)
 [![LeafDecayStopper](https://img.shields.io/badge/LeafDecayStopper-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper)
 
-[![Tanuki Decor](https://img.shields.io/badge/Tanuki%20Decor-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/tanukidecor)
-[![Nomadic Tents](https://img.shields.io/badge/Nomadic%20Tents-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/nomadic-tents)
-[![Citadel](https://img.shields.io/badge/Citadel-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/citadel)
+[![Citadel](https://img.shields.io/badge/Citadel-New_PR-f59e0b?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/citadel)[![#222](https://img.shields.io/badge/%23222-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/Citadel/pull/222)
 
 [![Alex's Mobs](https://img.shields.io/badge/Alex's%20Mobs-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)[![#2323](https://img.shields.io/badge/%232323-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsMobs/pull/2323)
 [![Alex's Caves](https://img.shields.io/badge/Alex's%20Caves-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-caves)[![#1698](https://img.shields.io/badge/%231698-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsCaves/pull/1698)
