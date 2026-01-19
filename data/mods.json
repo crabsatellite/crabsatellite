@@ -138,39 +138,169 @@
   },
   "pr_status": {
     "AlexModGuy/AlexsMobs": {
-      "status": "open",
-      "number": 2323,
-      "title": "Fix EntityEnderiophageRocket and TarantulaHawkElytra Rendering",
-      "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2323",
-      "updated_at": "2026-01-18T10:12:04Z"
+      "prs": [
+        {
+          "status": "open",
+          "number": 2323,
+          "title": "Fix EntityEnderiophageRocket and TarantulaHawkElytra Rendering",
+          "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2323",
+          "created_at": "2026-01-18T09:17:28Z",
+          "updated_at": "2026-01-18T10:12:04Z",
+          "closed_at": null
+        },
+        {
+          "status": "merged",
+          "number": 2319,
+          "title": "Fix in order to be compatiable with latest Citadel",
+          "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2319",
+          "created_at": "2026-01-11T15:22:40Z",
+          "updated_at": "2026-01-18T09:14:59Z",
+          "closed_at": "2026-01-14T22:26:52Z"
+        },
+        {
+          "status": "merged",
+          "number": 2318,
+          "title": "Fix in order to compatiable with the latest Citadel",
+          "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2318",
+          "created_at": "2026-01-08T23:38:04Z",
+          "updated_at": "2026-01-10T17:01:25Z",
+          "closed_at": "2026-01-10T17:01:25Z"
+        },
+        {
+          "status": "merged",
+          "number": 2317,
+          "title": "1.21 Port Bug Fix",
+          "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2317",
+          "created_at": "2026-01-05T17:07:36Z",
+          "updated_at": "2026-01-07T17:25:32Z",
+          "closed_at": "2026-01-07T17:25:32Z"
+        },
+        {
+          "status": "merged",
+          "number": 2315,
+          "title": "Port to 1.21.1 neoforge",
+          "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2315",
+          "created_at": "2025-12-29T11:53:16Z",
+          "updated_at": "2025-12-30T01:05:29Z",
+          "closed_at": "2025-12-29T18:04:25Z"
+        }
+      ],
+      "total": 5
     },
     "AlexModGuy/AlexsCaves": {
-      "status": "open",
-      "number": 1698,
-      "title": "1.21.1 neoforge bug fix",
-      "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1698",
-      "updated_at": "2026-01-18T14:08:48Z"
+      "prs": [
+        {
+          "status": "open",
+          "number": 1698,
+          "title": "1.21.1 neoforge bug fix",
+          "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1698",
+          "created_at": "2026-01-18T09:49:05Z",
+          "updated_at": "2026-01-18T14:08:48Z",
+          "closed_at": null
+        },
+        {
+          "status": "merged",
+          "number": 1693,
+          "title": "Port to 1.21.1",
+          "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1693",
+          "created_at": "2026-01-05T17:29:25Z",
+          "updated_at": "2026-01-10T17:02:44Z",
+          "closed_at": "2026-01-10T17:02:44Z"
+        }
+      ],
+      "total": 2
     },
     "MinecraftModDevelopmentMods/Extra-Golems": {
-      "status": "open",
-      "number": 144,
-      "title": "Port to 1.21.1 neoforge",
-      "url": "https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144",
-      "updated_at": "2025-12-29T12:58:51Z"
+      "prs": [
+        {
+          "status": "open",
+          "number": 144,
+          "title": "Port to 1.21.1 neoforge",
+          "url": "https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144",
+          "created_at": "2025-12-29T12:58:29Z",
+          "updated_at": "2025-12-29T12:58:51Z",
+          "closed_at": null
+        }
+      ],
+      "total": 1
     },
     "skyjay1/Pelagic-Prehistory": {
-      "status": "open",
-      "number": 1,
-      "title": "Port Pelagic-Prehistory to 1.20.1",
-      "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
-      "updated_at": "2026-01-18T13:53:01Z"
+      "prs": [
+        {
+          "status": "open",
+          "number": 1,
+          "title": "Port Pelagic-Prehistory to 1.20.1",
+          "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
+          "created_at": "2025-12-27T15:17:07Z",
+          "updated_at": "2026-01-18T13:53:01Z",
+          "closed_at": null
+        }
+      ],
+      "total": 1
     },
     "skyjay1/GreekFantasy": {
-      "status": "open",
-      "number": 148,
-      "title": "Port to 1.20.1",
-      "url": "https://github.com/skyjay1/GreekFantasy/pull/148",
-      "updated_at": "2025-12-28T10:32:35Z"
+      "prs": [
+        {
+          "status": "open",
+          "number": 148,
+          "title": "Port to 1.20.1",
+          "url": "https://github.com/skyjay1/GreekFantasy/pull/148",
+          "created_at": "2025-12-27T15:20:49Z",
+          "updated_at": "2025-12-28T10:32:35Z",
+          "closed_at": null
+        }
+      ],
+      "total": 1
+    },
+    "skyjay1/RPG-Gods": {
+      "prs": [],
+      "total": 0
+    },
+    "skyjay1/Nomadic-Tents": {
+      "prs": [
+        {
+          "status": "merged",
+          "number": 96,
+          "title": "Port to 1.21.1 Neoforge",
+          "url": "https://github.com/skyjay1/Nomadic-Tents/pull/96",
+          "created_at": "2025-12-11T14:17:30Z",
+          "updated_at": "2025-12-17T03:18:16Z",
+          "closed_at": "2025-12-17T03:18:16Z"
+        }
+      ],
+      "total": 1
+    },
+    "AlexModGuy/Citadel": {
+      "prs": [
+        {
+          "status": "open",
+          "number": 222,
+          "title": "Update renderer, pathfinding, collision handling, and book display for Alex’s Caves and Alex’s Mobs 1.21",
+          "url": "https://github.com/AlexModGuy/Citadel/pull/222",
+          "created_at": "2026-01-18T09:26:39Z",
+          "updated_at": "2026-01-18T09:59:25Z",
+          "closed_at": null
+        },
+        {
+          "status": "merged",
+          "number": 220,
+          "title": "1.21 Port Bug Fix ",
+          "url": "https://github.com/AlexModGuy/Citadel/pull/220",
+          "created_at": "2026-01-05T17:10:52Z",
+          "updated_at": "2026-01-14T22:25:52Z",
+          "closed_at": "2026-01-14T22:25:51Z"
+        },
+        {
+          "status": "merged",
+          "number": 219,
+          "title": "Fix in order to run with Alex's Mobs Neoforge 1.21.1",
+          "url": "https://github.com/AlexModGuy/Citadel/pull/219",
+          "created_at": "2025-12-29T11:56:52Z",
+          "updated_at": "2026-01-06T21:48:59Z",
+          "closed_at": "2025-12-29T18:01:29Z"
+        }
+      ],
+      "total": 3
     }
   },
   "release_status": {
@@ -199,5 +329,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-19T00:30:04.715Z"
+  "last_updated": "2026-01-19T02:07:31.964Z"
 }
