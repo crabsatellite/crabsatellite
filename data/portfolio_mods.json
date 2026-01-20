@@ -3,7 +3,7 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "568.9K",
+      "downloads": "601.3K",
       "updated": "May 8, 2023",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "755.8K",
+      "downloads": "758.1K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "172.3M",
+      "downloads": "172.5M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -192,9 +192,54 @@
       ]
     },
     {
+      "title": "Pelagic Prehistory",
+      "author": "mrmaplem00se",
+      "downloads": "13.2K",
+      "updated": "May 25, 2023",
+      "created": "May 25, 2023",
+      "description": "Full port to Forge 1.20.1",
+      "image": "https://media.forgecdn.net/avatars/thumbnails/822/361/256/256/638205421305341178.png",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory",
+      "categories": [
+        "Ores and Resources",
+        "Genetics",
+        "Mobs",
+        "Food"
+      ],
+      "isOwner": false,
+      "role": "Migration Lead",
+      "repo": "skyjay1/Pelagic-Prehistory",
+      "migration": "1.19.2 → 1.20.1",
+      "contributions": [
+        {
+          "type": "migration",
+          "migration": "1.19.2 → 1.20.1",
+          "target_version": "1.20.1",
+          "status": "released"
+        }
+      ],
+      "status": "released",
+      "prStatus": {
+        "status": "open",
+        "number": 1,
+        "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1"
+      },
+      "allPRs": [
+        {
+          "status": "open",
+          "number": 1,
+          "title": "Port Pelagic-Prehistory to 1.20.1",
+          "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
+          "created_at": "2025-12-27T15:17:07Z",
+          "updated_at": "2026-01-18T13:53:01Z",
+          "closed_at": null
+        }
+      ]
+    },
+    {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "129.5M",
+      "downloads": "129.6M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -313,7 +358,7 @@
           "title": "1.21.1 neoforge bug fix",
           "url": "https://github.com/AlexModGuy/AlexsCaves/pull/1698",
           "created_at": "2026-01-18T09:49:05Z",
-          "updated_at": "2026-01-18T14:08:48Z",
+          "updated_at": "2026-01-19T14:49:20Z",
           "closed_at": null
         },
         {
@@ -368,51 +413,6 @@
           "url": "https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144",
           "created_at": "2025-12-29T12:58:29Z",
           "updated_at": "2025-12-29T12:58:51Z",
-          "closed_at": null
-        }
-      ]
-    },
-    {
-      "title": "Pelagic Prehistory",
-      "author": "mrmaplem00se",
-      "downloads": "13.0K",
-      "updated": "May 25, 2023",
-      "created": "May 25, 2023",
-      "description": "Full port to Forge 1.20.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/822/361/256/256/638205421305341178.png",
-      "url": "https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory",
-      "categories": [
-        "Genetics",
-        "Mobs",
-        "Food",
-        "Ores and Resources"
-      ],
-      "isOwner": false,
-      "role": "Migration Lead",
-      "repo": "skyjay1/Pelagic-Prehistory",
-      "migration": "1.19.2 → 1.20.1",
-      "contributions": [
-        {
-          "type": "migration",
-          "migration": "1.19.2 → 1.20.1",
-          "target_version": "1.20.1",
-          "status": "in_progress"
-        }
-      ],
-      "status": "in_development",
-      "prStatus": {
-        "status": "open",
-        "number": 1,
-        "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1"
-      },
-      "allPRs": [
-        {
-          "status": "open",
-          "number": 1,
-          "title": "Port Pelagic-Prehistory to 1.20.1",
-          "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
-          "created_at": "2025-12-27T15:17:07Z",
-          "updated_at": "2026-01-18T13:53:01Z",
           "closed_at": null
         }
       ]
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-01-19T04:02:08.165Z"
+  "lastUpdated": "2026-01-20T00:27:13.757Z"
 }
