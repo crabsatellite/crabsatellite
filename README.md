@@ -20,7 +20,6 @@
 [![LeafDecayStopper](https://img.shields.io/badge/LeafDecayStopper-Author-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/leafdecaystopper)
 
 [![Citadel](https://img.shields.io/badge/Citadel-New_PR-f59e0b?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/citadel)[![#222](https://img.shields.io/badge/%23222-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/Citadel/pull/222)
-[![Pelagic Prehistory](https://img.shields.io/badge/Pelagic%20Prehistory-New_PR-f59e0b?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory)[![#1](https://img.shields.io/badge/%231-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/skyjay1/Pelagic-Prehistory/pull/1)
 
 [![Alex's Mobs](https://img.shields.io/badge/Alex's%20Mobs-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-mobs)[![#2323](https://img.shields.io/badge/%232323-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsMobs/pull/2323)
 [![Alex's Caves](https://img.shields.io/badge/Alex's%20Caves-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/alexs-caves)[![#1698](https://img.shields.io/badge/%231698-Open-3fb950?style=flat-square&logo=github&logoColor=white)](https://github.com/AlexModGuy/AlexsCaves/pull/1698)
