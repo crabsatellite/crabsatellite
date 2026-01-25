@@ -3,7 +3,7 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "730.1K",
+      "downloads": "768.1K",
       "updated": "May 8, 2023",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "1.7K",
+      "downloads": "1.9K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "766.1K",
+      "downloads": "768.5K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -82,7 +82,7 @@
     {
       "title": "Nomadic Tents",
       "author": "skyjay1",
-      "downloads": "7.4M",
+      "downloads": "7.5M",
       "updated": "Dec 13, 2015",
       "created": "Dec 13, 2015",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "173.2M",
+      "downloads": "173.4M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "mrmaplem00se",
-      "downloads": "13.5K",
+      "downloads": "13.6K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -220,26 +220,26 @@
       ],
       "status": "released",
       "prStatus": {
-        "status": "open",
+        "status": "merged",
         "number": 1,
         "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1"
       },
       "allPRs": [
         {
-          "status": "open",
+          "status": "merged",
           "number": 1,
           "title": "Port Pelagic-Prehistory to 1.20.1",
           "url": "https://github.com/skyjay1/Pelagic-Prehistory/pull/1",
           "created_at": "2025-12-27T15:17:07Z",
-          "updated_at": "2026-01-20T10:30:13Z",
-          "closed_at": null
+          "updated_at": "2026-01-24T04:44:40Z",
+          "closed_at": "2026-01-24T04:44:40Z"
         }
       ]
     },
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "130.1M",
+      "downloads": "130.3M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -276,7 +276,7 @@
           "title": "Fix EntityEnderiophageRocket and TarantulaHawkElytra Rendering",
           "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2323",
           "created_at": "2026-01-18T09:17:28Z",
-          "updated_at": "2026-01-18T10:12:04Z",
+          "updated_at": "2026-01-24T13:22:41Z",
           "closed_at": null
         },
         {
@@ -320,7 +320,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "23.2M",
+      "downloads": "23.3M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-01-24T00:27:13.915Z"
+  "lastUpdated": "2026-01-25T00:31:23.151Z"
 }
