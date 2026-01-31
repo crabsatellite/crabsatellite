@@ -205,7 +205,7 @@
           "title": "Fix EntityEnderiophageRocket and TarantulaHawkElytra Rendering",
           "url": "https://github.com/AlexModGuy/AlexsMobs/pull/2323",
           "created_at": "2026-01-18T09:17:28Z",
-          "updated_at": "2026-01-24T13:22:41Z",
+          "updated_at": "2026-01-30T15:42:31Z",
           "closed_at": null
         },
         {
@@ -410,5 +410,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-01-30T00:32:15.176Z"
+  "last_updated": "2026-01-31T00:31:13.946Z"
 }
