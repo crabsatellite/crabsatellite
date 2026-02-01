@@ -3,15 +3,15 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "976.2K",
+      "downloads": "1.0M",
       "updated": "May 8, 2023",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
       "image": "https://media.forgecdn.net/avatars/thumbnails/815/186/256/256/638191029853594596.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/hotbath",
       "categories": [
-        "Cosmetic",
-        "Adventure and RPG"
+        "Adventure and RPG",
+        "Cosmetic"
       ],
       "isOwner": true,
       "role": "Author"
@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "2.7K",
+      "downloads": "3.0K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "781.1K",
+      "downloads": "783.6K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "174.5M",
+      "downloads": "174.8M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "14.1K",
+      "downloads": "14.2K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "131.0M",
+      "downloads": "131.2M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -320,7 +320,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "23.5M",
+      "downloads": "23.6M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-01-31T00:31:13.946Z"
+  "lastUpdated": "2026-02-01T00:38:38.660Z"
 }
