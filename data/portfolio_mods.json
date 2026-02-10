@@ -19,15 +19,15 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "4.6K",
+      "downloads": "4.7K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
       "image": "https://media.forgecdn.net/avatars/thumbnails/1659/487/256/256/639057240203990713.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/showercore",
       "categories": [
-        "Cosmetic",
-        "Adventure and RPG"
+        "Adventure and RPG",
+        "Cosmetic"
       ],
       "isOwner": true,
       "role": "Author"
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "804.2K",
+      "downloads": "806.7K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "176.2M",
+      "downloads": "176.4M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "15.6K",
+      "downloads": "15.8K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "132.1M",
+      "downloads": "132.2M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -320,7 +320,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "23.9M",
+      "downloads": "24.0M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-02-09T00:35:29.014Z"
+  "lastUpdated": "2026-02-10T00:40:14.672Z"
 }
