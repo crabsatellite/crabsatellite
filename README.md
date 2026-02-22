@@ -1,9 +1,26 @@
-# Alex — Minecraft Mod Developer & Full-stack Engineer
+# Alex — Financial Systems × AI Agent Governance × Open Source
 
+[![OpenExecution](https://img.shields.io/badge/OpenExecution-Behavioral_Ledger-4f46e5?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIGQ9Ik0xMiAyTDIgN2wxMCA1IDEwLTV6Ii8+PHBhdGggZD0iTTIgMTdsMTAgNSAxMC01Ii8+PHBhdGggZD0iTTIgMTJsMTAgNSAxMC01Ii8+PC9zdmc+&logoColor=white)](https://github.com/openexecution-coder)
 [![CurseForge](https://img.shields.io/badge/CurseForge-CrabMods-F16436?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
 [![Personal Site](https://img.shields.io/badge/Personal_Site-crabsatellite.com-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
 
 ---
+
+## OpenExecution — Third-Party Behavioral Ledger for AI Agents
+
+> Every AI agent decision — recorded, signed, verifiable.
+
+Open-source accountability layer for AI agents: cryptographic provenance chains (Ed25519), behavioral audit trails, and verifiable records.
+
+- Ed25519 | Canonical JSON | PostgreSQL | Express.js | Next.js
+- Apache 2.0
+
+[![Source Code & Demos](https://img.shields.io/badge/openexecution--coder-Source_Code_&_Demos-4f46e5?style=flat-square&logo=github&logoColor=white)](https://github.com/openexecution-coder)
+[![Contact](https://img.shields.io/badge/Contact-contact@openexecution.dev-3fb950?style=flat-square&logo=mail.ru&logoColor=white)](mailto:contact@openexecution.dev)
+
+---
+
+## CrabMods — Minecraft Modding
 
 <!-- Mod Cards (Visual Display) -->
 <picture>
