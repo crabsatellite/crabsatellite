@@ -87,11 +87,11 @@ function formatDate(dateString) {
 }
 
 /**
- * Fetch PR status from GitHub
+ * Fetch all PRs from GitHub for a repo (returns a list of all PRs)
  */
 async function fetchPRs(repo) {
-  const openUrl = `https://api.github.com/search/issues?q=repo:${repo}+author:${GITHUB_AUTHOR}+type:pr+state:open&sort=updated&order=desc&per_page=1`;
-  const mergedUrl = `https://api.github.com/search/issues?q=repo:${repo}+author:${GITHUB_AUTHOR}+type:pr+is:merged&sort=updated&order=desc&per_page=1`;
+  // Fetch all PRs (both open and closed/merged) with higher per_page limit
+  const allPRsUrl = `https://api.github.com/search/issues?q=repo:${repo}+author:${GITHUB_AUTHOR}+type:pr&sort=updated&order=desc&per_page=100`;
 
   const headers = {
     Accept: "application/vnd.github.v3+json",
@@ -103,83 +103,72 @@ async function fetchPRs(repo) {
   }
 
   try {
-    // Check for open PRs first
-    const openResponse = await fetch(openUrl, { headers });
+    const response = await fetch(allPRsUrl, { headers });
 
     // Check if response is JSON
-    const contentType = openResponse.headers.get("content-type") || "";
+    const contentType = response.headers.get("content-type") || "";
     if (!contentType.includes("application/json")) {
       console.error(
-        `  GitHub API rate limited (no token). Status: ${openResponse.status}`
+        `  GitHub API rate limited (no token). Status: ${response.status}`
       );
       return { rateLimited: true };
     }
 
-    const openData = await openResponse.json();
+    const data = await response.json();
 
     // Check for API errors
-    if (openData.message) {
-      console.error(`  GitHub API error: ${openData.message}`);
+    if (data.message) {
+      console.error(`  GitHub API error: ${data.message}`);
       return { rateLimited: true };
     }
 
-    if (openData.items && openData.items.length > 0) {
-      const pr = openData.items[0];
-      return {
-        status: "open",
-        number: pr.number,
-        title: pr.title,
-        url: pr.html_url,
-        updated_at: pr.updated_at,
-      };
+    if (data.items && data.items.length > 0) {
+      // Return all PRs as a list
+      const prList = data.items.map((pr) => {
+        // Determine status: open, merged, or closed
+        let status = "open";
+        if (pr.state === "closed") {
+          // Check if it was merged by looking at pull_request object
+          status = pr.pull_request?.merged_at ? "merged" : "closed";
+        }
+        return {
+          status: status,
+          number: pr.number,
+          title: pr.title,
+          url: pr.html_url,
+          created_at: pr.created_at,
+          updated_at: pr.updated_at,
+          closed_at: pr.closed_at,
+        };
+      });
+      return { prs: prList, total: data.total_count };
     }
 
-    // If no open PR, check for merged PRs
-    const mergedResponse = await fetch(mergedUrl, { headers });
-
-    const mergedContentType = mergedResponse.headers.get("content-type") || "";
-    if (!mergedContentType.includes("application/json")) {
-      console.error(`  GitHub API rate limited for merged check`);
-      return { rateLimited: true };
-    }
-
-    const mergedData = await mergedResponse.json();
-
-    if (mergedData.items && mergedData.items.length > 0) {
-      const pr = mergedData.items[0];
-      return {
-        status: "merged",
-        number: pr.number,
-        title: pr.title,
-        url: pr.html_url,
-        updated_at: pr.updated_at,
-      };
-    }
-
-    return null;
+    return { prs: [], total: 0 };
   } catch (error) {
     console.error(`  Error fetching PRs: ${error.message}`);
-    return null;
+    return { prs: [], total: 0 };
   }
 }
 
 /**
  * Check if a mod has been released for the target Minecraft version on CurseForge
- * Uses the CurseForge internal API endpoint
  */
 async function checkCurseForgeRelease(mod) {
-  const { curseforge_slug, target_version, curseforge_id } = mod;
+  const { curseforge_slug, curseforge_id, contributions } = mod;
+  
+  // Get target versions to check from contributions array
+  const targetVersions = (contributions || [])
+    .filter(c => c.target_version && c.status !== 'released')
+    .map(c => c.target_version);
 
-  if (!curseforge_slug || !target_version) {
-    return {
-      released: false,
-      error: "Missing curseforge_slug or target_version",
-    };
+  if (!curseforge_slug || targetVersions.length === 0) {
+    return { released: false, versions: {} };
   }
 
   // Use CurseForge's internal API endpoint for fetching files with version filter
   // This endpoint is used by the CurseForge website itself
-  const apiUrl = `https://www.curseforge.com/api/v1/mods/${curseforge_id}/files?pageIndex=0&pageSize=20&sort=dateCreated&sortDescending=true&removeAlphas=true`;
+  const apiUrl = `https://www.curseforge.com/api/v1/mods/${curseforge_id}/files?pageIndex=0&pageSize=50&sort=dateCreated&sortDescending=true&removeAlphas=true`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -195,46 +184,97 @@ async function checkCurseForgeRelease(mod) {
       console.error(
         `  API returned HTTP ${response.status} for ${curseforge_slug}`
       );
-      return { released: false, error: `HTTP ${response.status}` };
+      return { released: false, error: `HTTP ${response.status}`, versions: {} };
     }
 
     const data = await response.json();
+    
+    // Check which target versions have been released
+    const versionResults = {};
+    let anyReleased = false;
 
-    // Check if any file supports the target version
+    // Check if any file supports each target version
     if (data.data && Array.isArray(data.data)) {
-      for (const file of data.data) {
-        // Try multiple possible version field names
-        const gameVersions =
-          file.gameVersions || file.sortableGameVersions || [];
+      for (const targetVersion of targetVersions) {
+        let found = false;
+        for (const file of data.data) {
+          // Try multiple possible version field names
+          const gameVersions =
+            file.gameVersions || file.sortableGameVersions || [];
 
-        // Handle both string arrays and object arrays
-        const versionStrings = gameVersions.map((v) =>
-          typeof v === "string"
-            ? v
-            : v.gameVersionName || v.name || v.gameVersion || ""
-        );
+          // Handle both string arrays and object arrays
+          const versionStrings = gameVersions.map((v) =>
+            typeof v === "string"
+              ? v
+              : v.gameVersionName || v.name || v.gameVersion || ""
+          );
 
-        // Check if target version is in the list
-        const hasTargetVersion = versionStrings.some(
-          (v) => v === target_version || v.includes(target_version)
-        );
+          // Check if target version is in the list
+          const hasTargetVersion = versionStrings.some(
+            (v) => v === targetVersion || v.includes(targetVersion)
+          );
 
-        if (hasTargetVersion) {
-          return {
-            released: true,
-            file_name: file.fileName,
-            file_id: file.id,
-            method: "curseforge-api",
-          };
+          if (hasTargetVersion) {
+            versionResults[targetVersion] = {
+              released: true,
+              file_name: file.fileName,
+              file_id: file.id,
+            };
+            found = true;
+            anyReleased = true;
+            break;
+          }
+        }
+        if (!found) {
+          versionResults[targetVersion] = { released: false };
         }
       }
     }
 
-    return { released: false, method: "curseforge-api" };
+    return { 
+      released: anyReleased, 
+      versions: versionResults,
+      method: "curseforge-api" 
+    };
   } catch (error) {
     console.error(`  Error checking ${curseforge_slug}:`, error.message);
-    return { released: false, error: error.message };
+    return { released: false, error: error.message, versions: {} };
   }
+}
+
+/**
+ * Contribution type display labels
+ */
+const CONTRIBUTION_LABELS = {
+  migration: 'Migration',
+  bugfix: 'Bug Fix',
+  feature: 'Feature',
+  port: 'Port',
+  maintenance: 'Maintenance',
+  documentation: 'Docs',
+  translation: 'Translation',
+  other: 'Contribution',
+};
+
+/**
+ * Get display string for contributions
+ */
+function getContributionsDisplay(mod) {
+  return (mod.contributions || []).map(c => {
+    if (c.type === 'migration') {
+      return c.migration || `→ ${c.target_version}`;
+    }
+    return CONTRIBUTION_LABELS[c.type] || c.type || 'Contribution';
+  }).join(', ');
+}
+
+/**
+ * Get target versions for checking release
+ */
+function getTargetVersions(mod) {
+  return (mod.contributions || [])
+    .filter(c => c.target_version && c.status !== 'released')
+    .map(c => c.target_version);
 }
 
 /**
@@ -253,28 +293,44 @@ async function main() {
   const prStatus = {};
   const releaseStatus = {};
   const modsToRelease = []; // in_development → released
+  const contributionsToUpdate = []; // For updating individual contribution status
 
-  // Step 1: Check CurseForge releases for in_development mods ONLY
-  // Released mods are not checked - if you want to add a new target version,
-  // manually move the mod to in_development with the new target_version
+  // Step 1: Check CurseForge releases for in_development mods
+  // Supports both single target_version and multiple contributions
   console.log("📦 Checking CurseForge for in_development mods...\n");
 
   for (const mod of modsData.mods.in_development) {
-    console.log(`Checking ${mod.name} for ${mod.target_version} release...`);
+    const targetVersions = getTargetVersions(mod);
+    const displayVersions = targetVersions.join(', ') || 'N/A';
+    console.log(`Checking ${mod.name} for [${displayVersions}] release...`);
+    
     const release = await checkCurseForgeRelease(mod);
     releaseStatus[mod.curseforge_slug] = release;
 
-    if (release.released) {
-      console.log(`  ✅ RELEASED on CurseForge!`);
+    // Update individual contribution status
+    let allReleased = true;
+    for (const contribution of mod.contributions || []) {
+      if (contribution.target_version && release.versions[contribution.target_version]?.released) {
+        console.log(`  ✅ ${contribution.target_version} RELEASED!`);
+        contribution.status = 'released';
+      } else if (contribution.target_version && contribution.status !== 'released') {
+        console.log(`  ⏳ ${contribution.target_version} not released yet`);
+        allReleased = false;
+      } else if (!contribution.target_version && contribution.status !== 'released') {
+        // Non-migration contributions (bugfix, feature, etc.) - check if still in progress
+        allReleased = false;
+      }
+    }
+    
+    // Only move to released if ALL contributions are released
+    if (allReleased && mod.contributions?.length > 0) {
       modsToRelease.push(mod);
-    } else {
-      console.log(`  ⏳ Not released yet`);
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 1500)); // Rate limiting
+    await new Promise((resolve) => setTimeout(resolve, 1500));
   }
 
-  // Step 2: Move released mods from in_development to released
+  // Step 2: Move fully released mods from in_development to released
   if (modsToRelease.length > 0) {
     console.log(
       `\n🚀 Moving ${modsToRelease.length} mod(s) to Released section...`
@@ -295,32 +351,37 @@ async function main() {
     }
   }
 
-  // Step 3: Check PR status for all in_development mods
+  // Step 3: Check PR status for all mods (both in_development and released)
   console.log("\n🔗 Checking GitHub PR status...\n");
 
   // Load existing PR status to preserve on rate limit
   const existingPrStatus = modsData.pr_status || {};
 
-  for (const mod of modsData.mods.in_development) {
-    console.log(`Checking ${mod.name} (${mod.repo})...`);
-    const pr = await fetchPRs(mod.repo);
+  // Combine in_development and released mods for PR checking
+  const allModsWithRepos = [
+    ...modsData.mods.in_development,
+    ...modsData.mods.released,
+  ].filter((mod) => mod.repo);
 
-    if (pr && pr.rateLimited) {
-      // Rate limited - preserve existing data
+  for (const mod of allModsWithRepos) {
+    console.log(`Checking ${mod.name} (${mod.repo})...`);
+    const prResult = await fetchPRs(mod.repo);
+
+    if (prResult?.rateLimited) {
       if (existingPrStatus[mod.repo]) {
         prStatus[mod.repo] = existingPrStatus[mod.repo];
-        console.log(
-          `  → Rate limited, keeping existing: PR #${
-            existingPrStatus[mod.repo].number
-          }`
-        );
+        console.log(`  → Rate limited, keeping existing: ${existingPrStatus[mod.repo].prs?.length || 0} PR(s)`);
       } else {
         console.log(`  → Rate limited, no existing data`);
       }
-    } else if (pr) {
-      prStatus[mod.repo] = pr;
-      console.log(`  → ${pr.status.toUpperCase()}: PR #${pr.number}`);
+    } else if (prResult?.prs?.length > 0) {
+      prStatus[mod.repo] = prResult;
+      console.log(`  → Found ${prResult.prs.length} PR(s)`);
+      prResult.prs.slice(0, 3).forEach((pr) => {
+        console.log(`    - #${pr.number} [${pr.status.toUpperCase()}]: ${pr.title.slice(0, 50)}...`);
+      });
     } else {
+      prStatus[mod.repo] = { prs: [], total: 0 };
       console.log(`  → No PRs found`);
     }
 
@@ -398,6 +459,9 @@ async function generatePortfolioData(modsData, prStatus) {
     );
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
+    const prData = prStatus[mod.repo];
+    const latestPR = prData?.prs?.[0];
+
     portfolioData.others.push({
       title: mod.name,
       author: details?.author || mod.repo?.split("/")[0] || "Unknown",
@@ -411,8 +475,11 @@ async function generatePortfolioData(modsData, prStatus) {
       isOwner: false,
       role: mod.role,
       repo: mod.repo,
-      migration: mod.migration,
+      migration: getContributionsDisplay(mod),
+      contributions: mod.contributions,
       status: "released",
+      prStatus: latestPR ? { status: latestPR.status, number: latestPR.number, url: latestPR.url } : undefined,
+      allPRs: prData?.prs || [],
     });
   }
 
@@ -426,7 +493,8 @@ async function generatePortfolioData(modsData, prStatus) {
     );
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const pr = prStatus[mod.repo];
+    const prData = prStatus[mod.repo];
+    const latestPR = prData?.prs?.[0];
 
     portfolioData.others.push({
       title: mod.name,
@@ -441,15 +509,11 @@ async function generatePortfolioData(modsData, prStatus) {
       isOwner: false,
       role: mod.role,
       repo: mod.repo,
-      migration: mod.migration,
+      migration: getContributionsDisplay(mod),
+      contributions: mod.contributions,
       status: "in_development",
-      prStatus: pr
-        ? {
-            status: pr.status,
-            number: pr.number,
-            url: pr.url,
-          }
-        : undefined,
+      prStatus: latestPR ? { status: latestPR.status, number: latestPR.number, url: latestPR.url } : undefined,
+      allPRs: prData?.prs || [],
     });
   }
 
@@ -531,11 +595,26 @@ function generateCard(
     tagX += tagWidth + 5;
   }
 
+  // Get latest PR from prInfo (now expects list format)
+  const latestPR = prInfo?.prs?.[0] || prInfo;
   let prIndicator = "";
-  if (section === "in_development" && prInfo) {
-    const prColor =
-      prInfo.status === "merged" ? colors.linkMerged : colors.linkOpen;
-    const prText = prInfo.status === "merged" ? "✓" : "PR";
+  
+  // For in_development: show all PR indicators (open or merged)
+  // For released: only show if there's an OPEN PR (new contribution)
+  const shouldShowPR = latestPR && latestPR.status && (
+    section === "in_development" ||
+    (section === "released" && latestPR.status === "open")
+  );
+  
+  if (shouldShowPR) {
+    // Use gold/amber color for released mods with open PR to match badge design
+    let prColor;
+    if (section === "released") {
+      prColor = "#f59e0b"; // Gold/amber for "New PR" on released mods
+    } else {
+      prColor = latestPR.status === "merged" ? colors.linkMerged : colors.linkOpen;
+    }
+    const prText = latestPR.status === "merged" ? "✓" : "PR";
     prIndicator = `<rect x="${x + cardWidth - 32}" y="${
       y + 8
     }" width="24" height="16" rx="3" fill="${prColor}"/><text x="${
@@ -564,6 +643,20 @@ function generateCard(
   }">${escapeXml(desc)}</text>${tagElements.join("")}</g>`;
 }
 
+/**
+ * Parse download string to number for sorting
+ */
+function parseDownloads(downloadStr) {
+  if (!downloadStr) return 0;
+  const str = downloadStr.toString().toUpperCase();
+  if (str.includes('M')) {
+    return parseFloat(str) * 1000000;
+  } else if (str.includes('K')) {
+    return parseFloat(str) * 1000;
+  }
+  return parseFloat(str) || 0;
+}
+
 function generateSection(
   title,
   mods,
@@ -571,7 +664,9 @@ function generateSection(
   totalWidth,
   colors,
   prStatus = {},
-  section = "active"
+  section = "active",
+  compact = false,
+  maxItems = 6
 ) {
   const padding = 16,
     gap = 10,
@@ -579,11 +674,29 @@ function generateSection(
   const cardWidth = Math.floor(
     (totalWidth - padding * 2 - gap * (cardsPerRow - 1)) / cardsPerRow
   );
-  const rowCount = Math.ceil(mods.length / cardsPerRow);
-  const sectionHeight = 36 + rowCount * (92 + gap);
+  
+  // Sort by downloads (descending) and limit if compact mode
+  let displayMods = [...mods];
+  const totalMods = mods.length;
+  const hiddenCount = Math.max(0, totalMods - maxItems);
+  
+  if (compact && totalMods > maxItems) {
+    // Sort by downloads descending
+    displayMods.sort((a, b) => {
+      const aDownloads = parseDownloads(a.downloads);
+      const bDownloads = parseDownloads(b.downloads);
+      return bDownloads - aDownloads;
+    });
+    displayMods = displayMods.slice(0, maxItems);
+  }
+  
+  const rowCount = Math.ceil(displayMods.length / cardsPerRow);
+  const hasMoreText = compact && hiddenCount > 0;
+  const moreTextHeight = hasMoreText ? 24 : 0;
+  const sectionHeight = 36 + rowCount * (92 + gap) + moreTextHeight;
 
   let cardsContent = "";
-  mods.forEach((mod, i) => {
+  displayMods.forEach((mod, i) => {
     const row = Math.floor(i / cardsPerRow),
       col = i % cardsPerRow;
     const x = padding + col * (cardWidth + gap),
@@ -598,6 +711,13 @@ function generateSection(
       section
     );
   });
+  
+  // Add "and xx more..." text if in compact mode and there are hidden items
+  let moreText = "";
+  if (hasMoreText) {
+    const moreY = startY + 36 + rowCount * (92 + gap) + 12;
+    moreText = `<text x="${totalWidth / 2}" y="${moreY}" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="${colors.textMuted}" text-anchor="middle" font-style="italic">and ${hiddenCount} more...</text>`;
+  }
 
   return {
     content: `<text x="${padding}" y="${
@@ -608,18 +728,20 @@ function generateSection(
       startY + 28
     }" x2="${totalWidth - padding}" y2="${startY + 28}" stroke="${
       colors.cardBorder
-    }" stroke-width="1"/>${cardsContent}`,
+    }" stroke-width="1"/>${cardsContent}${moreText}`,
     height: sectionHeight,
+    hiddenCount: hiddenCount,
   };
 }
 
-function buildSVG(modsData, theme) {
+function buildSVG(modsData, theme, compact = false) {
   const colors = THEMES[theme];
   const totalWidth = 840,
     padding = 16;
   const prStatus = modsData.pr_status || {};
   let currentY = padding,
     allContent = "";
+  let totalHiddenCount = 0;
 
   if (modsData.mods.active?.length > 0) {
     const s = generateSection(
@@ -629,10 +751,12 @@ function buildSVG(modsData, theme) {
       totalWidth,
       colors,
       {},
-      "active"
+      "active",
+      compact
     );
     allContent += s.content;
     currentY += s.height + 16;
+    totalHiddenCount += s.hiddenCount || 0;
   }
   if (modsData.mods.released?.length > 0) {
     const s = generateSection(
@@ -641,11 +765,13 @@ function buildSVG(modsData, theme) {
       currentY,
       totalWidth,
       colors,
-      {},
-      "released"
+      prStatus,
+      "released",
+      compact
     );
     allContent += s.content;
     currentY += s.height + 16;
+    totalHiddenCount += s.hiddenCount || 0;
   }
   if (modsData.mods.in_development?.length > 0) {
     const s = generateSection(
@@ -655,10 +781,12 @@ function buildSVG(modsData, theme) {
       totalWidth,
       colors,
       prStatus,
-      "in_development"
+      "in_development",
+      compact
     );
     allContent += s.content;
     currentY += s.height;
+    totalHiddenCount += s.hiddenCount || 0;
   }
 
   const totalHeight = currentY + padding;
@@ -670,31 +798,55 @@ function buildSVG(modsData, theme) {
       })
     : new Date().toLocaleDateString();
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="${totalHeight}" viewBox="0 0 ${totalWidth} ${totalHeight}"><rect width="100%" height="100%" fill="${
-    colors.background
-  }" rx="6"/>${allContent}<text x="${totalWidth - padding}" y="${
-    totalHeight - 8
-  }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
-    colors.textMuted
-  }" text-anchor="end">Updated: ${updateDate}</text></svg>`;
+  return {
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="${totalHeight}" viewBox="0 0 ${totalWidth} ${totalHeight}"><rect width="100%" height="100%" fill="${
+      colors.background
+    }" rx="6"/>${allContent}<text x="${totalWidth - padding}" y="${
+      totalHeight - 8
+    }" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="${
+      colors.textMuted
+    }" text-anchor="end">Updated: ${updateDate}</text></svg>`,
+    totalHiddenCount: totalHiddenCount,
+  };
 }
 
 async function generateSVGs(modsData) {
-  const darkPath = path.join(__dirname, "../../assets/mods-card-dark.svg");
-  const lightPath = path.join(__dirname, "../../assets/mods-card-light.svg");
+  // Generate compact versions (for README display)
+  const darkCompactPath = path.join(__dirname, "../../assets/mods-card-dark.svg");
+  const lightCompactPath = path.join(__dirname, "../../assets/mods-card-light.svg");
+  
+  // Generate full versions
+  const darkFullPath = path.join(__dirname, "../../assets/mods-card-dark-full.svg");
+  const lightFullPath = path.join(__dirname, "../../assets/mods-card-light-full.svg");
 
-  fs.writeFileSync(darkPath, buildSVG(modsData, "dark"));
-  fs.writeFileSync(lightPath, buildSVG(modsData, "light"));
-  console.log("\n✓ SVGs generated: mods-card-dark.svg, mods-card-light.svg");
+  // Build compact versions
+  const darkCompact = buildSVG(modsData, "dark", true);
+  const lightCompact = buildSVG(modsData, "light", true);
+  
+  // Build full versions
+  const darkFull = buildSVG(modsData, "dark", false);
+  const lightFull = buildSVG(modsData, "light", false);
+
+  fs.writeFileSync(darkCompactPath, darkCompact.svg);
+  fs.writeFileSync(lightCompactPath, lightCompact.svg);
+  fs.writeFileSync(darkFullPath, darkFull.svg);
+  fs.writeFileSync(lightFullPath, lightFull.svg);
+  
+  console.log("\n✓ SVGs generated:");
+  console.log("  - mods-card-dark.svg, mods-card-light.svg (compact)");
+  console.log("  - mods-card-dark-full.svg, mods-card-light-full.svg (full)");
+
+  // Calculate if any section has more than 6 items
+  const hasHiddenItems = darkCompact.totalHiddenCount > 0;
 
   // Update README badges
-  await updateReadmeBadges(modsData);
+  await updateReadmeBadges(modsData, hasHiddenItems);
 }
 
 /**
  * Update README with clickable badges
  */
-async function updateReadmeBadges(modsData) {
+async function updateReadmeBadges(modsData, hasHiddenItems = false) {
   const readmePath = path.join(__dirname, "../../README.md");
   let readme = fs.readFileSync(readmePath, "utf8");
 
@@ -718,22 +870,37 @@ async function updateReadmeBadges(modsData) {
   }
   badges += "\n";
 
-  // Released mods
-  for (const mod of modsData.mods.released || []) {
-    const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-    badges += `[![${
-      mod.name
-    }](https://img.shields.io/badge/${encodeURIComponent(mod.name).replace(
-      /-/g,
-      "--"
-    )}-Released-2ea44f?style=flat-square&logo=curseforge&logoColor=white)](${url})\n`;
+  // Released mods - only show if there's an open PR (new contribution)
+  const releasedWithOpenPR = (modsData.mods.released || []).filter((mod) => {
+    const prData = prStatus[mod.repo];
+    const latestPR = prData?.prs?.[0];
+    return latestPR && latestPR.status === "open";
+  });
+
+  if (releasedWithOpenPR.length > 0) {
+    for (const mod of releasedWithOpenPR) {
+      const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
+      const prData = prStatus[mod.repo];
+      const latestPR = prData?.prs?.[0];
+
+      // Use a distinct style for released mods with new PRs: gold/amber color
+      badges += `[![${
+        mod.name
+      }](https://img.shields.io/badge/${encodeURIComponent(mod.name).replace(
+        /-/g,
+        "--"
+      )}-New_PR-f59e0b?style=flat-square&logo=curseforge&logoColor=white)](${url})`;
+      badges += `[![#${latestPR.number}](https://img.shields.io/badge/%23${latestPR.number}-Open-3fb950?style=flat-square&logo=github&logoColor=white)](${latestPR.url})`;
+      badges += "\n";
+    }
+    badges += "\n";
   }
-  badges += "\n";
 
   // In development mods
   for (const mod of modsData.mods.in_development || []) {
     const url = `${CURSEFORGE_BASE}/${mod.curseforge_slug}`;
-    const pr = prStatus[mod.repo];
+    const prData = prStatus[mod.repo];
+    const latestPR = prData?.prs?.[0];
 
     badges += `[![${
       mod.name
@@ -742,12 +909,17 @@ async function updateReadmeBadges(modsData) {
       "--"
     )}-Dev-6e7681?style=flat-square&logo=curseforge&logoColor=white)](${url})`;
 
-    if (pr) {
-      const prColor = pr.status === "merged" ? "a371f7" : "3fb950";
-      const prLabel = pr.status === "merged" ? "Merged" : "Open";
-      badges += `[![#${pr.number}](https://img.shields.io/badge/%23${pr.number}-${prLabel}-${prColor}?style=flat-square&logo=github&logoColor=white)](${pr.url})`;
+    if (latestPR) {
+      const prColor = latestPR.status === "merged" ? "a371f7" : "3fb950";
+      const prLabel = latestPR.status === "merged" ? "Merged" : "Open";
+      badges += `[![#${latestPR.number}](https://img.shields.io/badge/%23${latestPR.number}-${prLabel}-${prColor}?style=flat-square&logo=github&logoColor=white)](${latestPR.url})`;
     }
     badges += "\n";
+  }
+
+  // Add link to full version if there are hidden items
+  if (hasHiddenItems) {
+    badges += `\n[📋 View all projects](./assets/mods-card-light-full.svg)\n`;
   }
 
   badges += `
