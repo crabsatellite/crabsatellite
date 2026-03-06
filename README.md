@@ -12,7 +12,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/dockerfile-doctor?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/dockerfile-doctor/)
 [![License](https://img.shields.io/github/license/crabsatellite/dockerfile-doctor?style=flat-square)](https://github.com/crabsatellite/dockerfile-doctor/blob/master/LICENSE)
 
-The only Dockerfile linter that **fixes what it finds**. 80 rules, 50 auto-fixers, pure Python, zero dependencies.
+The only Dockerfile linter that **fixes what it finds**. 80 rules, 51 auto-fixers, pure Python, zero dependencies.
 
 ```
 $ dockerfile-doctor --fix Dockerfile
