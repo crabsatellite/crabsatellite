@@ -5,6 +5,28 @@
 
 ---
 
+## Dockerfile Doctor — Lint & Auto-Fix for Dockerfiles
+
+[![PyPI](https://img.shields.io/pypi/v/dockerfile-doctor?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/dockerfile-doctor/)
+[![CI](https://img.shields.io/github/actions/workflow/status/crabsatellite/dockerfile-doctor/ci.yml?style=flat-square&logo=github&label=CI)](https://github.com/crabsatellite/dockerfile-doctor/actions)
+[![Python](https://img.shields.io/pypi/pyversions/dockerfile-doctor?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/dockerfile-doctor/)
+[![License](https://img.shields.io/github/license/crabsatellite/dockerfile-doctor?style=flat-square)](https://github.com/crabsatellite/dockerfile-doctor/blob/master/LICENSE)
+
+The only Dockerfile linter that **fixes what it finds**. 80 rules, 50 auto-fixers, pure Python, zero dependencies.
+
+```
+$ dockerfile-doctor --fix Dockerfile
+  Line 3   [WARNING]  DD003  Missing --no-install-recommends  ✔ fixed
+  Line 5   [WARNING]  DD004  Missing apt cache cleanup        ✔ fixed
+  Line 8   [WARNING]  DD009  pip install without --no-cache-dir  ✔ fixed
+  Applied 3 fixes → Dockerfile
+```
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-dockerfile--doctor-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/dockerfile-doctor)
+[![Install](https://img.shields.io/badge/pip_install-dockerfile--doctor-3776AB?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/dockerfile-doctor/)
+
+---
+
 ## CrabMods — Minecraft Modding
 
 <!-- Mod Cards (Visual Display) -->
