@@ -27,6 +27,18 @@ $ dockerfile-doctor --fix Dockerfile
 
 ---
 
+## Z3 Tactic Evolution — Optimized SMT Solver Portfolios
+
+[![Zenodo](https://img.shields.io/badge/DOI-10.5281/zenodo.18909825-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.18909825)
+[![License](https://img.shields.io/github/license/crabsatellite/z3-tactic-evolution?style=flat-square)](https://github.com/crabsatellite/z3-tactic-evolution/blob/master/LICENSE)
+
+A fixed tactic string that improves Z3's solve rate on nonlinear integer arithmetic (QF_NIA) by **+2.2pp** on test and **+4.3pp** on validation, with zero solver modification. Cross-validated on 3 external benchmark families.
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-z3--tactic--evolution-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/z3-tactic-evolution)
+[![Preprint](https://img.shields.io/badge/Preprint-Zenodo-1682D4?style=flat-square&logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.18909825)
+
+---
+
 ## CrabMods — Minecraft Modding
 
 <!-- Mod Cards (Visual Display) -->
