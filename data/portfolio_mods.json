@@ -10,8 +10,8 @@
       "image": "https://media.forgecdn.net/avatars/thumbnails/1659/486/256/256/639057238931792096.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/hotbath",
       "categories": [
-        "Adventure and RPG",
-        "Cosmetic"
+        "Cosmetic",
+        "Adventure and RPG"
       ],
       "isOwner": true,
       "role": "Author"
@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "8.8K",
+      "downloads": "9.1K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "880.2K",
+      "downloads": "882.8K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "181.0M",
+      "downloads": "181.2M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "26.9K",
+      "downloads": "27.1K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "135.5M",
+      "downloads": "135.7M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-03-14T00:32:00.228Z"
+  "lastUpdated": "2026-03-15T00:39:30.257Z"
 }
