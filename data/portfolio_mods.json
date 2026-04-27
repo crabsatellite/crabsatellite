@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "14.2K",
+      "downloads": "14.3K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -35,7 +35,7 @@
     {
       "title": "LeafDecayStopper",
       "author": "CrabMods",
-      "downloads": "6.4K",
+      "downloads": "6.5K",
       "updated": "Oct 28, 2024",
       "created": "Oct 28, 2024",
       "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "967.1K",
+      "downloads": "970.6K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "187.0M",
+      "downloads": "187.2M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -168,7 +168,7 @@
           "title": "Update renderer, pathfinding, collision handling, and book display for Alex’s Caves and Alex’s Mobs 1.21",
           "url": "https://github.com/AlexModGuy/Citadel/pull/222",
           "created_at": "2026-01-18T09:26:39Z",
-          "updated_at": "2026-04-14T11:41:16Z",
+          "updated_at": "2026-04-26T19:31:56Z",
           "closed_at": null
         },
         {
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "33.2K",
+      "downloads": "33.5K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "139.8M",
+      "downloads": "139.9M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-04-26T00:46:03.157Z"
+  "lastUpdated": "2026-04-27T00:46:08.042Z"
 }
