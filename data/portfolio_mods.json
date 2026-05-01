@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "17.5K",
+      "downloads": "21.7K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "983.5K",
+      "downloads": "988.5K",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "187.6M",
+      "downloads": "187.7M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "33.9K",
+      "downloads": "34.0K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "140.2M",
+      "downloads": "140.3M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-04-30T00:49:23.128Z"
+  "lastUpdated": "2026-05-01T00:52:38.699Z"
 }
