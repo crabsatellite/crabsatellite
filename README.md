@@ -22,7 +22,7 @@ Three-regime learnability map for VQ-VAE + AR transformer over 32³ Minecraft vo
 
 Information value can be non-monotone in signal informativeness when feasibility is endogenous. A five-state model exhibits an explicit phase transition; classical Blackwell dominance reverses under generic feasibility curvature.
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19251487-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19251487)
+[![SSRN](https://img.shields.io/badge/SSRN-6478278-014991?style=flat-square)](https://doi.org/10.2139/ssrn.6478278)
 [![GitHub](https://img.shields.io/badge/GitHub-blackwell--dilemma-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/blackwell-dilemma)
 
 **Accountability Arbitrage: Ethical Tensions in AI Agent Accountability Infrastructure** — Under review at AI and Ethics
