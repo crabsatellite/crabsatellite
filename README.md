@@ -1,35 +1,48 @@
 # Alex Li
 
-Automated reasoning, algorithm configuration, computational combinatorics.
+AI agent infrastructure · formal mathematics · game systems.
 
-M.S. Computer Engineering, New York University.
+Independent researcher and infrastructure builder. M.S. Computer Engineering, New York University. Based in Yokohama.
 
 [![Personal Site](https://img.shields.io/badge/crabsatellite.com-blue?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0008--4516--8946-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0008-4516-8946)
 
 ---
 
 ### Research
 
-**Canonicalization Leakage in Non-Equivariant Models**
+**Which Structural Constraints Are Learnable? A Regime Map for a Minecraft Voxel Generator** — ✅ FDG 2026 (Accepted)
 
-Models trained on canonicalized circuit representations achieve strong prediction (r = 0.788) but 0% invariance consistency. We decompose this into four orthogonal signal components to isolate the leakage mechanism.
+Three-regime learnability map for VQ-VAE + AR transformer over 32³ Minecraft voxels (~260 block types). 14 structural properties → 9 controllable, 4 approachable, 1 unresponsive. Composite predictor signal × min(CV, 1) achieves Spearman ρ = 0.879 (p = 0.002, n = 10). To appear in ACM Digital Library.
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19097225-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19097225)
-[![GitHub](https://img.shields.io/badge/GitHub-canonicalization--leakage-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/canonicalization-leakage)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19135431-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19135431)
+[![GitHub](https://img.shields.io/badge/GitHub-constraint--learnability--regime--map-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/constraint-learnability-regime-map)
 
-**Learned Control Layers for MaxSAT**
+**Blackwell Dilemma: Information Value Under Endogenous Feasibility**
 
-First RL-based dynamic algorithm configuration for MaxSAT local search. PPO controller discovers an explore-then-exploit noise schedule, outperforming Bayesian-optimized static configuration (7/10 wins, p = 0.019).
+Information value can be non-monotone in signal informativeness when feasibility is endogenous. A five-state model exhibits an explicit phase transition; classical Blackwell dominance reverses under generic feasibility curvature.
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.18924836-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.18924836)
-[![GitHub](https://img.shields.io/badge/GitHub-learned--control--layers-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/learned-control-layers)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19251487-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19251487)
+[![GitHub](https://img.shields.io/badge/GitHub-blackwell--dilemma-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/blackwell-dilemma)
 
-**Z3 Tactic Evolution**
+**Accountability Arbitrage: Ethical Tensions in AI Agent Accountability Infrastructure** — Under review at AI and Ethics
 
-A fixed tactic string that improves Z3's solve rate on QF_NIA by +2.2pp on test and +4.3pp on validation, with zero solver modification. Cross-validated on 3 external benchmark families.
+When firms can choose where AI agent actions are reviewed, accountability becomes arbitrageable. Maps power asymmetries in the AEGIS protocol's three-stage review pipeline; identifies labor-market spillovers when downstream verification migrates across jurisdictions.
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.18909825-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.18909825)
-[![GitHub](https://img.shields.io/badge/GitHub-z3--tactic--evolution-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/z3-tactic-evolution)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19301269-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19301269)
+[![GitHub](https://img.shields.io/badge/GitHub-accountability--arbitrage-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/accountability-arbitrage)
+
+> Full publication list (including working papers in macro, decision theory, and philosophy of mind) at [crabsatellite.com](https://crabsatellite.com).
+
+---
+
+### Open Infrastructure
+
+**[AEGIS Protocol](https://github.com/crabsatellite/aegis-protocol)** — Open protocol for AI agent action accountability. Apache 2.0, 202 tests, zero dependencies. Reference implementation of the protocol behind the *Accountability Arbitrage* paper.
+
+**[Hodge Conjecture (Lean4)](https://github.com/crabsatellite/hodge-conjecture-lean4-formalization)** — Lean4 formalization attack on the Hodge Conjecture, one of the seven Millennium Prize Problems. Working paper at [zenodo:19442143](https://doi.org/10.5281/zenodo.19442143). 14 tool levels, four conditional kills, structural block on ω₇.
+
+[![Lean4](https://img.shields.io/badge/Lean4-Formal_Proof-blue?style=flat-square)](https://github.com/crabsatellite/hodge-conjecture-lean4-formalization)
 
 ---
 
@@ -44,6 +57,6 @@ A fixed tactic string that improves Z3's solve rate on QF_NIA by +2.2pp on test 
 
 ### Community
 
-**Minecraft Modding** — 3 published mods on [CurseForge](https://www.curseforge.com/members/crabmods). Ported 9 mods to NeoForge/Forge 1.21.
+**Minecraft Modding** — Independent mod author on [CurseForge](https://www.curseforge.com/members/crabmods). Total downloads across maintained projects: **1.49M+**. Ported 9 mods to NeoForge/Forge 1.21.
 
 [![CurseForge](https://img.shields.io/badge/CurseForge-CrabMods-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
