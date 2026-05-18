@@ -10,8 +10,8 @@
       "image": "https://media.forgecdn.net/avatars/thumbnails/1659/486/256/256/639057238931792096.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/hotbath",
       "categories": [
-        "Cosmetic",
-        "Adventure and RPG"
+        "Adventure and RPG",
+        "Cosmetic"
       ],
       "isOwner": true,
       "role": "Author"
@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "49.3K",
+      "downloads": "49.5K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "36.8K",
+      "downloads": "36.9K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "141.8M",
+      "downloads": "141.9M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-05-17T00:53:59.069Z"
+  "lastUpdated": "2026-05-18T00:54:44.800Z"
 }
