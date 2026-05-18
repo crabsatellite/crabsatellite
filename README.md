@@ -40,10 +40,6 @@ When firms can choose where AI agent actions are reviewed, accountability become
 
 **[AEGIS Protocol](https://github.com/crabsatellite/aegis-protocol)** — Open protocol for AI agent action accountability. Apache 2.0, 202 tests, zero dependencies. Reference implementation of the protocol behind the *Accountability Arbitrage* paper.
 
-**[Hodge Conjecture (Lean4)](https://github.com/crabsatellite/hodge-conjecture-lean4-formalization)** — Lean4 formalization attack on the Hodge Conjecture, one of the seven Millennium Prize Problems. Working paper at [zenodo:19442143](https://doi.org/10.5281/zenodo.19442143). 14 tool levels, four conditional kills, structural block on ω₇.
-
-[![Lean4](https://img.shields.io/badge/Lean4-Formal_Proof-blue?style=flat-square)](https://github.com/crabsatellite/hodge-conjecture-lean4-formalization)
-
 ---
 
 ### Tools
