@@ -82,7 +82,7 @@
     {
       "title": "Nomadic Tents",
       "author": "skyjay1",
-      "downloads": "7.7M",
+      "downloads": "7.8M",
       "updated": "Dec 13, 2015",
       "created": "Dec 13, 2015",
       "description": "Full port to NeoForge 1.21.1",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "37.9K",
+      "downloads": "38.0K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "142.4M",
+      "downloads": "142.5M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-05-23T00:53:11.983Z"
+  "lastUpdated": "2026-05-24T00:56:05.813Z"
 }
