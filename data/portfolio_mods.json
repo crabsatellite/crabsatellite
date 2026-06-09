@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "57.8K",
+      "downloads": "58.7K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -35,7 +35,7 @@
     {
       "title": "LeafDecayStopper",
       "author": "CrabMods",
-      "downloads": "7.7K",
+      "downloads": "7.8K",
       "updated": "Oct 28, 2024",
       "created": "Oct 28, 2024",
       "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "193.1M",
+      "downloads": "193.4M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "40.5K",
+      "downloads": "40.8K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "144.1M",
+      "downloads": "144.3M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -320,7 +320,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "28.6M",
+      "downloads": "28.7M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -420,7 +420,7 @@
     {
       "title": "Greek Fantasy",
       "author": "skyjay1",
-      "downloads": "6.6M",
+      "downloads": "6.7M",
       "updated": "Nov 6, 2020",
       "created": "Nov 6, 2020",
       "description": "Full port to Forge 1.20.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-06-08T01:02:41.080Z"
+  "lastUpdated": "2026-06-09T00:54:49.579Z"
 }
