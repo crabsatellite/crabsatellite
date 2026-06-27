@@ -1,6 +1,6 @@
 # Alex Li
 
-AI agent infrastructure · formal mathematics · game systems.
+AI governance infrastructure · formal methods · code-backed research.
 
 Independent researcher and infrastructure builder. M.S. Computer Engineering, New York University. Based in Yokohama.
 
@@ -11,9 +11,9 @@ Independent researcher and infrastructure builder. M.S. Computer Engineering, Ne
 
 ### Research
 
-**Which Structural Constraints Are Learnable? A Regime Map for a Minecraft Voxel Generator** — ✅ FDG 2026 (Accepted)
+**Which Structural Constraints Are Learnable? A Regime Map for a Minecraft Voxel Generator**
 
-Three-regime learnability map for VQ-VAE + AR transformer over 32³ Minecraft voxels (~260 block types). 14 structural properties → 9 controllable, 4 approachable, 1 unresponsive. Composite predictor signal × min(CV, 1) achieves Spearman ρ = 0.879 (p = 0.002, n = 10). To appear in ACM Digital Library.
+Code-backed study of structural learnability in 32³ Minecraft voxel generation. VQ-VAE + AR transformer over ~260 block types; 14 structural properties → 9 controllable, 4 approachable, 1 unresponsive. Composite predictor signal × min(CV, 1) reaches Spearman ρ = 0.879 (p = 0.002, n = 10). Public DOI and reproducibility package are available below.
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19135431-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19135431)
 [![GitHub](https://img.shields.io/badge/GitHub-constraint--learnability--regime--map-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/constraint-learnability-regime-map)
@@ -32,7 +32,7 @@ When firms can choose where AI agent actions are reviewed, accountability become
 [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19301269-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19301269)
 [![GitHub](https://img.shields.io/badge/GitHub-accountability--arbitrage-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/accountability-arbitrage)
 
-> Full publication list (including working papers in macro, decision theory, and philosophy of mind) at [crabsatellite.com](https://crabsatellite.com).
+> Full research list, including SSRN-visible working papers in AI governance, decision theory/economics, algorithmic foundations, and philosophy of cognition, at [crabsatellite.com](https://crabsatellite.com).
 
 ---
 
