@@ -11,7 +11,7 @@ Independent researcher and infrastructure builder. M.S. Computer Engineering, Ne
 
 ### Research
 
-**Which Structural Constraints Are Learnable? A Regime Map for a Minecraft Voxel Generator**
+**Which Structural Constraints Are Learnable? A Regime Map for a Minecraft Voxel Generator** — Accepted at the FDG 2026 17th PCG Workshop
 
 Code-backed study of structural learnability in 32³ Minecraft voxel generation. VQ-VAE + AR transformer over ~260 block types; 14 structural properties → 9 controllable, 4 approachable, 1 unresponsive. Composite predictor signal × min(CV, 1) reaches Spearman ρ = 0.879 (p = 0.002, n = 10). Public DOI and reproducibility package are available below.
 
