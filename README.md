@@ -1,58 +1,60 @@
 # Alex Li
 
-AI governance infrastructure · formal methods · code-backed research.
+Independent researcher in mathematics and computer science.
 
-Independent researcher and infrastructure builder. M.S. Computer Engineering, New York University. Based in Yokohama.
+M.S. Computer Engineering, New York University. Based in Yokohama.
 
 [![Personal Site](https://img.shields.io/badge/crabsatellite.com-blue?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0008--4516--8946-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0008-4516-8946)
 
 ---
 
-### Research
+## Selected Research
+
+### Hamilton cycles in noncrossing partition refinement graphs
+
+**Hamilton Cycles in Noncrossing Partition Refinement Graph** — Submitted to *The Electronic Journal of Combinatorics*
+
+A complete classification for every natural number: the graph is Hamiltonian exactly for `n = 0`, `n = 1`, or even `n >= 4`; it has a Hamilton path exactly for `n <= 3` or even `n`. The manuscript, theorem map, and Lean 4 formalization are public, with the publication endpoints checked under standard axioms.
+
+[Concept DOI](https://doi.org/10.5281/zenodo.21316750) · [Repository](https://github.com/crabsatellite/gray-code-evolution)
+
+### Structural learnability in discrete 3D generation
 
 **Which Structural Constraints Are Learnable? A Regime Map for a Minecraft Voxel Generator** — Accepted at the FDG 2026 17th PCG Workshop
 
-Code-backed study of structural learnability in 32³ Minecraft voxel generation. VQ-VAE + AR transformer over ~260 block types; 14 structural properties → 9 controllable, 4 approachable, 1 unresponsive. Composite predictor signal × min(CV, 1) reaches Spearman ρ = 0.879 (p = 0.002, n = 10). Public DOI and reproducibility package are available below.
+A code-and-data-backed study of structural learnability in a fixed 32³ voxel-generation pipeline. Fourteen measured properties separate into nine controllable, four approachable, and one unresponsive regime; the released package includes the analysis, robustness checks, and an interactive explainer.
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19135431-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19135431)
-[![GitHub](https://img.shields.io/badge/GitHub-constraint--learnability--regime--map-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/constraint-learnability-regime-map)
+[ACM DOI](https://doi.org/10.1145/3815598.3815669) · [Zenodo concept DOI](https://doi.org/10.5281/zenodo.19135430) · [Repository](https://github.com/crabsatellite/constraint-learnability-regime-map)
 
-**Blackwell Dilemma: Information Value Under Endogenous Feasibility**
+### Information value under endogenous feasibility
 
-Information value can be non-monotone in signal informativeness when feasibility is endogenous. A five-state model exhibits an explicit phase transition; classical Blackwell dominance reverses under generic feasibility curvature.
+**The Blackwell Dilemma**
 
-[![SSRN](https://img.shields.io/badge/SSRN-6478278-014991?style=flat-square)](https://doi.org/10.2139/ssrn.6478278)
-[![GitHub](https://img.shields.io/badge/GitHub-blackwell--dilemma-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/blackwell-dilemma)
+A theoretical study of how more informative signals can reduce attainable welfare when feasibility is endogenous. The public materials include the working paper, formal claim ledger, Lean 4 development, simulations, and a preregistered prediction.
 
-**Accountability Arbitrage: Ethical Tensions in AI Agent Accountability Infrastructure** — Under review at AI and Ethics
+[SSRN](https://doi.org/10.2139/ssrn.6478278) · [Repository](https://github.com/crabsatellite/blackwell-dilemma)
 
-When firms can choose where AI agent actions are reviewed, accountability becomes arbitrageable. Maps power asymmetries in the AEGIS protocol's three-stage review pipeline; identifies labor-market spillovers when downstream verification migrates across jurisdictions.
+### Rado numbers
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19301269-blue?style=flat-square&logo=zenodo)](https://doi.org/10.5281/zenodo.19301269)
-[![GitHub](https://img.shields.io/badge/GitHub-accountability--arbitrage-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/accountability-arbitrage)
+**On Rado Numbers for `x + by = bz`: The `b^k` Pattern and a Threshold Conjecture**
 
-> Full research list, including SSRN-visible working papers in AI governance, decision theory/economics, algorithmic foundations, and philosophy of cognition, at [crabsatellite.com](https://crabsatellite.com).
+SAT- and Lean-backed work on multicolor Rado numbers, including verified artifacts for `R_4(3) = 81`, an explicit verified witness for `R_5(3) > 296`, and a clearly separated conjectural frontier.
 
----
+[SSRN](https://doi.org/10.2139/ssrn.6814341) · [Zenodo concept DOI](https://doi.org/10.5281/zenodo.18957993) · [Repository](https://github.com/crabsatellite/rado-numbers-sat)
 
-### Open Infrastructure
-
-**[AEGIS Protocol](https://github.com/crabsatellite/aegis-protocol)** — Open protocol for AI agent action accountability. Apache 2.0, 202 tests, zero dependencies. Reference implementation of the protocol behind the *Accountability Arbitrage* paper.
+> The broader public research corpus spans mathematics, computer science, decision theory, AI governance, and philosophy of cognition. [Personal site](https://crabsatellite.com) · [SSRN paper list](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=10568238)
 
 ---
 
-### Tools
+## Research Infrastructure
 
-**Dockerfile Doctor** — The only Dockerfile linter that **fixes what it finds**. 80 rules, 51 auto-fixers, pure Python, zero dependencies.
-
-[![PyPI](https://img.shields.io/pypi/v/dockerfile-doctor?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/dockerfile-doctor/)
-[![GitHub](https://img.shields.io/badge/GitHub-dockerfile--doctor-181717?style=flat-square&logo=github)](https://github.com/crabsatellite/dockerfile-doctor)
+**[AEGIS Protocol](https://github.com/crabsatellite/aegis-protocol)** — Reference implementation of a three-layer protocol for AI-agent action accountability, with tamper-evident records, independent signature verification, and 202 automated tests.
 
 ---
 
-### Community
+## Open Source
 
-**Minecraft Modding** — Independent mod author on [CurseForge](https://www.curseforge.com/members/crabmods). Total downloads across maintained projects: **1.49M+**. Ported 9 mods to NeoForge/Forge 1.21.
+**[Hot Bath](https://github.com/crabsatellite/hotBath)** — Independently developed and maintained Minecraft mod with more than one million downloads across public releases.
 
-[![CurseForge](https://img.shields.io/badge/CurseForge-CrabMods-F16436?style=flat-square&logo=curseforge&logoColor=white)](https://www.curseforge.com/members/crabmods)
+**[ModPorter](https://github.com/crabsatellite/modporter)** — Developer-preview migration tool for deterministic Forge-to-NeoForge transformations, protected by regression tests and strict real-mod runtime gates.
