@@ -11,6 +11,14 @@ M.S. Computer Engineering, New York University. Based in Yokohama.
 
 ## Selected Research
 
+### Erdős Problem 848
+
+**Erdős Problem 848: A Kernel-Checked Proof of the Exact Extremal Bound**
+
+A kernel-checked proof of the exact extremal statement for every natural number `N`. Rather than enumerating individual values of `N`, the proof combines a Hall reformulation, range compression, valuation–cell–fibre descent, and finite certificates consumed by Lean 4. The manuscript, source, theorem map, and replay package are public.
+
+[Paper concept DOI](https://doi.org/10.5281/zenodo.21701047) · [Repository](https://github.com/crabsatellite/erdos-848-squarefree-product)
+
 ### Hamilton cycles in noncrossing partition refinement graphs
 
 **Hamilton Cycles in Noncrossing Partition Refinement Graph** — Submitted to *The Electronic Journal of Combinatorics*
