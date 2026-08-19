@@ -1,8 +1,8 @@
-# Alex Li
+# Alex Chengyu Li
 
 Independent researcher in mathematics and computer science.
 
-M.S. Computer Engineering, New York University. Based in Yokohama.
+M.S. Computer Engineering, New York University. Based in Tokyo, Japan.
 
 [![Personal Site](https://img.shields.io/badge/crabsatellite.com-blue?style=flat-square&logo=google-chrome&logoColor=white)](https://crabsatellite.com)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0008--4516--8946-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0008-4516-8946)
