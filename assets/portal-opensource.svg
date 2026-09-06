@@ -5,8 +5,10 @@ text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,mo
 @keyframes orbit{to{transform:rotate(360deg)}}
 @keyframes breathe{0%,100%{opacity:.36}50%{opacity:.8}}
 @keyframes signal{to{stroke-dashoffset:-560}}
+@keyframes invite{0%,60%,100%{transform:translate(0,0)}75%{transform:translate(2px,-2px)}}
 .spin{animation:orbit 55s linear infinite}.reverse{animation:orbit 88s linear infinite reverse}
 .breathe{animation:breathe 8s ease-in-out infinite}.signal{animation:signal 18s linear infinite}
+.entry-arrow{animation:invite 3.4s ease-in-out infinite}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>

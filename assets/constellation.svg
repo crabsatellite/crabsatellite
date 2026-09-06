@@ -5,8 +5,10 @@ text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,mo
 @keyframes orbit{to{transform:rotate(360deg)}}
 @keyframes breathe{0%,100%{opacity:.36}50%{opacity:.8}}
 @keyframes signal{to{stroke-dashoffset:-560}}
+@keyframes invite{0%,60%,100%{transform:translate(0,0)}75%{transform:translate(2px,-2px)}}
 .spin{animation:orbit 55s linear infinite}.reverse{animation:orbit 88s linear infinite reverse}
 .breathe{animation:breathe 8s ease-in-out infinite}.signal{animation:signal 18s linear infinite}
+.entry-arrow{animation:invite 3.4s ease-in-out infinite}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -35,8 +37,11 @@ text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,mo
   <circle r="21" stroke-opacity=".16"/>
  </g>
  <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="#738ba4" stroke-opacity=".4"/>
- <text x="50" y="58" font-size="13" fill="#a8b9cc" letter-spacing="2.1">CRAB SATELLITE</text>
- <text class="mono" x="50" y="333" font-size="12" fill="#c9d7e8" letter-spacing="1.6">EXPLORE</text>
- <path d="M124 334l9-9m-8 0h8v8" fill="none" stroke="#a9d7f5"/>
- <text class="mono" x="850" y="333" font-size="10" fill="#6e88a8" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
+ <text x="50" y="58" font-size="22" fill="#dce8f5" letter-spacing=".4">Alex Chengyu Li</text>
+ <g>
+  <rect x="50" y="301" width="248" height="48" rx="9" fill="#142739" fill-opacity=".96" stroke="#6897b8" stroke-width="1.2"/>
+  <text x="70" y="331" font-size="18" fill="#edf5ff">Explore my work</text>
+  <g class="entry-arrow"><path d="M262 332l13-13m-12 0h12v12" fill="none" stroke="#a6d5f3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+ </g>
+ <text class="mono" x="850" y="341" font-size="10" fill="#8ca6c1" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
 </g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="#26344a"/></svg>

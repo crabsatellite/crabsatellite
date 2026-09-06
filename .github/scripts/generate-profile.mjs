@@ -23,62 +23,120 @@ text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,mo
 @keyframes orbit{to{transform:rotate(360deg)}}
 @keyframes breathe{0%,100%{opacity:.36}50%{opacity:.8}}
 @keyframes signal{to{stroke-dashoffset:-560}}
+@keyframes invite{0%,60%,100%{transform:translate(0,0)}75%{transform:translate(2px,-2px)}}
 .spin{animation:orbit 55s linear infinite}.reverse{animation:orbit 88s linear infinite reverse}
 .breathe{animation:breathe 8s ease-in-out infinite}.signal{animation:signal 18s linear infinite}
+.entry-arrow{animation:invite 3.4s ease-in-out infinite}
 ${css}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>${body}</svg>\n`;
 }
 
-function daylightSky() {
-  const skyline = Array.from({ length: 54 }, (_, i) => {
-    const x = i * 18 - 20;
-    const height = 10 + ((i * 31 + 17) % 49);
-    const roof = 292 - height;
-    return `<path d="M${x} 299V${roof}h${11 + i % 4}V299"/>`;
-  }).join('');
+function coverNavigation(dark = false) {
+  return `<text x="50" y="58" font-size="22" fill="${dark ? '#dce8f5' : '#244b63'}" letter-spacing=".4">${xml(profile.name)}</text>
+ <g>
+  <rect x="50" y="301" width="248" height="48" rx="9" fill="${dark ? '#142739' : '#ffffff'}" fill-opacity=".96" stroke="${dark ? '#6897b8' : '#8eb0c3'}" stroke-width="1.2"/>
+  <text x="70" y="331" font-size="18" fill="${dark ? '#edf5ff' : '#23475c'}">Explore my work</text>
+  <g class="entry-arrow"><path d="M262 332l13-13m-12 0h12v12" fill="none" stroke="${dark ? '#a6d5f3' : '#326a8b'}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+ </g>
+ <text class="mono" x="850" y="341" font-size="10" fill="${dark ? '#8ca6c1' : '#796c58'}" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>`;
+}
+
+function daylightBeach() {
   const cloud = `<path d="M-148 22C-158 1-138-18-111-15C-115-46-81-66-50-45C-36-78 14-88 38-46C61-56 97-47 100-19C143-25 170-1 158 22C184 39 165 60 119 61H-109C-164 62-182 39-148 22Z"/>`;
-  return svg('Crab Satellite — daylight sky', 900, 380, `
+  const grains = Array.from({ length: 115 }, (_, i) => {
+    const x = 20 + (i * 113 % 866), y = 283 + (i * 47 % 91);
+    return `<circle cx="${x}" cy="${y}" r="${i % 3 ? '.6' : '1'}" fill="#ac9473" opacity="${i % 3 ? '.14' : '.19'}"/>`;
+  }).join('');
+  const tracks = Array.from({ length: 16 }, (_, i) => `<path d="m${427+i*21} ${326+i%3}-3 2m6 4-3 2"/>`).join('');
+  const legs = [-1, 1].map(side => Array.from({ length: 4 }, (_, i) => {
+    const x = side * (16 + i % 2 * 3), y = -3 + i * 5;
+    return `<g class="leg-${(i + (side > 0 ? 1 : 0)) % 2 ? 'a' : 'b'}"><path d="M${x} ${y}L${side*(31+i*2)} ${y+5}L${side*(43-i*2)} ${y+16}"/></g>`;
+  }).join('')).join('');
+  const claw = `<path d="M-4 8C-15 4-13-9-5-13L-1-3L4-13C13-7 12 5 4 9Z" fill="url(#shell)" stroke="#b84435" stroke-width="1.2"/>`;
+  return svg('Alex Chengyu Li — explore my work', 900, 380, `
 <defs>
- <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c7e1f1"/><stop offset=".55" stop-color="#e5eff7"/><stop offset="1" stop-color="#f6f8fb"/></linearGradient>
- <radialGradient id="sunlight"><stop stop-color="#fffaf0" stop-opacity=".94"/><stop offset=".36" stop-color="#fffaf0" stop-opacity=".54"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0"/></radialGradient>
- <linearGradient id="cloud" x2=".15" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#cfdfee"/></linearGradient>
- <linearGradient id="cloud-front" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#e8f0f8"/></linearGradient>
- <linearGradient id="mist" x2="0" y2="1"><stop stop-color="#f4f8fc" stop-opacity="0"/><stop offset="1" stop-color="#f7f9fc"/></linearGradient>
- <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3.5"/></filter>
- <filter id="far" x="-20%" y="-80%" width="140%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c4e2f3"/><stop offset=".7" stop-color="#edf5f8"/><stop offset="1" stop-color="#f6f8f8"/></linearGradient>
+ <radialGradient id="sunlight"><stop stop-color="#fff9df" stop-opacity=".95"/><stop offset=".42" stop-color="#fffaf0" stop-opacity=".55"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0"/></radialGradient>
+ <linearGradient id="cloud" x2=".15" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#d6e6f0"/></linearGradient>
+ <linearGradient id="water" x2="0" y2="1"><stop stop-color="#8fbecb"/><stop offset="1" stop-color="#c8e4d9"/></linearGradient>
+ <linearGradient id="sand" x2=".25" y2="1"><stop stop-color="#e5ceb0"/><stop offset=".4" stop-color="#f0dfc4"/><stop offset="1" stop-color="#faf1e1"/></linearGradient>
+ <linearGradient id="shell" x2=".25" y2="1"><stop stop-color="#ee805f"/><stop offset=".55" stop-color="#e36149"/><stop offset="1" stop-color="#c94639"/></linearGradient>
+ <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.8"/></filter>
+ <filter id="far" x="-20%" y="-80%" width="140%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
  <clipPath id="frame"><rect width="900" height="380" rx="12"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
  <rect width="900" height="380" fill="url(#sky)"/>
- <ellipse cx="714" cy="72" rx="205" ry="155" fill="url(#sunlight)"/>
- <path d="M320 94Q522 112 773 33" fill="none" stroke="#ffffff" stroke-width="2" opacity=".45" class="trail"/>
- <g transform="translate(620 127) scale(1.25 .32)" fill="#ffffff" opacity=".54" filter="url(#far)"><g class="cloud-far">${cloud}</g></g>
- <g transform="translate(235 153) scale(1.5 .58)" fill="url(#cloud)" opacity=".8" filter="url(#soft)"><g class="cloud-slow">${cloud}</g></g>
- <g fill="#8eacc8" opacity=".18">${skyline}</g>
- <g fill="#88a6c2" opacity=".25">
-  <path d="M544 299V258h14v-20h6v20h15v41M597 299v-52h18v-15h12v67M721 299v-45h20v-15h5v15h12v45M417 299v-40h29v40"/>
-  <path d="M645 299v-63h7v-19h2v-11h2v11h2v19h7v63"/>
+ <ellipse cx="710" cy="75" rx="158" ry="132" fill="url(#sunlight)"/>
+ <circle cx="710" cy="75" r="23" fill="#edc584" opacity=".86"/>
+ <g transform="translate(710 75) rotate(-18)" fill="none" stroke="#b99d78" stroke-width=".8">
+  <ellipse rx="61" ry="38" opacity=".22"/><path d="M-79 0H-72M72 0H79M0-53V-47M0 47V53" opacity=".38"/>
  </g>
- <g transform="translate(621 231) scale(1.35 .81)" fill="url(#cloud)" filter="url(#soft)"><g class="cloud-near">${cloud}</g></g>
- <g transform="translate(802 271) scale(1.3 .7)" fill="url(#cloud-front)" opacity=".92" filter="url(#soft)"><g class="cloud-slow">${cloud}</g></g>
- <g transform="translate(333 267) scale(1.02 .57)" fill="url(#cloud-front)" opacity=".9" filter="url(#soft)"><g class="cloud-near">${cloud}</g></g>
- <g transform="translate(95 292) scale(1.2 .72)" fill="url(#cloud-front)" opacity=".94" filter="url(#soft)"><g class="cloud-far">${cloud}</g></g>
- <rect y="270" width="900" height="110" fill="url(#mist)"/>
- <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="#8ea5b9" stroke-opacity=".35"/>
- <text x="50" y="58" font-size="13" fill="#36566f" letter-spacing="2.1">CRAB SATELLITE</text>
- <text class="mono" x="50" y="333" font-size="12" fill="#314f6c" letter-spacing="1.6">EXPLORE</text>
- <path d="M124 334l9-9m-8 0h8v8" fill="none" stroke="#356c99"/>
- <text class="mono" x="850" y="333" font-size="10" fill="#536b81" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
-</g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="#d7e0ec"/>`, `
+ <g transform="translate(570 82) scale(1.1 .23)" fill="#ffffff" opacity=".64" filter="url(#far)"><g class="cloud-far">${cloud}</g></g>
+ <g transform="translate(218 132) scale(1.32 .35)" fill="url(#cloud)" opacity=".78" filter="url(#soft)"><g class="cloud-slow">${cloud}</g></g>
+ <g transform="translate(774 158) scale(1.13 .38)" fill="url(#cloud)" opacity=".9" filter="url(#soft)"><g class="cloud-near">${cloud}</g></g>
+ <path d="M0 191Q250 185 476 191T900 190V307H0Z" fill="url(#water)"/>
+ <path d="M0 193Q240 188 475 194T900 193" fill="none" stroke="#eaf5f4" stroke-width="2"/>
+ <g fill="none" stroke="#f6fcfa" stroke-linecap="round" class="water-glint">
+  <path d="M65 215h76m38 9h102m134-13h112m76 13h101m43-12h75" opacity=".56"/>
+  <path d="M20 239h49m245-6h78m-2 15h89m70-7h131m104-6h90" opacity=".48"/>
+ </g>
+ <g class="tide">
+  <path d="M-20 273C126 265 220 291 344 267S571 205 702 220S854 249 924 241V394H-20Z" fill="#f6faf0"/>
+  <path d="M-20 281C126 273 220 299 344 275S571 213 702 228S854 257 924 249V394H-20Z" fill="url(#sand)"/>
+ </g>
+ <path d="M316 309C456 299 520 246 658 251" fill="none" stroke="#fff8e9" stroke-width="1.8" opacity=".58"/>
+ ${grains}
+ <g stroke="#987650" stroke-width="1.8" stroke-linecap="round" opacity=".2" class="tracks">${tracks}</g>
+ <g transform="translate(824 312) rotate(13)" fill="none" stroke="#bca084" stroke-linecap="round" opacity=".58">
+  <path d="M-9 5Q-16-9-3-11Q10-17 13-3L5 8Z" fill="#f8eddb"/>
+  <path d="M0 5-5-8m8 13 3-13m-9 14-6-9m13 9 5-8" stroke-width=".8"/>
+ </g>
+ <g class="crab-travel" transform="translate(623 294)">
+  <ellipse cx="0" cy="24" rx="41" ry="6" fill="#987752" opacity=".16"/>
+  <g class="crab-body">
+   <g fill="none" stroke="#bd4d3e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">${legs}</g>
+   <path d="M-15-3Q-28-9-33-24M15-3Q28-9 33-24" fill="none" stroke="#c95743" stroke-width="5" stroke-linecap="round"/>
+   <g transform="translate(-34 -26) rotate(-15)"><g class="claw-left">${claw}</g></g>
+   <g transform="translate(34 -26) rotate(15)"><g class="claw-right">${claw}</g></g>
+   <ellipse rx="25" ry="16" fill="url(#shell)" stroke="#b94838" stroke-width="1.3"/>
+   <path d="M-15-7Q0-16 15-7" stroke="#ffa78a" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+   <path d="M-9-12-11-24M9-12 11-24" stroke="#ad4236" stroke-width="3.5" stroke-linecap="round"/>
+   <g class="crab-eyes">
+    <circle cx="-11" cy="-25" r="4.5" fill="#fffdf3"/><circle cx="11" cy="-25" r="4.5" fill="#fffdf3"/>
+    <g class="pupils" fill="#344650"><circle cx="-10.5" cy="-25" r="2.3"/><circle cx="11.5" cy="-25" r="2.3"/></g>
+   </g>
+   <path d="M-4 5Q0 8 4 5" fill="none" stroke="#963b32" stroke-width="1.3" stroke-linecap="round"/>
+  </g>
+ </g>
+ <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="#92acb6" stroke-opacity=".3"/>
+ ${coverNavigation()}
+</g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="#d7e0e5"/>`, `
 @keyframes cloud-drift{from{transform:translateX(-16px)}to{transform:translateX(22px)}}
 @keyframes cloud-drift-back{from{transform:translateX(16px)}to{transform:translateX(-12px)}}
-@keyframes trail-light{0%,100%{opacity:.3}50%{opacity:.62}}
+@keyframes crab-walk{0%,8%{transform:translate(710px,299px)}42%,54%{transform:translate(422px,305px)}88%,100%{transform:translate(710px,299px)}}
+@keyframes crab-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
+@keyframes leg-step{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+@keyframes claw-wave{0%,36%,64%,100%{transform:rotate(0)}43%,52%{transform:rotate(-22deg)}47%,58%{transform:rotate(8deg)}}
+@keyframes blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}
+@keyframes glance{0%,8%,89%,100%{transform:translateX(1px)}15%,55%{transform:translateX(-1px)}65%,85%{transform:translateX(1px)}}
+@keyframes wash{from{transform:translateY(-2px)}to{transform:translateY(3px)}}
+@keyframes shimmer{from{opacity:.4;transform:translateX(-5px)}to{opacity:.85;transform:translateX(7px)}}
 .cloud-slow{animation:cloud-drift 26s ease-in-out infinite alternate}
 .cloud-far{animation:cloud-drift-back 38s ease-in-out infinite alternate}
 .cloud-near{animation:cloud-drift 32s ease-in-out infinite alternate-reverse}
-.trail{animation:trail-light 18s ease-in-out infinite}
-`, 'A softly animated daylight sky with drifting clouds and a distant city skyline.');
+.crab-travel{animation:crab-walk 20s ease-in-out infinite}
+.crab-body{animation:crab-bob .5s ease-in-out infinite}
+.leg-a{animation:leg-step .28s ease-in-out infinite alternate}
+.leg-b{animation:leg-step .28s ease-in-out infinite alternate-reverse}
+.claw-left{animation:claw-wave 20s ease-in-out infinite;transform-origin:0 8px}
+.claw-right{animation:claw-wave 20s ease-in-out infinite reverse;transform-origin:0 8px}
+.crab-eyes{animation:blink 6s linear infinite;transform-origin:0 -25px}
+.pupils{animation:glance 20s linear infinite}
+.tide{animation:wash 7s ease-in-out infinite alternate}
+.water-glint{animation:shimmer 5s ease-in-out infinite alternate}
+`, 'A red crab strolls along a sunny beach beneath drifting clouds. Click the image or the Explore my work button to open the personal website.');
 }
 
 const themes = {
@@ -154,13 +212,10 @@ outputs.set(`assets/constellation${t.suffix}.svg`, svg('Crab Satellite — enter
   <circle r="21" stroke-opacity=".16"/>
  </g>
  <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="${t.corner}" stroke-opacity=".4"/>
- <text x="50" y="58" font-size="13" fill="${t.name}" letter-spacing="2.1">CRAB SATELLITE</text>
- <text class="mono" x="50" y="333" font-size="12" fill="${t.cta}" letter-spacing="1.6">EXPLORE</text>
- <path d="M124 334l9-9m-8 0h8v8" fill="none" stroke="${t.arrow}"/>
- <text class="mono" x="850" y="333" font-size="10" fill="${t.caption}" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
+ ${coverNavigation(true)}
 </g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="${t.border}"/>`));
 } else {
-  outputs.set('assets/sky.svg', daylightSky());
+  outputs.set('assets/beach.svg', daylightBeach());
 }
 
 profile.portals.forEach((p, i) => {
@@ -193,7 +248,7 @@ function picture(asset, alt, lightAsset = `${asset}-light`) {
 
 outputs.set('README.md', `<!-- Generated by .github/scripts/generate-profile.mjs from data/profile.json. -->
 <a href="${profile.site}">
-  ${picture('constellation', `${profile.name} — Crab Satellite. Explore research, open source and AI governance.`, 'sky')}
+  ${picture('constellation', `${profile.name} — Crab Satellite. Open the personal website to explore research, open source and AI governance.`, 'beach')}
 </a>
 
 ${profile.portals.map(p => `<a href="${p.url}">\n  ${picture(`portal-${p.id}`, `${p.title} — ${p.site}`)}\n</a>`).join('\n\n')}

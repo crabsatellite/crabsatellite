@@ -3,8 +3,9 @@
 The README is a visual navigation page. Its motion is decorative, not a display
 of research output, rankings, download totals or contribution metrics. Keep the
 name and links concise; detailed work belongs on the linked websites.
-The scene is the cover's main subject. Keep Crab Satellite as a small
-signature and Explore as a quiet entry cue; do not restore an oversized handle,
+The scene is the cover's main subject. Keep Alex Chengyu Li in the upper left
+and a clear, outlined Explore my work button as the entry cue. The whole banner
+links to the personal site. Do not restore an oversized handle,
 add a replacement slogan, or turn the cover into a personal achievement poster.
 Keep the GitHub bio factual and work-focused. Do not restore Sigma Xi membership
 or similar credential claims to the bio or README; the author removed that
@@ -16,8 +17,10 @@ promotional framing. Membership may remain in LinkedIn's Organizations section.
 The embedded SVG animates in the browser without JavaScript, external assets,
 scheduled regeneration or metadata polling. Retain reduced-motion support and
 accessible ordinary links. Inspect the result in GitHub's actual README view.
-The dark cover is a nebula; the light cover is a daylight sky with drifting
-clouds and a distant, abstract city skyline. Do not recolor the nebula white.
+The dark cover is a nebula; the light cover is a sunny beach with drifting
+clouds, small waves and a red crab walking sideways, moving its legs and claws.
+Keep the crab on the sand and clear of the entry button. Do not recolor the
+nebula white or restore an empty sky-only cover.
 All three portals have matching dark and light palettes.
 README picture sources use GitHub's supported prefers-color-scheme
 selection, with the light variant as fallback. Generate both themes together;

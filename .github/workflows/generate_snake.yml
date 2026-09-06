@@ -3,7 +3,7 @@ name: Profile visuals
 on:
   push:
     branches: [main]
-    paths: ['README.md', 'data/profile.json', 'assets/constellation.svg', 'assets/sky.svg', 'assets/portal-*.svg', '.github/scripts/generate-profile.mjs', '.github/workflows/generate_snake.yml']
+    paths: ['README.md', 'data/profile.json', 'assets/constellation.svg', 'assets/beach.svg', 'assets/portal-*.svg', '.github/scripts/generate-profile.mjs', '.github/workflows/generate_snake.yml']
   workflow_dispatch:
 
 permissions:
