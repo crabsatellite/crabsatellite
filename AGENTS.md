@@ -17,12 +17,15 @@ promotional framing. Membership may remain in LinkedIn's Organizations section.
 The embedded SVG animates in the browser without JavaScript, external assets,
 scheduled regeneration or metadata polling. Retain reduced-motion support and
 accessible ordinary links. Inspect the result in GitHub's actual README view.
-The dark cover is a compact nebula; the light cover is a minimal Japanese-inspired
+The dark cover is a compact nebula; the light cover is a minimal
 shoreline in warm paper white, muted blue-grey and vermilion. Use fine vector
 curves, smooth tides and a small crab based on the Crab Research mark. Avoid
 photoreal AI-generated images, broad gradients, soft clip-art clouds, cartoon
 faces and oversized mascot graphics. Keep the crab clear of the entry button.
 The user prefers refinement and smooth motion over visual complexity.
+Do not add a red sun disc or national-symbol styling to the cover. Crab legs
+must attach to the body and bend at connected joints; do not animate detached
+leg fragments or rotate whole limbs around the body's center.
 All three portals have matching dark and light palettes.
 README picture sources use GitHub's supported prefers-color-scheme
 selection, with the light variant as fallback. Generate both themes together;

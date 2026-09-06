@@ -69,15 +69,29 @@ function coverNavigation(dark = false) {
 }
 
 function shoreline() {
-  const mark = `<path d="M19 24c0-7 6-11 13-11s13 4 13 11v6c-4 6-22 6-26 0v-6Z" fill="#B34B35"/>
- <g fill="none" stroke="#B34B35" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-  <g class="crab-step-a"><path d="m20 22-9-6-5 3m4 9-5 6m20-2-11 7"/></g>
-  <g class="crab-step-b"><path d="m21 27-12 1m35-6 9-6 5 3m-20 16 11 7"/></g>
-  <g class="crab-step-a"><path d="m43 27 12 1 5 6"/></g>
-  <path d="M23 16l-3-9m21 9 3-9"/>
-  <g class="crab-claw"><path d="M11 16 6 8l1-6 6 5 1 5"/></g>
-  <path d="m53 16 5-8-1-6-6 5-1 5"/>
- </g>`;
+  // Each leg has one fixed body attachment and a lower segment hinged at its knee.
+  const legPairs = [
+    { hip: [22, 20], knee: [12, 16], foot: [5, 21] },
+    { hip: [21, 24], knee: [10, 24], foot: [4, 31] },
+    { hip: [22, 28], knee: [12, 32], foot: [8, 41] },
+    { hip: [25, 30], knee: [19, 38], foot: [16, 46] },
+  ];
+  const legs = [false, true].map(mirror => legPairs.map(({ hip, knee, foot }, i) => {
+    const point = ([x, y]) => [mirror ? 64 - x : x, y];
+    const [hx, hy] = point(hip), [kx, ky] = point(knee), [fx, fy] = point(foot);
+    const phase = (i + Number(mirror)) % 2 ? 'a' : 'b';
+    return `<g class="crab-leg" transform="translate(${hx} ${hy})"><g class="crab-step-${phase}">
+     <path d="M0 0L${kx-hx} ${ky-hy}"/>
+     <g transform="translate(${kx-hx} ${ky-hy})"><g class="crab-shin-${phase}"><path d="M0 0L${fx-kx} ${fy-ky}"/></g></g>
+    </g></g>`;
+  }).join('')).join('');
+  const claw = '<path d="M0 0Q-7-2-7-8L-6-12L-2-7L2-10Q6-4 0 0"/>';
+  const mark = `<g fill="none" stroke="#B34B35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  ${legs}
+  <path d="M23 18Q18 14 13 12M41 18Q46 14 51 12M25 16 23 8M39 16 41 8"/>
+  <g transform="translate(13 12)"><g class="crab-claw">${claw}</g></g>
+  <g transform="translate(51 12) scale(-1 1)">${claw}</g>
+ </g><path d="M19 24c0-7 6-11 13-11s13 4 13 11v6c-4 6-22 6-26 0v-6Z" fill="#B34B35"/>`;
   return svg('Alex Chengyu Li — a quiet shore', 900, 300, `
 <defs>
  <clipPath id="frame"><rect width="900" height="300" rx="8"/></clipPath>
@@ -86,7 +100,6 @@ function shoreline() {
 </defs>
 <g clip-path="url(#frame)">
  <rect width="900" height="300" fill="#f7f5ed"/>
- <circle cx="742" cy="61" r="17" fill="#b34b35" opacity=".84"/>
  <g class="cloud-drift" fill="#fcfbf7" stroke="#a2b8b6" stroke-width=".65" stroke-linecap="round">
   <path d="M553 84h127c9 0 10-9 3-12-3-1-8-1-12 1-1-10-18-14-26-6-4-15-25-16-33-1-9-6-21-2-23 7h-36"/>
   <path d="M730 98h74c8 0 8-9 0-10-4-9-18-10-24-2-8-5-17-1-19 5h-31"/>
@@ -122,16 +135,19 @@ function shoreline() {
 @keyframes shore-wash{from{transform:translateY(-1.2px)}to{transform:translateY(1.4px)}}
 @keyframes stroll{0%,100%{transform:translate(704px,219px)}50%{transform:translate(576px,212px)}}
 @keyframes quiet-step{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+@keyframes quiet-shin{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
 @keyframes quiet-claw{0%,34%,65%,100%{transform:rotate(0)}45%,52%{transform:rotate(-11deg)}}
 .cloud-drift{animation:cloud-float 19s ease-in-out infinite alternate}
 .wave-far,.sea-breath{animation:swell-far 11s ease-in-out infinite alternate}
 .wave-near{animation:swell-near 8s ease-in-out infinite alternate}
 .shore-wash{animation:shore-wash 8s ease-in-out infinite alternate}
 .crab-stroll{animation:stroll 19s ease-in-out infinite}
-.crab-step-a{animation:quiet-step .55s ease-in-out infinite alternate;transform-origin:32px 24px}
-.crab-step-b{animation:quiet-step .55s ease-in-out infinite alternate-reverse;transform-origin:32px 24px}
-.crab-claw{animation:quiet-claw 19s ease-in-out infinite;transform-origin:11px 16px}
-`, 'A minimal, Japanese-inspired coastal illustration in paper white, muted blue-grey and vermilion. Fine waves flow past a small walking crab derived from the Crab Research mark. Click the cover to open the website.');
+.crab-step-a{animation:quiet-step .65s ease-in-out infinite alternate;transform-origin:0 0}
+.crab-step-b{animation:quiet-step .65s ease-in-out infinite alternate-reverse;transform-origin:0 0}
+.crab-shin-a{animation:quiet-shin .65s ease-in-out infinite alternate-reverse;transform-origin:0 0}
+.crab-shin-b{animation:quiet-shin .65s ease-in-out infinite alternate;transform-origin:0 0}
+.crab-claw{animation:quiet-claw 19s ease-in-out infinite;transform-origin:0 0}
+`, 'A minimal coastal illustration in paper white, muted blue-grey and vermilion. Fine waves flow past a small walking crab derived from the Crab Research mark. Click the cover to open the website.');
 }
 
 const themes = {
@@ -229,10 +245,16 @@ profile.portals.forEach((p, i) => {
 }
 
 function picture(asset, alt, lightAsset = `${asset}-light`) {
+  const url = name => {
+    const path = `assets/${name}.svg`;
+    const content = outputs.get(path);
+    assert(content, `Missing picture source: ${path}`);
+    return `./${path}?v=${createHash('sha256').update(content).digest('hex').slice(0, 12)}`;
+  };
   return `<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/${asset}.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/${lightAsset}.svg" />
-    <img src="./assets/${lightAsset}.svg" width="100%" alt="${xml(alt)}" />
+    <source media="(prefers-color-scheme: dark)" srcset="${url(asset)}" />
+    <source media="(prefers-color-scheme: light)" srcset="${url(lightAsset)}" />
+    <img src="${url(lightAsset)}" width="100%" alt="${xml(alt)}" />
   </picture>`;
 }
 
