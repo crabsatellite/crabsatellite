@@ -30,11 +30,37 @@ ${css}
 </style>${body}</svg>\n`;
 }
 
+const themes = {
+  dark: {
+    suffix: '', space: '#12203d', edge: '#060a12', haze: ['#7b53c5', '#3e76d3', '#172451'],
+    core: ['#030711', '#0d1630', '#587da2', '#aecfeb'], stars: ['#a6bfe5', '#ddb1e7'],
+    particles: ['#5484ff', '#7391ff', '#96a5ff', '#4879d2', '#ae5ecc', '#6accfa'],
+    orbit: '#9cbedc', ring: '#7c9bb9', signal: '#b2e2f5', ray: ['#86cfff', '#ae6eca'],
+    satellite: '#f0c18b', corner: '#738ba4', name: '#a8b9cc', title: '#f0f5fd',
+    rule: '#89bde9', cta: '#c9d7e8', arrow: '#a9d7f5', meta: '#7f97b2', caption: '#6e88a8',
+    border: '#26344a', card: ['#0b1321', '#090f18'], cardBorder: '#28344a',
+    cardTitle: '#e4ebf5', cardMeta: '#9daec3',
+  },
+  light: {
+    suffix: '-light', space: '#e6eefb', edge: '#f8fafc', haze: ['#b4a4d7', '#8cb7dd', '#dde7f6'],
+    core: ['#f9fbff', '#e6edf8', '#7697b8', '#b9cfe5'], stars: ['#7792af', '#b297b8'],
+    particles: ['#437bbb', '#6275b7', '#9a77b8', '#4f91ac', '#b0799f', '#439aab'],
+    orbit: '#6986a7', ring: '#647f9e', signal: '#3976ac', ray: ['#6b99ba', '#9b7aac'],
+    satellite: '#9f6930', corner: '#8095ac', name: '#486079', title: '#162d49',
+    rule: '#477ca8', cta: '#314f6c', arrow: '#356c99', meta: '#536b81', caption: '#536b81',
+    border: '#d7e0ec', card: ['#f5f8fc', '#ffffff'], cardBorder: '#d8e1ec',
+    cardTitle: '#23364d', cardMeta: '#4d6378',
+  },
+};
+
+for (const [theme, t] of Object.entries(themes)) {
+// Identical geometry and motion in both themes; only their designed palettes differ.
+seed = 848;
 const stars = Array.from({ length: 150 }, (_, i) => {
   const x = n(random() * 900), y = n(random() * 380), r = n(.35 + random() * .85);
-  return `<circle cx="${x}" cy="${y}" r="${r}" fill="${i % 5 ? '#a6bfe5' : '#ddb1e7'}" opacity="${n(.15 + random() * .4)}"/>`;
+  return `<circle cx="${x}" cy="${y}" r="${r}" fill="${t.stars[i % 5 ? 0 : 1]}" opacity="${n(.15 + random() * .4)}"/>`;
 }).join('');
-const colors = ['#5484ff', '#7391ff', '#96a5ff', '#4879d2', '#ae5ecc', '#6accfa'];
+const colors = t.particles;
 const points = [], wisps = [];
 for (let arm = 0; arm < 4; arm++) {
   for (let i = 0; i < 420; i++) {
@@ -57,67 +83,72 @@ const ticks = Array.from({ length: 80 }, (_, i) => {
   const a = i * Math.PI / 40, r = i % 5 ? 174 : 170;
   return `<path d="M${n(Math.cos(a)*r)} ${n(Math.sin(a)*r)}L${n(Math.cos(a)*178)} ${n(Math.sin(a)*178)}"/>`;
 }).join('');
-outputs.set('assets/constellation.svg', svg('Crab Satellite — enter the constellation', 900, 380, `
+outputs.set(`assets/constellation${t.suffix}.svg`, svg('Crab Satellite — enter the constellation', 900, 380, `
 <defs>
- <radialGradient id="space"><stop stop-color="#12203d"/><stop offset="1" stop-color="#060a12"/></radialGradient>
- <radialGradient id="haze"><stop stop-color="#7b53c5" stop-opacity=".22"/><stop offset=".52" stop-color="#3e76d3" stop-opacity=".15"/><stop offset="1" stop-color="#172451" stop-opacity="0"/></radialGradient>
- <radialGradient id="core"><stop offset=".68" stop-color="#030711"/><stop offset=".85" stop-color="#0d1630"/><stop offset=".96" stop-color="#587da2"/><stop offset="1" stop-color="#aecfeb" stop-opacity="0"/></radialGradient>
- <linearGradient id="fade"><stop offset=".03" stop-color="#060a12"/><stop offset=".42" stop-color="#060a12" stop-opacity=".95"/><stop offset=".65" stop-color="#060a12" stop-opacity="0"/></linearGradient>
- <linearGradient id="line"><stop stop-color="#86cfff" stop-opacity="0"/><stop offset=".52" stop-color="#86cfff" stop-opacity=".65"/><stop offset="1" stop-color="#ae6eca" stop-opacity="0"/></linearGradient>
+ <radialGradient id="space"><stop stop-color="${t.space}"/><stop offset="1" stop-color="${t.edge}"/></radialGradient>
+ <radialGradient id="haze"><stop stop-color="${t.haze[0]}" stop-opacity=".22"/><stop offset=".52" stop-color="${t.haze[1]}" stop-opacity=".15"/><stop offset="1" stop-color="${t.haze[2]}" stop-opacity="0"/></radialGradient>
+ <radialGradient id="core"><stop offset=".68" stop-color="${t.core[0]}"/><stop offset=".85" stop-color="${t.core[1]}"/><stop offset=".96" stop-color="${t.core[2]}"/><stop offset="1" stop-color="${t.core[3]}" stop-opacity="0"/></radialGradient>
+ <linearGradient id="line"><stop stop-color="${t.ray[0]}" stop-opacity="0"/><stop offset=".52" stop-color="${t.ray[0]}" stop-opacity=".65"/><stop offset="1" stop-color="${t.ray[1]}" stop-opacity="0"/></linearGradient>
  <clipPath id="frame"><rect width="900" height="380" rx="12"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
  <rect width="900" height="380" fill="url(#space)"/>
  <g>${stars}</g>
- <ellipse cx="662" cy="202" rx="340" ry="205" fill="url(#haze)" class="breathe"/>
- <g transform="translate(667 198) rotate(-24)"><g transform="scale(1 .58)">
+ <ellipse cx="510" cy="190" rx="360" ry="215" fill="url(#haze)" class="breathe"/>
+ <g transform="translate(515 190) rotate(-24)"><g transform="scale(1 .58)">
   <g class="spin">${wisps.join('')}${points.join('')}</g>
-  <g class="reverse" fill="none" stroke="#9cbedc" stroke-width=".7" opacity=".34">${ticks}</g>
-  <ellipse rx="226" ry="226" fill="none" stroke="#7c9bb9" opacity=".17"/>
-  <circle r="226" fill="none" stroke="#b2e2f5" stroke-width="2" stroke-dasharray="10 550" class="signal"/>
+  <g class="reverse" fill="none" stroke="${t.orbit}" stroke-width=".7" opacity=".34">${ticks}</g>
+  <ellipse rx="226" ry="226" fill="none" stroke="${t.ring}" opacity=".17"/>
+  <circle r="226" fill="none" stroke="${t.signal}" stroke-width="2" stroke-dasharray="10 550" class="signal"/>
  </g></g>
- <circle cx="667" cy="198" r="37" fill="url(#core)"/>
- <circle cx="667" cy="198" r="29" fill="#030711"/>
- <path d="M367 235Q670 93 902 191" fill="none" stroke="url(#line)" stroke-width=".8"/>
- <g transform="translate(816 108) rotate(-24)" fill="none" stroke="#f0c18b" stroke-width="1.2">
+ <circle cx="515" cy="190" r="37" fill="url(#core)"/>
+ <circle cx="515" cy="190" r="29" fill="${t.core[0]}"/>
+ <path d="M170 240Q530 85 827 182" fill="none" stroke="url(#line)" stroke-width=".8"/>
+ <g transform="translate(714 91) rotate(-24)" fill="none" stroke="${t.satellite}" stroke-width="1.2">
   <path d="M-14-3h10v6h-10zm18 0h10v6H4zM-4 0H4M0-7V7M-3-5h6v10H-3z"/>
   <circle r="21" stroke-opacity=".16"/>
  </g>
- <rect width="900" height="380" fill="url(#fade)"/>
- <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="#738ba4" stroke-opacity=".4"/>
- <text x="50" y="59" font-size="12" fill="#a8b9cc" letter-spacing="1.1">${xml(profile.name)}</text>
- <text x="48" y="148" font-size="57" font-weight="300" fill="#f0f5fd" letter-spacing="3">CRAB</text>
- <text x="48" y="211" font-size="57" font-weight="300" fill="#f0f5fd" letter-spacing="3">SATELLITE</text>
- <path d="M50 243H107" stroke="#89bde9" stroke-width="1"/>
- <text class="mono" x="50" y="281" font-size="12" fill="#c9d7e8" letter-spacing="1.4">ENTER THE CONSTELLATION</text>
- <path d="M285 277h11m-5-5 5 5-5 5" fill="none" stroke="#a9d7f5"/>
- <text class="mono" x="50" y="333" font-size="10" fill="#7f97b2" letter-spacing="1.1">CRABSATELLITE.COM</text>
- <text class="mono" x="850" y="333" font-size="9" fill="#6e88a8" text-anchor="end" letter-spacing="1.4">RESEARCH / CODE / SYSTEMS</text>
-</g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="#26344a"/>`));
+ <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="${t.corner}" stroke-opacity=".4"/>
+ <text x="50" y="58" font-size="13" fill="${t.name}" letter-spacing="2.1">CRAB SATELLITE</text>
+ <text class="mono" x="50" y="333" font-size="12" fill="${t.cta}" letter-spacing="1.6">EXPLORE</text>
+ <path d="M124 334l9-9m-8 0h8v8" fill="none" stroke="${t.arrow}"/>
+ <text class="mono" x="850" y="333" font-size="10" fill="${t.caption}" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
+</g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="${t.border}"/>`));
 
 profile.portals.forEach((p, i) => {
+  const accent = theme === 'dark' ? p.color : p.lightColor;
+  assert(/^#[\da-f]{6}$/i.test(accent), `Missing ${theme} accent for ${p.id}`);
   const graphic = i === 0
-    ? `<g transform="translate(595 53)"><g class="spin" fill="none" stroke="${p.color}" stroke-width=".75"><ellipse rx="44" ry="15"/><ellipse rx="44" ry="15" transform="rotate(60)"/><ellipse rx="44" ry="15" transform="rotate(120)"/></g><circle r="3" fill="${p.color}"/></g>`
+    ? `<g transform="translate(595 53)"><g class="spin" fill="none" stroke="${accent}" stroke-width=".75"><ellipse rx="44" ry="15"/><ellipse rx="44" ry="15" transform="rotate(60)"/><ellipse rx="44" ry="15" transform="rotate(120)"/></g><circle r="3" fill="${accent}"/></g>`
     : i === 1
-      ? `<g fill="none" stroke="${p.color}" opacity=".7"><path d="m563 37-16 15 16 15m57-30 16 15-16 15m-35 10 11-50"/><path d="M530 83h126" opacity=".16"/><path d="M530 83h126" stroke-dasharray="12 114" class="signal"/></g>`
-      : `<g transform="translate(595 52)"><g class="reverse" fill="none" stroke="${p.color}" stroke-width=".8"><path d="M0-33 29-16 29 16 0 33-29 16-29-16Z"/><path d="M0-21 18-10 18 10 0 21-18 10-18-10Z" opacity=".35"/></g><circle r="3" fill="${p.color}"/></g>`;
-  outputs.set(`assets/portal-${p.id}.svg`, svg(`${p.title} — ${p.site}`, 900, 104, `
-<defs><linearGradient id="bg"><stop stop-color="#0b1321"/><stop offset="1" stop-color="#090f18"/></linearGradient></defs>
-<rect x=".5" y=".5" width="899" height="103" rx="9" fill="url(#bg)" stroke="#28344a"/>
-<path d="M24 32V72" stroke="${p.color}" opacity=".7"/>
-<text class="mono" x="42" y="58" font-size="13" fill="${p.color}">0${i+1}</text>
-<text x="88" y="64" font-size="30" fill="#e4ebf5" letter-spacing=".3">${xml(p.title)}</text>
+      ? `<g fill="none" stroke="${accent}" opacity=".7"><path d="m563 37-16 15 16 15m57-30 16 15-16 15m-35 10 11-50"/><path d="M530 83h126" opacity=".16"/><path d="M530 83h126" stroke-dasharray="12 114" class="signal"/></g>`
+      : `<g transform="translate(595 52)"><g class="reverse" fill="none" stroke="${accent}" stroke-width=".8"><path d="M0-33 29-16 29 16 0 33-29 16-29-16Z"/><path d="M0-21 18-10 18 10 0 21-18 10-18-10Z" opacity=".35"/></g><circle r="3" fill="${accent}"/></g>`;
+  outputs.set(`assets/portal-${p.id}${t.suffix}.svg`, svg(`${p.title} — ${p.site}`, 900, 104, `
+<defs><linearGradient id="bg"><stop stop-color="${t.card[0]}"/><stop offset="1" stop-color="${t.card[1]}"/></linearGradient></defs>
+<rect x=".5" y=".5" width="899" height="103" rx="9" fill="url(#bg)" stroke="${t.cardBorder}"/>
+<path d="M24 32V72" stroke="${accent}" opacity=".7"/>
+<text class="mono" x="42" y="58" font-size="13" fill="${accent}">0${i+1}</text>
+<text x="88" y="64" font-size="30" fill="${t.cardTitle}" letter-spacing=".3">${xml(p.title)}</text>
 ${graphic}
-<text class="mono" x="830" y="58" font-size="14" text-anchor="end" fill="#9daec3">${xml(p.site)}</text>
-<path d="M852 59l12-12m-11 0h11v11" stroke="${p.color}" stroke-width="1.3" fill="none"/>`));
+<text class="mono" x="830" y="58" font-size="14" text-anchor="end" fill="${t.cardMeta}">${xml(p.site)}</text>
+<path d="M852 59l12-12m-11 0h11v11" stroke="${accent}" stroke-width="1.3" fill="none"/>`));
 });
+}
+
+function picture(asset, alt) {
+  return `<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/${asset}.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/${asset}-light.svg" />
+    <img src="./assets/${asset}-light.svg" width="100%" alt="${xml(alt)}" />
+  </picture>`;
+}
 
 outputs.set('README.md', `<!-- Generated by .github/scripts/generate-profile.mjs from data/profile.json. -->
 <a href="${profile.site}">
-  <img src="./assets/constellation.svg" width="100%" alt="Alex Chengyu Li — Crab Satellite. Enter the animated constellation." />
+  ${picture('constellation', `${profile.name} — Crab Satellite. Enter the animated constellation.`)}
 </a>
 
-${profile.portals.map(p => `<a href="${p.url}"><img src="./assets/portal-${p.id}.svg" width="100%" alt="${p.title} — ${p.site}" /></a>`).join('\n\n')}
+${profile.portals.map(p => `<a href="${p.url}">\n  ${picture(`portal-${p.id}`, `${p.title} — ${p.site}`)}\n</a>`).join('\n\n')}
 
 <p align="center">
   <a href="${profile.site}">Crab Satellite</a> &nbsp; · &nbsp;

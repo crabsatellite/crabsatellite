@@ -3,9 +3,9 @@
   "site": "https://crabsatellite.com/",
   "linkedin": "https://www.linkedin.com/in/alex-li-13b585263/",
   "portals": [
-    { "id": "research", "title": "Research", "site": "Crab Research", "url": "https://crabresearch.com/", "color": "#80b8ff" },
-    { "id": "opensource", "title": "Open Source", "site": "CrabMods", "url": "https://crabmods.com/", "color": "#80dbc7" },
-    { "id": "governance", "title": "AI Governance", "site": "OpenExecution", "url": "https://openexecution.dev/", "color": "#e8b477" }
+    { "id": "research", "title": "Research", "site": "Crab Research", "url": "https://crabresearch.com/", "color": "#80b8ff", "lightColor": "#3369a7" },
+    { "id": "opensource", "title": "Open Source", "site": "CrabMods", "url": "https://crabmods.com/", "color": "#80dbc7", "lightColor": "#147c68" },
+    { "id": "governance", "title": "AI Governance", "site": "OpenExecution", "url": "https://openexecution.dev/", "color": "#e8b477", "lightColor": "#986631" }
   ],
   "modporter": "https://github.com/crabsatellite/modporter"
 }

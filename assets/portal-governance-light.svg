@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="104" viewBox="0 0 900 104" role="img" aria-labelledby="title desc">
+<title id="title">AI Governance — OpenExecution</title><desc id="desc">An original animated constellation. Decorative motion pauses when reduced motion is preferred. Navigation is provided by the surrounding link.</desc>
+<style>
+text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,monospace}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes breathe{0%,100%{opacity:.36}50%{opacity:.8}}
+@keyframes signal{to{stroke-dashoffset:-560}}
+.spin{animation:orbit 55s linear infinite}.reverse{animation:orbit 88s linear infinite reverse}
+.breathe{animation:breathe 8s ease-in-out infinite}.signal{animation:signal 18s linear infinite}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs><linearGradient id="bg"><stop stop-color="#f5f8fc"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs>
+<rect x=".5" y=".5" width="899" height="103" rx="9" fill="url(#bg)" stroke="#d8e1ec"/>
+<path d="M24 32V72" stroke="#986631" opacity=".7"/>
+<text class="mono" x="42" y="58" font-size="13" fill="#986631">03</text>
+<text x="88" y="64" font-size="30" fill="#23364d" letter-spacing=".3">AI Governance</text>
+<g transform="translate(595 52)"><g class="reverse" fill="none" stroke="#986631" stroke-width=".8"><path d="M0-33 29-16 29 16 0 33-29 16-29-16Z"/><path d="M0-21 18-10 18 10 0 21-18 10-18-10Z" opacity=".35"/></g><circle r="3" fill="#986631"/></g>
+<text class="mono" x="830" y="58" font-size="14" text-anchor="end" fill="#4d6378">OpenExecution</text>
+<path d="M852 59l12-12m-11 0h11v11" stroke="#986631" stroke-width="1.3" fill="none"/></svg>
