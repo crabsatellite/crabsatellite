@@ -2,8 +2,8 @@
 <a href="https://crabsatellite.com/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/constellation.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/constellation-light.svg" />
-    <img src="./assets/constellation-light.svg" width="100%" alt="Alex Chengyu Li — Crab Satellite. Enter the animated constellation." />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/sky.svg" />
+    <img src="./assets/sky.svg" width="100%" alt="Alex Chengyu Li — Crab Satellite. Explore research, open source and AI governance." />
   </picture>
 </a>
 

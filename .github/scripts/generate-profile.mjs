@@ -15,9 +15,9 @@ for (const url of [profile.site, profile.linkedin, profile.modporter, ...profile
 }
 assert.deepEqual(profile.portals.map(p => p.id), ['research', 'opensource', 'governance']);
 const outputs = new Map();
-function svg(title, width, height, body, css = '') {
+function svg(title, width, height, body, css = '', description = 'An original animated constellation.') {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
-<title id="title">${xml(title)}</title><desc id="desc">An original animated constellation. Decorative motion pauses when reduced motion is preferred. Navigation is provided by the surrounding link.</desc>
+<title id="title">${xml(title)}</title><desc id="desc">${xml(description)} Decorative motion pauses when reduced motion is preferred. Navigation is provided by the surrounding link.</desc>
 <style>
 text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,monospace}
 @keyframes orbit{to{transform:rotate(360deg)}}
@@ -28,6 +28,57 @@ text{font-family:Arial,Helvetica,sans-serif} .mono{font-family:Consolas,Menlo,mo
 ${css}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>${body}</svg>\n`;
+}
+
+function daylightSky() {
+  const skyline = Array.from({ length: 54 }, (_, i) => {
+    const x = i * 18 - 20;
+    const height = 10 + ((i * 31 + 17) % 49);
+    const roof = 292 - height;
+    return `<path d="M${x} 299V${roof}h${11 + i % 4}V299"/>`;
+  }).join('');
+  const cloud = `<path d="M-148 22C-158 1-138-18-111-15C-115-46-81-66-50-45C-36-78 14-88 38-46C61-56 97-47 100-19C143-25 170-1 158 22C184 39 165 60 119 61H-109C-164 62-182 39-148 22Z"/>`;
+  return svg('Crab Satellite — daylight sky', 900, 380, `
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c7e1f1"/><stop offset=".55" stop-color="#e5eff7"/><stop offset="1" stop-color="#f6f8fb"/></linearGradient>
+ <radialGradient id="sunlight"><stop stop-color="#fffaf0" stop-opacity=".94"/><stop offset=".36" stop-color="#fffaf0" stop-opacity=".54"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0"/></radialGradient>
+ <linearGradient id="cloud" x2=".15" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#cfdfee"/></linearGradient>
+ <linearGradient id="cloud-front" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#e8f0f8"/></linearGradient>
+ <linearGradient id="mist" x2="0" y2="1"><stop stop-color="#f4f8fc" stop-opacity="0"/><stop offset="1" stop-color="#f7f9fc"/></linearGradient>
+ <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3.5"/></filter>
+ <filter id="far" x="-20%" y="-80%" width="140%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>
+ <clipPath id="frame"><rect width="900" height="380" rx="12"/></clipPath>
+</defs>
+<g clip-path="url(#frame)">
+ <rect width="900" height="380" fill="url(#sky)"/>
+ <ellipse cx="714" cy="72" rx="205" ry="155" fill="url(#sunlight)"/>
+ <path d="M320 94Q522 112 773 33" fill="none" stroke="#ffffff" stroke-width="2" opacity=".45" class="trail"/>
+ <g transform="translate(620 127) scale(1.25 .32)" fill="#ffffff" opacity=".54" filter="url(#far)"><g class="cloud-far">${cloud}</g></g>
+ <g transform="translate(235 153) scale(1.5 .58)" fill="url(#cloud)" opacity=".8" filter="url(#soft)"><g class="cloud-slow">${cloud}</g></g>
+ <g fill="#8eacc8" opacity=".18">${skyline}</g>
+ <g fill="#88a6c2" opacity=".25">
+  <path d="M544 299V258h14v-20h6v20h15v41M597 299v-52h18v-15h12v67M721 299v-45h20v-15h5v15h12v45M417 299v-40h29v40"/>
+  <path d="M645 299v-63h7v-19h2v-11h2v11h2v19h7v63"/>
+ </g>
+ <g transform="translate(621 231) scale(1.35 .81)" fill="url(#cloud)" filter="url(#soft)"><g class="cloud-near">${cloud}</g></g>
+ <g transform="translate(802 271) scale(1.3 .7)" fill="url(#cloud-front)" opacity=".92" filter="url(#soft)"><g class="cloud-slow">${cloud}</g></g>
+ <g transform="translate(333 267) scale(1.02 .57)" fill="url(#cloud-front)" opacity=".9" filter="url(#soft)"><g class="cloud-near">${cloud}</g></g>
+ <g transform="translate(95 292) scale(1.2 .72)" fill="url(#cloud-front)" opacity=".94" filter="url(#soft)"><g class="cloud-far">${cloud}</g></g>
+ <rect y="270" width="900" height="110" fill="url(#mist)"/>
+ <path d="M30 58V30H58M842 30H870V58M870 322V350H842M58 350H30V322" fill="none" stroke="#8ea5b9" stroke-opacity=".35"/>
+ <text x="50" y="58" font-size="13" fill="#36566f" letter-spacing="2.1">CRAB SATELLITE</text>
+ <text class="mono" x="50" y="333" font-size="12" fill="#314f6c" letter-spacing="1.6">EXPLORE</text>
+ <path d="M124 334l9-9m-8 0h8v8" fill="none" stroke="#356c99"/>
+ <text class="mono" x="850" y="333" font-size="10" fill="#536b81" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
+</g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="#d7e0ec"/>`, `
+@keyframes cloud-drift{from{transform:translateX(-16px)}to{transform:translateX(22px)}}
+@keyframes cloud-drift-back{from{transform:translateX(16px)}to{transform:translateX(-12px)}}
+@keyframes trail-light{0%,100%{opacity:.3}50%{opacity:.62}}
+.cloud-slow{animation:cloud-drift 26s ease-in-out infinite alternate}
+.cloud-far{animation:cloud-drift-back 38s ease-in-out infinite alternate}
+.cloud-near{animation:cloud-drift 32s ease-in-out infinite alternate-reverse}
+.trail{animation:trail-light 18s ease-in-out infinite}
+`, 'A softly animated daylight sky with drifting clouds and a distant city skyline.');
 }
 
 const themes = {
@@ -42,19 +93,13 @@ const themes = {
     cardTitle: '#e4ebf5', cardMeta: '#9daec3',
   },
   light: {
-    suffix: '-light', space: '#e6eefb', edge: '#f8fafc', haze: ['#b4a4d7', '#8cb7dd', '#dde7f6'],
-    core: ['#f9fbff', '#e6edf8', '#7697b8', '#b9cfe5'], stars: ['#7792af', '#b297b8'],
-    particles: ['#437bbb', '#6275b7', '#9a77b8', '#4f91ac', '#b0799f', '#439aab'],
-    orbit: '#6986a7', ring: '#647f9e', signal: '#3976ac', ray: ['#6b99ba', '#9b7aac'],
-    satellite: '#9f6930', corner: '#8095ac', name: '#486079', title: '#162d49',
-    rule: '#477ca8', cta: '#314f6c', arrow: '#356c99', meta: '#536b81', caption: '#536b81',
-    border: '#d7e0ec', card: ['#f5f8fc', '#ffffff'], cardBorder: '#d8e1ec',
+    suffix: '-light', card: ['#f5f8fc', '#ffffff'], cardBorder: '#d8e1ec',
     cardTitle: '#23364d', cardMeta: '#4d6378',
   },
 };
 
 for (const [theme, t] of Object.entries(themes)) {
-// Identical geometry and motion in both themes; only their designed palettes differ.
+if (theme === 'dark') {
 seed = 848;
 const stars = Array.from({ length: 150 }, (_, i) => {
   const x = n(random() * 900), y = n(random() * 380), r = n(.35 + random() * .85);
@@ -114,6 +159,9 @@ outputs.set(`assets/constellation${t.suffix}.svg`, svg('Crab Satellite — enter
  <path d="M124 334l9-9m-8 0h8v8" fill="none" stroke="${t.arrow}"/>
  <text class="mono" x="850" y="333" font-size="10" fill="${t.caption}" text-anchor="end" letter-spacing="1.1">CRABSATELLITE.COM</text>
 </g><rect x=".5" y=".5" width="899" height="379" rx="12" fill="none" stroke="${t.border}"/>`));
+} else {
+  outputs.set('assets/sky.svg', daylightSky());
+}
 
 profile.portals.forEach((p, i) => {
   const accent = theme === 'dark' ? p.color : p.lightColor;
@@ -135,17 +183,17 @@ ${graphic}
 });
 }
 
-function picture(asset, alt) {
+function picture(asset, alt, lightAsset = `${asset}-light`) {
   return `<picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/${asset}.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/${asset}-light.svg" />
-    <img src="./assets/${asset}-light.svg" width="100%" alt="${xml(alt)}" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/${lightAsset}.svg" />
+    <img src="./assets/${lightAsset}.svg" width="100%" alt="${xml(alt)}" />
   </picture>`;
 }
 
 outputs.set('README.md', `<!-- Generated by .github/scripts/generate-profile.mjs from data/profile.json. -->
 <a href="${profile.site}">
-  ${picture('constellation', `${profile.name} — Crab Satellite. Enter the animated constellation.`)}
+  ${picture('constellation', `${profile.name} — Crab Satellite. Explore research, open source and AI governance.`, 'sky')}
 </a>
 
 ${profile.portals.map(p => `<a href="${p.url}">\n  ${picture(`portal-${p.id}`, `${p.title} — ${p.site}`)}\n</a>`).join('\n\n')}

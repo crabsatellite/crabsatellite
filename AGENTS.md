@@ -3,7 +3,7 @@
 The README is a visual navigation page. Its motion is decorative, not a display
 of research output, rankings, download totals or contribution metrics. Keep the
 name and links concise; detailed work belongs on the linked websites.
-The constellation is the cover's main subject. Keep Crab Satellite as a small
+The scene is the cover's main subject. Keep Crab Satellite as a small
 signature and Explore as a quiet entry cue; do not restore an oversized handle,
 add a replacement slogan, or turn the cover into a personal achievement poster.
 Keep the GitHub bio factual and work-focused. Do not restore Sigma Xi membership
@@ -16,10 +16,12 @@ promotional framing. Membership may remain in LinkedIn's Organizations section.
 The embedded SVG animates in the browser without JavaScript, external assets,
 scheduled regeneration or metadata polling. Retain reduced-motion support and
 accessible ordinary links. Inspect the result in GitHub's actual README view.
-Maintain both the dark-space and light-sky palettes for the cover and all three
-portals. README picture sources use GitHub's supported prefers-color-scheme
+The dark cover is a nebula; the light cover is a daylight sky with drifting
+clouds and a distant, abstract city skyline. Do not recolor the nebula white.
+All three portals have matching dark and light palettes.
+README picture sources use GitHub's supported prefers-color-scheme
 selection, with the light variant as fallback. Generate both themes together;
-keep their geometry, animation and navigation synchronized. Inspect actual
+keep their navigation and reduced-motion behavior synchronized. Inspect actual
 image currentSrc in GitHub after switching appearance, not only SVG previews.
 
 The independent mod-data workflow feeds CrabMods and the existing personal
