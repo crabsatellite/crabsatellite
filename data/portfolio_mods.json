@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "84.6K",
+      "downloads": "84.8K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -35,7 +35,7 @@
     {
       "title": "LeafDecayStopper",
       "author": "CrabMods",
-      "downloads": "12.1K",
+      "downloads": "12.2K",
       "updated": "Oct 28, 2024",
       "created": "Oct 28, 2024",
       "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "208.2M",
+      "downloads": "208.3M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "58.6K",
+      "downloads": "58.7K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "154.9M",
+      "downloads": "155.0M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -320,7 +320,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "33.2M",
+      "downloads": "33.3M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-09-11T00:35:58.467Z"
+  "lastUpdated": "2026-09-12T00:34:26.613Z"
 }
