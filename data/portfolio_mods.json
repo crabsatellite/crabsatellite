@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "87.1K",
+      "downloads": "87.2K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "209.7M",
+      "downloads": "209.8M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,17 +194,17 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "60.8K",
+      "downloads": "60.9K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
       "image": "https://media.forgecdn.net/avatars/thumbnails/822/361/256/256/638205421305341178.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/pelagic-prehistory",
       "categories": [
-        "Mobs",
-        "Food",
         "Genetics",
-        "Ores and Resources"
+        "Ores and Resources",
+        "Mobs",
+        "Food"
       ],
       "isOwner": false,
       "role": "Migration Lead",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "156.0M",
+      "downloads": "156.1M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -320,7 +320,7 @@
     {
       "title": "Alex's Caves",
       "author": "sbom_xela",
-      "downloads": "33.6M",
+      "downloads": "33.7M",
       "updated": "Oct 19, 2023",
       "created": "Oct 19, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-09-23T00:34:29.380Z"
+  "lastUpdated": "2026-09-24T00:35:58.423Z"
 }
