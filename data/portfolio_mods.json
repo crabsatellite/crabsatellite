@@ -3,7 +3,7 @@
     {
       "title": "HotBath",
       "author": "CrabMods",
-      "downloads": "2.6M",
+      "downloads": "2.7M",
       "updated": "May 8, 2023",
       "created": "May 8, 2023",
       "description": "Relaxing hot baths with healing, buffs and magical effects. 6 bath types with unique benefits.",
@@ -19,15 +19,15 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "87.2K",
+      "downloads": "87.4K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
       "image": "https://media.forgecdn.net/avatars/thumbnails/1659/487/256/256/639057240203990713.png",
       "url": "https://www.curseforge.com/minecraft/mc-mods/showercore",
       "categories": [
-        "Cosmetic",
-        "Adventure and RPG"
+        "Adventure and RPG",
+        "Cosmetic"
       ],
       "isOwner": true,
       "role": "Author"
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "209.8M",
+      "downloads": "209.9M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "60.9K",
+      "downloads": "61.1K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -492,5 +492,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-09-24T00:35:58.423Z"
+  "lastUpdated": "2026-09-25T00:36:44.586Z"
 }
