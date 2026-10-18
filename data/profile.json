@@ -7,5 +7,5 @@
     { "id": "opensource", "title": "Open Source", "site": "CrabMods", "url": "https://crabmods.com/", "color": "#80dbc7", "lightColor": "#147c68" },
     { "id": "governance", "title": "AI Governance", "site": "OpenExecution", "url": "https://openexecution.dev/", "color": "#e8b477", "lightColor": "#986631" }
   ],
-  "modporter": "https://github.com/crabsatellite/modporter"
+  "modporter": "https://github.com/CrabMods/modporter"
 }

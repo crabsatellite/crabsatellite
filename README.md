@@ -34,5 +34,5 @@
 <p align="center">
   <a href="https://crabsatellite.com/">Crab Satellite</a> &nbsp; · &nbsp;
   <a href="https://www.linkedin.com/in/alex-li-13b585263/">LinkedIn</a> &nbsp; · &nbsp;
-  <a href="https://github.com/crabsatellite/modporter">ModPorter</a>
+  <a href="https://github.com/CrabMods/modporter">ModPorter</a>
 </p>
