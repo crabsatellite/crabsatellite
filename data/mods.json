@@ -273,13 +273,13 @@
     "MinecraftModDevelopmentMods/Extra-Golems": {
       "prs": [
         {
-          "status": "open",
+          "status": "merged",
           "number": 144,
           "title": "Port to 1.21.1 neoforge",
           "url": "https://github.com/MinecraftModDevelopmentMods/Extra-Golems/pull/144",
           "created_at": "2025-12-29T12:58:29Z",
-          "updated_at": "2025-12-29T12:58:51Z",
-          "closed_at": null
+          "updated_at": "2026-10-21T18:54:12Z",
+          "closed_at": "2026-10-21T18:54:12Z"
         }
       ],
       "total": 1
@@ -410,5 +410,5 @@
       "method": "curseforge-api"
     }
   },
-  "last_updated": "2026-10-21T00:33:57.325Z"
+  "last_updated": "2026-10-22T00:34:34.460Z"
 }
