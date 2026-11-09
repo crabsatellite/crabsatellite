@@ -19,7 +19,7 @@
     {
       "title": "ShowerCore",
       "author": "CrabMods",
-      "downloads": "96.1K",
+      "downloads": "96.6K",
       "updated": "Dec 15, 2025",
       "created": "Dec 15, 2025",
       "description": "Official HotBath extension: showers, bathtubs, and adorable rubber ducks with stacking buffs.",
@@ -35,7 +35,7 @@
     {
       "title": "LeafDecayStopper",
       "author": "CrabMods",
-      "downloads": "23.9K",
+      "downloads": "24.5K",
       "updated": "Oct 28, 2024",
       "created": "Oct 28, 2024",
       "description": "Dimension-based leaf decay control via commands. Perfect for landscaping and decoration.",
@@ -53,7 +53,7 @@
     {
       "title": "Tanuki Decor",
       "author": "skyjay1",
-      "downloads": "1.6M",
+      "downloads": "1.7M",
       "updated": "Dec 24, 2023",
       "created": "Dec 24, 2023",
       "description": "Full port to NeoForge 1.21.1",
@@ -127,7 +127,7 @@
     {
       "title": "Citadel",
       "author": "sbom_xela",
-      "downloads": "215.7M",
+      "downloads": "215.9M",
       "updated": "Jul 23, 2019",
       "created": "Jul 23, 2019",
       "description": "Version migration and ongoing bug fixes",
@@ -194,7 +194,7 @@
     {
       "title": "Pelagic Prehistory",
       "author": "SameOldModding",
-      "downloads": "71.8K",
+      "downloads": "72.5K",
       "updated": "May 25, 2023",
       "created": "May 25, 2023",
       "description": "Full port to Forge 1.20.1",
@@ -239,7 +239,7 @@
     {
       "title": "Alex's Mobs",
       "author": "sbom_xela",
-      "downloads": "160.3M",
+      "downloads": "160.4M",
       "updated": "Dec 7, 2020",
       "created": "Dec 7, 2020",
       "description": "Full port to NeoForge 1.21.1",
@@ -374,18 +374,15 @@
     },
     {
       "title": "Extra Golems",
-      "author": "skyjay1",
-      "downloads": "9.3M",
-      "updated": "Jul 29, 2015",
-      "created": "Jul 29, 2015",
+      "author": "MinecraftModDevelopmentMods",
+      "downloads": "0",
+      "updated": "",
+      "created": "",
       "description": "Full port to NeoForge 1.21.1",
-      "image": "https://media.forgecdn.net/avatars/thumbnails/186/336/256/256/636832893257126275.png",
+      "image": "",
       "url": "https://www.curseforge.com/minecraft/mc-mods/extra-golems",
       "categories": [
-        "Mobs",
-        "Adventure and RPG",
-        "Armor, Tools, and Weapons",
-        "Cosmetic"
+        "Mods"
       ],
       "isOwner": false,
       "role": "Migration Lead",
@@ -492,5 +489,5 @@
       "allPRs": []
     }
   ],
-  "lastUpdated": "2026-11-08T00:24:33.864Z"
+  "lastUpdated": "2026-11-09T00:24:48.536Z"
 }
