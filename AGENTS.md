@@ -1,42 +1,48 @@
 # GitHub profile
 
-The README is a visual navigation page. Its motion is decorative, not a display
-of research output, rankings, download totals or contribution metrics. Keep the
-name and links concise; detailed work belongs on the linked websites.
-The scene is the cover's main subject. Keep Alex Chengyu Li in the upper left
-and a clear, outlined Explore my work button as the entry cue. The whole banner
-links to the personal site. Do not restore an oversized handle,
-add a replacement slogan, or turn the cover into a personal achievement poster.
-Keep the GitHub bio factual and work-focused. Do not restore Sigma Xi membership
-or similar credential claims to the bio or README; the author removed that
-promotional framing. Membership may remain in LinkedIn's Organizations section.
+The README is a short technical introduction for the developer community: a
+cover with the name and two lines about the work, then three project cards.
+It introduces the work, not a professional persona. Keep the real name: formal
+attributions point here (Google DeepMind's Formal Conjectures records Erdős
+#1212 as solved by Alex Chengyu Li and links this account; IBM's DFAH-Bench
+credits AEGIS with a link to it). Do not show the employer, job titles, a
+résumé-style headline, an oversized handle or a slogan. Keep the GitHub bio
+factual and work-focused. Do not restore Sigma Xi membership or similar
+credential claims to the bio or README; the author removed that promotional
+framing. Membership may remain in LinkedIn's Organizations section.
 
-`data/profile.json` owns the navigation labels and URLs. Run
-`node .github/scripts/generate-profile.mjs` after editing it or the SVG renderer;
-`node .github/scripts/generate-profile.mjs --check` verifies the committed output.
-The embedded SVG animates in the browser without JavaScript, external assets,
-scheduled regeneration or metadata polling. Retain reduced-motion support and
-accessible ordinary links. Inspect the result in GitHub's actual README view.
-The dark cover is a compact nebula; the light cover is a minimal
-shoreline in warm paper white, muted blue-grey and vermilion. Use fine vector
-curves, smooth tides and a small crab based on the Crab Research mark. Avoid
-photoreal AI-generated images, broad gradients, soft clip-art clouds, cartoon
-faces and oversized mascot graphics. Keep the crab clear of the entry button.
-The user prefers refinement and smooth motion over visual complexity.
-Do not add a red sun disc or national-symbol styling to the cover. Crab legs
-must attach to the body and bend at connected joints; do not animate detached
-leg fragments or rotate whole limbs around the body's center.
-All three portals have matching dark and light palettes.
-README picture sources use GitHub's supported prefers-color-scheme
-selection, with the light variant as fallback. Generate both themes together;
-keep their navigation and reduced-motion behavior synchronized. Inspect actual
-image currentSrc in GitHub after switching appearance, not only SVG previews.
+Each project card states one plain sentence about the project, then the
+external source and what it records, in that source's own terms (for example
+"recorded as solved", "credits AEGIS"). Do not upgrade the wording into claims
+the source does not make. Team work stays attributed to the team: HotBath is a
+CrabMods team mod and is not presented as a solo project. Pinned repositories
+carry breadth; avoid repeating the card projects there.
 
-Typography uses licensed Instrument Serif for the signature and Instrument Sans
-for navigation. The fonts are converted to SVG paths to avoid browser fallback.
-`data/typography.json` contains outlines, kerning and font-source hashes; update
-it with `python .github/scripts/prepare-typography.py` when changing the fonts.
-Ordinary generation and CI need only Node. Keep font licenses in `assets/`.
+`data/profile.json` owns the cover copy, project cards and footer links. Run
+`node .github/scripts/generate-profile.mjs` after editing it or the renderer;
+`node .github/scripts/generate-profile.mjs --check` verifies the committed
+output, and the generator fails if any line is wider than its box.
+
+Design system: the cover and the cards share one card shape (14 radius,
+hairline edge, warm paper or ink ground), equal gutters, one vermilion accent,
+one line-drawing stroke weight and one type scale (Instrument Serif for names
+and titles, Instrument Sans for everything else). Each card image is a third
+of the row with the card inset inside it, so outer edges align with the cover.
+The cover figure is computed: lattice points in a fixed window and a real
+admissible unit-step path for the Erdős 1212 setting. Keep it truthful if the
+window changes; the generator searches and fails when no path crosses.
+Motion is slow and decorative, stops under reduced motion, and needs no
+JavaScript, external assets, scheduled regeneration or metadata polling.
+README picture sources use GitHub's prefers-color-scheme selection with the
+light variant as fallback. Generate both themes together and inspect the
+actual GitHub README view in both appearances, not only SVG previews.
+
+Typography is converted to SVG paths to avoid browser fallback.
+`data/typography.json` holds outlines for printable ASCII plus the extra
+characters listed in `.github/scripts/prepare-typography.py` (currently ő, ·
+and —), with kerning and font-source hashes. Add a character there and rerun
+`python .github/scripts/prepare-typography.py` (needs fontTools) before using
+it. Ordinary generation and CI need only Node. Keep font licenses in `assets/`.
 
 The independent mod-data workflow feeds CrabMods and the existing personal
 site's open-source page. Preserve `data/portfolio_mods.json` and its updater.

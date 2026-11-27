@@ -1,10 +1,11 @@
 # Profile visual sources
 
-The profile's light illustration and animation are built from SVG curves in
-`.github/scripts/generate-profile.mjs`. The crab follows the existing Crab
-Research mark; its movement and the shoreline composition are specific to this
-profile. The dark particle field is generated deterministically by the same
-script. No generated photographic image is used by the finished README.
+The profile cover and project cards are built from SVG primitives in
+`.github/scripts/generate-profile.mjs`. The cover figure is computed, not drawn:
+its dots are integer lattice points and the highlighted path is a unit-step
+path through the coprime points with a composite coordinate (the Erdős Problem
+1212 setting), found by search in a fixed window. The small crab follows the
+existing Crab Research mark. No generated photographic image is used.
 
 Typography:
 

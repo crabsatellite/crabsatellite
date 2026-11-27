@@ -8,6 +8,8 @@ from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
 
 ROOT = Path(__file__).resolve().parents[2]
+# Printable ASCII plus the few characters the profile needs (Erdős, separators).
+EXTRA = 'ő·—'
 
 
 def extract(filename, axes=None):
@@ -17,7 +19,10 @@ def extract(filename, axes=None):
         font = instantiateVariableFont(font, axes, inplace=False)
     cmap = font.getBestCmap()
     glyph_set = font.getGlyphSet()
-    chars = {chr(code): cmap[code] for code in range(32, 127)}
+    codes = [*range(32, 127), *map(ord, EXTRA)]
+    missing = [chr(code) for code in codes if code not in cmap]
+    assert not missing, f'{filename} has no glyph for {missing}'
+    chars = {chr(code): cmap[code] for code in codes}
     glyphs = {}
     for char, name in chars.items():
         pen = SVGPathPen(glyph_set, ntos=lambda v: str(round(v, 2)))

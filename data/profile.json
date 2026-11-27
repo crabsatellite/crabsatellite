@@ -1,11 +1,43 @@
 {
   "name": "Alex Chengyu Li",
   "site": "https://crabsatellite.com/",
-  "linkedin": "https://www.linkedin.com/in/alex-chengyu-li-13b585263/",
-  "portals": [
-    { "id": "research", "title": "Research", "site": "Crab Research", "url": "https://crabresearch.com/", "color": "#80b8ff", "lightColor": "#3369a7" },
-    { "id": "opensource", "title": "Open Source", "site": "CrabMods", "url": "https://crabmods.com/", "color": "#80dbc7", "lightColor": "#147c68" },
-    { "id": "governance", "title": "AI Governance", "site": "OpenExecution", "url": "https://openexecution.dev/", "color": "#e8b477", "lightColor": "#986631" }
+  "role": [
+    "Independent work on AI-assisted mathematics,",
+    "verifiable AI agents and Minecraft mods."
   ],
-  "modporter": "https://github.com/CrabMods/modporter"
+  "projects": [
+    {
+      "id": "erdos-1212",
+      "drawing": "lattice",
+      "title": "Erdős #1212",
+      "summary": "Lean proof of an infinite lattice path",
+      "source": "GOOGLE DEEPMIND · FORMAL CONJECTURES",
+      "evidence": "Recorded as solved; proof reproduced",
+      "url": "https://github.com/google-deepmind/formal-conjectures/pull/6788"
+    },
+    {
+      "id": "aegis",
+      "drawing": "chain",
+      "title": "AEGIS",
+      "summary": "Portable, signed evidence for AI agents",
+      "source": "IBM CLIENT ENGINEERING · DFAH-BENCH",
+      "evidence": "Credits AEGIS in its provenance modules",
+      "url": "https://github.com/crabsatellite/aegis-protocol"
+    },
+    {
+      "id": "modporter",
+      "drawing": "port",
+      "title": "ModPorter",
+      "summary": "Ports Forge 1.20.1 mods to NeoForge 1.21.1",
+      "source": "CRABMODS · OPEN SOURCE",
+      "evidence": "Rule-based; developers review the output",
+      "url": "https://github.com/CrabMods/modporter"
+    }
+  ],
+  "links": [
+    { "label": "Crab Satellite", "url": "https://crabsatellite.com/" },
+    { "label": "Crab Research", "url": "https://crabresearch.com/" },
+    { "label": "CrabMods", "url": "https://crabmods.com/" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/alex-chengyu-li-13b585263/" }
+  ]
 }
